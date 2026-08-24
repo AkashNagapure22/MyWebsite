@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: #020617;
+  color: #f8fafc;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fixed Fullscreen 3D Particle Canvas */
+#three-bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  pointer-events: none;
+}
+
+/* Modern Glassmorphic Cyber Panels */
+.cyber-panel {
+  background: rgba(2, 6, 23, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),
+              inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cyber-panel:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 30px 60px -15px rgba(56, 189, 248, 0.2),
+              inset 0 1px 0 0 rgba(56, 189, 248, 0.2);
+}
+
+/* Neon Pulse Border Effect */
+.holo-glow {
+  position: relative;
+}
+.holo-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1, #38bdf8);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.2;
+  filter: blur(8px);
+  transition: opacity 0.3s ease;
+}
+.holo-glow:hover::after {
+  opacity: 0.6;
+}
+
+/* Construction Ticker Animation */
+@keyframes scrollLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.animate-scroll {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollLeft 45s linear infinite;
+}
+
+/* Flip Card 3D Setup */
+.flip-card-container { perspective: 1200px; }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flip-card-container.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 0.75rem;
+}
+.flip-card-back { transform: rotateY(180deg); }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #020617; }
+::-webkit-scrollbar-thumb { background: #0284c7; border-radius: 3px; }
+
+/* Active Nav Class for Scroll Spy */
+.nav-item-link.active-link {
+  color: #38bdf8 !important;
+  background-color: rgba(14, 165, 233, 0.15);
+  border-color: rgba(56, 189, 248, 0.4) !important;
+}
