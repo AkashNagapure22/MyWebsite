@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Akash Nagapure | Skills & Technical Arsenal</title>
+<meta name="description" content="Explore the core competencies, enterprise endpoint management, cloud virtualization, and automation technical arsenal of Akash Nagapure." />
+<link rel="canonical" href="https://www.akashnagapure.in/public/Sub_Pages/Skills.html" />
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.akashnagapure.in/public/Sub_Pages/Skills.html">
+<meta property="og:title" content="Akash Nagapure | Skills & Technical Arsenal">
+<meta property="og:description" content="Explore the core competencies, enterprise endpoint management, cloud virtualization, and automation technical arsenal.">
+<meta property="og:image" content="https://www.akashnagapure.in/images/Main_Page_Images/hobby_homelab.avif">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "primary": "#38bdf8",
+                    "primary-glow": "#0ea5e9",
+                    "secondary": "#6366f1",
+                    "surface-container": "#0f172a",
+                    "background": "#020617",
+                    "surface-dim": "#020617"
+                },
+                "fontFamily": {
+                    "headline-md": ["Geist", "sans-serif"],
+                    "label-caps": ["JetBrains Mono", "monospace"],
+                    "body-md": ["Inter", "sans-serif"]
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    html { scroll-padding-top: 110px; scroll-behavior: smooth; }
+    
+    ::-webkit-scrollbar { height: 6px; width: 6px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #38bdf8, #6366f1); border-radius: 4px; }
+    
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* 3D Glassmorphism Cards */
+    .glass-card-3d {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(2, 6, 23, 0.95) 100%);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(56, 189, 248, 0.18);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+                    0 0 30px rgba(56, 189, 248, 0.05);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .glass-card-3d:hover {
+        border-color: rgba(56, 189, 248, 0.55);
+        box-shadow: 0 40px 70px -15px rgba(56, 189, 248, 0.25),
+                    0 0 50px rgba(56, 189, 248, 0.15);
+        transform: translateY(-3px);
+    }
+
+    /* Holographic Glow Accent */
+    .holo-glow {
+        position: relative;
+    }
+    .holo-glow::after {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        background: linear-gradient(45deg, #38bdf8, transparent, #6366f1, transparent, #38bdf8);
+        border-radius: inherit;
+        z-index: -1;
+        opacity: 0.3;
+        filter: blur(12px);
+        transition: opacity 0.3s ease;
+    }
+    .holo-glow:hover::after {
+        opacity: 0.8;
+    }
+
+    .nav-link.active-link {
+        color: #38bdf8 !important;
+        border-bottom: 2px solid #38bdf8;
+    }
+</style>
+</head>
+<body class="bg-background text-slate-100 overflow-x-hidden font-body-md selection:bg-sky-500 selection:text-slate-950 min-h-screen flex flex-col justify-between">
+
+<!-- Full-Page 3D Cinematic Particle & Tech Grid Background -->
+<canvas id="three-bg-canvas" class="fixed inset-0 w-full h-full -z-10 pointer-events-none"></canvas>
+<script>
+  let scene, camera, renderer, particlesGeo, particlesMesh, gridHelper;
+  let mouseX = 0, mouseY = 0;
+  let targetX = 0, targetY = 0;
+
+  function init3DBackground() {
+    const canvas = document.getElementById('three-bg-canvas');
+    if (!canvas) return;
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 50;
+
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const count = 3500;
+    particlesGeo = new THREE.BufferGeometry();
+    const positions = new Float32Array(count * 3);
+
+    for (let i = 0; i < count * 3; i += 3) {
+      positions[i] = (Math.random() - 0.5) * 500;
+      positions[i + 1] = (Math.random() - 0.5) * 600;
+      positions[i + 2] = (Math.random() - 0.5) * 300;
+    }
+    particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    const particleMat = new THREE.PointsMaterial({
+      color: 0x38bdf8,
+      size: 0.8,
+      transparent: true,
+      opacity: 0.9,
+      blending: THREE.AdditiveBlending
+    });
+
+    particlesMesh = new THREE.Points(particlesGeo, particleMat);
+    scene.add(particlesMesh);
+
+    gridHelper = new THREE.GridHelper(600, 60, 0x0284c7, 0x0f172a);
+    gridHelper.position.y = -100;
+    gridHelper.material.transparent = true;
+    gridHelper.material.opacity = 0.25;
+    scene.add(gridHelper);
+
+    document.addEventListener('mousemove', (event) => {
+      mouseX = (event.clientX - window.innerWidth / 2) * 0.0005;
+      mouseY = (event.clientY - window.innerHeight / 2) * 0.0005;
+    });
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  }
+
+  let clock = new THREE.Clock();
+  function animate3DBackground() {
+    requestAnimationFrame(animate3DBackground);
+    const elapsedTime = clock.getElapsedTime();
+    targetX += (mouseX - targetX) * 0.05;
+    targetY += (mouseY - targetY) * 0.05;
+
+    if(particlesMesh) {
+      particlesMesh.rotation.y = elapsedTime * 0.02 + targetX;
+      particlesMesh.rotation.x = elapsedTime * 0.01 + targetY;
+    }
+    if(gridHelper) gridHelper.rotation.y = elapsedTime * 0.005;
+    if (renderer && scene && camera) renderer.render(scene, camera);
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    init3DBackground();
+    animate3DBackground();
+  });
+</script>
+
+<!-- Navigation Shell with Skills Categories, Search Bar, and Scroll Spy Menu -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-xl border-b border-sky-500/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 gap-4">
+      <a href="../../index.html" class="flex items-center space-x-3 group cursor-pointer flex-shrink-0">
+        <div class="h-9 w-auto flex items-center justify-center shrink-0 bg-transparent overflow-hidden filter drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]">
+          <img src="../Main_page_data/Logo.avif" alt="Logo" width="36" height="30" class="h-full w-auto object-contain logo-vibrant" onerror="this.onerror=null; this.src='../Main_page_data/placeholder.gif';" />
+        </div>
+        <div class="flex flex-col hidden sm:flex">
+          <span class="font-sans font-bold text-base text-white tracking-tight leading-none">Akash Nagapure</span>
+          <span class="font-mono text-[9px] text-sky-400 font-medium tracking-widest whitespace-nowrap mt-1">Technical Arsenal & Skills</span>
+        </div>
+      </a>
+
+      <!-- Skills Categories on Top Menu with .nav-link for Scroll Spy -->
+      <div class="hidden xl:flex items-center space-x-1 overflow-x-auto no-scrollbar py-1 shrink-0" id="nav-menu">
+        <a href="../../index.html" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all whitespace-nowrap">Home</a>
+        <a href="#endpoint" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link">Endpoint Mgmt</a>
+        <a href="#virtualization" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link">Virtualization</a>
+        <a href="#security" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link">Identity & Security</a>
+        <a href="#automation" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link">Automation</a>
+      </div>
+
+      <!-- Live Page Search Bar -->
+      <div class="relative flex-grow max-w-xs sm:max-w-sm">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+          <span class="material-symbols-outlined text-sm">search</span>
+        </div>
+        <input type="text" id="skills-search-input" oninput="filterSkills(this.value)" placeholder="Search skills, tools, technologies..." 
+          class="w-full pl-9 pr-4 py-1.5 bg-black/60 border border-slate-800 hover:border-sky-500/50 focus:border-sky-400 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none transition-all font-mono" />
+      </div>
+
+      <div class="flex items-center xl:hidden">
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Menu">
+          <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu-drawer" class="hidden xl:hidden bg-slate-900/98 border-b border-white/10 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-1 font-mono text-xs">
+    <a href="../../index.html" class="block px-4 py-2.5 rounded-md text-slate-300 hover:bg-slate-800">Home</a>
+    <a href="#endpoint" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800">Endpoint Management</a>
+    <a href="#virtualization" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800">Virtualization & Cloud VDI</a>
+    <a href="#security" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800">Identity & Microsoft Security</a>
+    <a href="#automation" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800">Automation, Scripting & ITSM</a>
+  </div>
+</nav>
+
+<!-- Scroll to Top Widget -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+    <button onclick="scrollToTop()" class="p-3 bg-sky-400 text-slate-950 hover:bg-sky-300 font-bold rounded-full shadow-2xl transition-all flex items-center justify-center cursor-pointer" aria-label="Scroll to top">
+        <span class="material-symbols-outlined text-xl">arrow_upward</span>
+    </button>
+</div>
+
+<main class="content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 space-y-16 flex-grow w-full">
+
+    <section class="skills-page space-y-12">
+        <!-- Header -->
+        <div class="glass-card-3d rounded-2xl p-8 sm:p-12 relative overflow-hidden holo-glow">
+            <div class="max-w-3xl space-y-4">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-sky-950 border border-sky-500/30 rounded-full font-mono text-xs text-sky-400 uppercase tracking-wider">
+                    Enterprise Technical Capabilities
+                </div>
+                <h1 class="font-sans text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Skills & Technologies
+                </h1>
+                <p class="font-sans text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Practical, enterprise-focused skills built through hands-on architecture across Microsoft Intune, SCCM, security operations, hybrid cloud infrastructure, and PowerShell automation.
+                </p>
+            </div>
+        </div>
+
+        <!-- SEARCH EMPTY STATE WARNING -->
+        <div id="search-empty-state" class="hidden text-center py-12 glass-card-3d rounded-2xl mb-8">
+            <span class="material-symbols-outlined text-4xl text-sky-400 mb-2">search_off</span>
+            <h3 class="text-white font-bold text-lg">No matching technical skills found</h3>
+            <p class="text-slate-400 text-xs font-mono mt-1">Try searching for keywords like "Intune", "PowerShell", "VMware", or "Azure".</p>
+        </div>
+
+        <!-- SKILLS SECTIONS GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="skills-grid">
+            
+            <!-- Endpoint Management -->
+            <div id="endpoint" class="glass-card-3d p-7 rounded-2xl space-y-4 scroll-mt-32 searchable-skill-card">
+                <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                    <span class="material-symbols-outlined text-sky-400 text-2xl">devices</span>
+                    <h2 class="font-headline-md text-xl text-white font-bold">Endpoint Management & Modern Workplace</h2>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Microsoft Intune (MEM) Tenant Administration</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Configuration Manager (SCCM / MECM) Site Operations</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Windows Autopilot Zero-Touch Provisioning</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Microsoft Autopatch & Update Ring Management</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Application Packaging & Win32 Deployment Wrappers</li>
+                </ul>
+            </div>
+
+            <!-- Virtualization & VDI -->
+            <div id="virtualization" class="glass-card-3d p-7 rounded-2xl space-y-4 scroll-mt-32 searchable-skill-card">
+                <div class="flex items-center gap-4 border-b border-white/10 pb-3">
+                    <span class="material-symbols-outlined text-sky-400 text-2xl">dns</span>
+                    <h2 class="font-headline-md text-xl text-white font-bold">Virtualization & Cloud VDI</h2>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Azure Virtual Desktop (AVD) Architecture</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Windows 365 Enterprise Cloud PC Provisioning</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> VMware Horizon & vSphere Cluster Operations</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> FSLogix Profile Container Redirection & Optimization</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Citrix Secure Remote Workspace Integration</li>
+                </ul>
+            </div>
+
+            <!-- Identity & Security -->
+            <div id="security" class="glass-card-3d p-7 rounded-2xl space-y-4 scroll-mt-32 searchable-skill-card">
+                <div class="flex items-center gap-4 border-b border-white/10 pb-3">
+                    <span class="material-symbols-outlined text-sky-400 text-2xl">security</span>
+                    <h2 class="font-headline-md text-xl text-white font-bold">Identity & Microsoft Security</h2>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Microsoft Entra ID (Azure AD) Hybrid Governance</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Zero Trust Conditional Access Policies & RBAC</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Microsoft Defender for Endpoint & XDR Security</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Active Directory Domain Services (AD DS), DNS, DHCP</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Group Policy Object (GPO) Modernization & Migration</li>
+                </ul>
+            </div>
+
+            <!-- Automation & Scripting -->
+            <div id="automation" class="glass-card-3d p-7 rounded-2xl space-y-4 scroll-mt-32 searchable-skill-card">
+                <div class="flex items-center gap-4 border-b border-white/10 pb-3">
+                    <span class="material-symbols-outlined text-sky-400 text-2xl">terminal</span>
+                    <h2 class="font-headline-md text-xl text-white font-bold">Automation, Scripting & ITSM</h2>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Advanced PowerShell Scripting & Proactive Remediations</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> Microsoft Graph API REST Integration & Workflows</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> ServiceNow ITSM & CMDB Asset Sync Automation</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> SQL Server Database Health Checks & Reporting</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-400">▹</span> ITIL 4 Service Management Lifecycle Frameworks</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- THREADED DISCUSSION & COMMENTS SECTION (Wired to Serverless Neon API) -->
+    <section id="discussion" class="scroll-mt-28 border-t border-sky-500/20 pt-14 mt-16 space-y-8">
+        <div class="flex items-center gap-4">
+            <h2 class="font-headline-md text-xl sm:text-2xl text-sky-400 italic tracking-tight font-bold">SKILLS DISCUSSION &amp; Q&amp;A</h2>
+            <div class="h-px flex-grow bg-white/10"></div>
+        </div>
+
+        <form id="comment-form" class="glass-card-3d p-6 sm:p-8 rounded-2xl border border-sky-500/30 space-y-5 shadow-2xl">
+            <h3 class="text-lg font-semibold text-sky-300 tracking-tight font-mono">Ask About Technical Skills or Stack</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" id="author" placeholder="Your Name / Handle *" required class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono" />
+                <input type="email" id="email" placeholder="Your Email Address *" required class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono" />
+            </div>
+            <div>
+                <textarea id="content" rows="3" placeholder="Leave a comment or question about my technical skills..." required class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm"></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="px-6 py-3 bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950 font-bold rounded-xl transition-all disabled:opacity-50 text-sm shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-105 cursor-pointer font-mono">
+                Post Comment
+            </button>
+        </form>
+
+        <div id="comments-container" class="space-y-6">
+            <p class="text-slate-500 text-sm font-mono">Loading discussion...</p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="w-full py-12 bg-slate-950 border-t border-sky-500/20 text-center relative z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-4">
+        <div class="h-10 w-auto flex items-center justify-center shrink-0 bg-transparent overflow-hidden filter drop-shadow-[0_0_10px_rgba(56,189,248,0.4)]">
+          <img src="../Main_page_data/Logo.avif" alt="Akash Nagapure Logo Footer" width="40" height="40" loading="lazy" class="h-full w-auto object-contain logo-vibrant font-bold" onerror="this.onerror=null; this.src='../Main_page_data/placeholder.gif';" />
+        </div>
+        <div class="flex flex-col text-left">
+          <span class="font-sans font-extrabold text-sm text-white">Akash Nagapure</span>
+          <span class="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-1">
+            © 2026. All Rights Reserved. Engineered with Precision.
+          </span>
+        </div>
+      </div>
+
+      <!-- Clickable Links & Legal Pages -->
+      <div class="flex flex-wrap items-center justify-center md:justify-end gap-6">
+        <div class="flex items-center gap-5">
+          <a href="https://www.linkedin.com/in/anagapure" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile" class="p-2.5 rounded-xl bg-slate-900 border border-sky-500/30 text-sky-400 hover:text-white hover:border-sky-400 transition-all shadow-[0_0_15px_rgba(56,189,248,0.2)]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:akashnagapure@live.com" aria-label="Send Email" class="p-2.5 rounded-xl bg-slate-900 border border-sky-500/30 text-sky-400 hover:text-white hover:border-sky-400 transition-all shadow-[0_0_15px_rgba(56,189,248,0.2)]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+
+        <div class="flex items-center space-x-3 font-mono text-xs text-slate-400">
+          <a href="../Sub_Pages/privacy.html" class="hover:text-sky-400 transition-colors">Privacy Policy</a>
+          <span>•</span>
+          <a href="../Sub_Pages/terms.html" class="hover:text-sky-400 transition-colors">Terms & Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Include Vote Manager Script -->
+<script src="../vote-manager.js"></script>
+
+<script>
+    if (window.lucide) lucide.createIcons();
+
+    const ARTICLE_ID = 'skills';
+    const API_URL = '/api/comments';
+
+    // Real-Time Skills Search Filter Logic
+    function filterSkills(query) {
+        const filter = query.toLowerCase().trim();
+        const cards = document.querySelectorAll('.searchable-skill-card');
+        const emptyState = document.getElementById('search-empty-state');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const textContent = card.innerText.toLowerCase();
+            if (textContent.includes(filter)) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        if (emptyState) {
+            if (visibleCount === 0 && filter !== '') {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+        }
+    }
+
+    async function loadComments() {
+        const container = document.getElementById('comments-container');
+        try {
+            const response = await fetch(`${API_URL}?article_id=${encodeURIComponent(ARTICLE_ID)}`);
+            const comments = await response.json();
+
+            if (!response.ok) throw new Error();
+
+            if (!comments || comments.length === 0) {
+                container.innerHTML = '<p class="text-slate-500 text-sm font-mono">No comments yet. Be the first to start the discussion!</p>';
+                return;
+            }
+
+            const commentMap = {};
+            const topLevelComments = [];
+
+            comments.forEach(comment => {
+                comment.replies = [];
+                commentMap[comment.id] = comment;
+                if (comment.parent_id) {
+                    if (commentMap[comment.parent_id]) {
+                        commentMap[comment.parent_id].replies.push(comment);
+                    }
+                } else {
+                    topLevelComments.push(comment);
+                }
+            });
+
+            container.innerHTML = topLevelComments.map(comment => renderCommentNode(comment)).join('');
+            if (window.lucide) lucide.createIcons();
+        } catch (err) {
+            container.innerHTML = '<p class="text-slate-400 text-sm font-mono">No active comment server detected. Discussion thread initialized locally.</p>';
+        }
+    }
+
+    function renderCommentNode(comment) {
+        const formattedDate = comment.created_at ? new Date(comment.created_at).toLocaleString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        }) : 'Just now';
+
+        const repliesHTML = comment.replies && comment.replies.length > 0 
+            ? `<div class="mt-4 pl-4 md:pl-6 border-l-2 border-sky-500/20 space-y-4">
+                ${comment.replies.map(reply => renderCommentNode(reply)).join('')}
+               </div>`
+            : '';
+
+        return `
+            <div class="p-5 glass-card-3d rounded-2xl border border-slate-800 space-y-3 shadow-xl" id="comment-${comment.id}">
+                <div class="flex items-center justify-between text-xs text-slate-400">
+                    <span class="font-bold text-sky-400 text-sm font-mono">${escapeHTML(comment.author)}</span>
+                    <span class="text-slate-500 font-mono">${formattedDate}</span>
+                </div>
+                
+                <p class="text-slate-300 text-sm whitespace-pre-line leading-relaxed">${escapeHTML(comment.content)}</p>
+                
+                <div class="flex items-center space-x-4 text-xs pt-2">
+                    <button type="button" onclick="handleVote(${comment.id}, 'like')" class="inline-flex items-center space-x-1 text-slate-400 hover:text-emerald-400 transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">thumb_up</span>
+                        <span>${comment.likes || 0}</span>
+                    </button>
+                    <button type="button" onclick="handleVote(${comment.id}, 'dislike')" class="inline-flex items-center space-x-1 text-slate-400 hover:text-rose-400 transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">thumb_down</span>
+                        <span>${comment.dislikes || 0}</span>
+                    </button>
+                    <button type="button" onclick="toggleReplyForm(${comment.id})" class="inline-flex items-center space-x-1 text-sky-400 hover:text-sky-300 font-semibold transition-colors bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20 font-mono cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">reply</span>
+                        <span>Reply</span>
+                    </button>
+                </div>
+
+                <form id="reply-form-${comment.id}" class="hidden space-y-3 mt-4 pt-4 border-t border-slate-800 bg-black/40 p-4 rounded-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <input type="text" id="reply-author-${comment.id}" placeholder="Your Name *" required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 font-mono" />
+                        <input type="email" id="reply-email-${comment.id}" placeholder="Your Email *" required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 font-mono" />
+                    </div>
+                    <textarea id="reply-content-${comment.id}" rows="2" placeholder="Write a reply..." required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500"></textarea>
+                    <div class="flex space-x-2">
+                        <button type="button" onclick="postReply(${comment.id})" class="px-3.5 py-1.5 bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold rounded-lg shadow font-mono cursor-pointer">Submit Reply</button>
+                        <button type="button" onclick="toggleReplyForm(${comment.id})" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-lg font-mono cursor-pointer">Cancel</button>
+                    </div>
+                </form>
+                ${repliesHTML}
+            </div>
+        `;
+    }
+
+    function toggleReplyForm(commentId) {
+        document.getElementById(`reply-form-${commentId}`).classList.toggle('hidden');
+    }
+
+    async function handleVote(id, action) {
+        try {
+            const res = await fetch(API_URL, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id, action })
+            });
+            if (res.ok) await loadComments();
+        } catch (err) {
+            console.error('Failed to vote');
+        }
+    }
+
+    async function postReply(parentId) {
+        const author = document.getElementById(`reply-author-${parentId}`).value;
+        const email = document.getElementById(`reply-email-${parentId}`).value;
+        const content = document.getElementById(`reply-content-${parentId}`).value;
+
+        if (!author.trim() || !email.trim() || !content.trim()) {
+            alert('Please fill out all required fields.');
+            return;
+        }
+
+        try {
+            const res = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ author, email, content, parent_id: parentId, article_id: ARTICLE_ID })
+            });
+            if (res.ok) await loadComments();
+        } catch (err) {
+            alert('Network error.');
+        }
+    }
+
+    document.getElementById('comment-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        const author = document.getElementById('author');
+        const email = document.getElementById('email');
+        const content = document.getElementById('content');
+
+        btn.disabled = true;
+        btn.innerText = 'Posting...';
+
+        try {
+            const res = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ author: author.value, email: email.value, content: content.value, parent_id: null, article_id: ARTICLE_ID })
+            });
+
+            if (res.ok) {
+                author.value = ''; email.value = ''; content.value = '';
+                await loadComments();
+            }
+        } catch (err) {
+            alert('Network error.');
+        } finally {
+            btn.disabled = false;
+            btn.innerText = 'Post Comment';
+        }
+    });
+
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag));
+    }
+
+    loadComments();
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu-drawer');
+        menu.classList.toggle('hidden');
+    }
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Active Navigation Highlight on Scroll (Scroll Spy)
+    const navLinks = document.querySelectorAll('#nav-menu a[href^="#"]');
+    const sections = document.querySelectorAll('div[id].searchable-skill-card');
+
+    const navObserverOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+    };
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active-link');
+                    }
+                });
+            }
+        });
+    }, navObserverOptions);
+
+    sections.forEach(section => navObserver.observe(section));
+</script>
+</body>
+</html>

@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Akash Nagapure | Foodie Portfolio</title>
+<meta name="description" content="Explore the foodie portfolio and culinary adventures of Akash Nagapure, featuring restaurant reviews, food bucket lists, and local delicacies." />
+<link rel="canonical" href="https://www.akashnagapure.in/Sub_Pages/Food.html" />
+
+<!-- Open Graph / Social Share Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.akashnagapure.in/Sub_Pages/Food.html">
+<meta property="og:title" content="Akash Nagapure | Foodie Portfolio">
+<meta property="og:description" content="Explore the foodie portfolio and culinary adventures of Akash Nagapure, featuring restaurant reviews, food bucket lists, and local delicacies.">
+<meta property="og:image" content="https://www.akashnagapure.in/images/Food_Images/Mutton_Curry.avif">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "primary": "#ffebd1",
+                    "primary-glow": "#ff9900",
+                    "secondary": "#ffb2b8",
+                    "on-surface-variant": "#cbd5e1",
+                    "surface-container": "#201f21",
+                    "background": "#131315",
+                    "surface-dim": "#131315"
+                },
+                "spacing": {
+                    "margin-desktop": "64px",
+                    "container-max": "1440px",
+                    "gutter": "24px"
+                },
+                "fontFamily": {
+                    "headline-md": ["Geist", "sans-serif"],
+                    "label-caps": ["Geist", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "display-lg": ["Geist", "sans-serif"]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    html { scroll-padding-top: 90px; }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { height: 4px; width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #ff9900, #ff0055); border-radius: 4px; }
+    
+    /* Hide Scrollbar for clean horizontal menu scrolling */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .glass-card {
+        background: rgba(22, 20, 18, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .glass-card:hover {
+        border-color: rgba(255, 153, 0, 0.5);
+        box-shadow: 0 0 20px rgba(255, 153, 0, 0.15);
+    }
+
+    /* 3D Flip Card Styles */
+    .flip-card {
+        perspective: 1000px;
+        user-select: none;
+    }
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+        pointer-events: none;
+    }
+    .flip-card * {
+        pointer-events: auto;
+    }
+    
+    .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 0.5rem;
+    }
+    .flip-card-back {
+        transform: rotateY(180deg);
+    }
+
+    /* Carousel */
+    .carousel-slide { display: none; }
+    .carousel-slide.active { display: block; animation: fadeIn 0.8s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Active Nav Class */
+    .nav-link.active-link {
+        color: #ffebd1 !important;
+        border-bottom: 2px solid #ff9900;
+    }
+
+    /* Review Expansion Animation */
+    .review-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out;
+        opacity: 0;
+    }
+    .review-details.expanded {
+        max-height: 1000px;
+        opacity: 1;
+        transition: max-height 0.6s ease-in-out, opacity 0.5s ease-in-out;
+    }
+</style>
+</head>
+<body class="bg-background text-slate-100 overflow-x-hidden font-body-md min-h-screen flex flex-col justify-between">
+
+<!-- Background Shader Canvas -->
+<div class="fixed inset-0 w-full h-full -z-10 bg-black overflow-hidden pointer-events-none">
+    <canvas class="w-full h-full opacity-50" id="ambient-canvas"></canvas>
+</div>
+<script>
+(function() {
+    const canvas = document.getElementById('ambient-canvas');
+    function syncSize() { if(canvas) { canvas.width = window.innerWidth; canvas.height = window.innerHeight; } }
+    window.addEventListener('resize', syncSize);
+    syncSize();
+
+    if (!canvas) return;
+    const gl = canvas.getContext('webgl');
+    if (!gl) return;
+    const vs = `attribute vec2 a_position; varying vec2 v_texCoord; void main() { v_texCoord = a_position * 0.5 + 0.5; gl_Position = vec4(a_position, 0.0, 1.0); }`;
+    const fs = `precision highp float; varying vec2 v_texCoord; uniform float u_time; uniform vec2 u_resolution; void main() { vec2 uv = v_texCoord; vec2 p = (uv * 2.0 - 1.0) * vec2(u_resolution.x / u_resolution.y, 1.0); float noise = 0.0; vec2 q = p * 0.8; for(float i = 1.0; i < 4.0; i++) { q += vec2(cos(q.y + u_time * 0.15 + i), sin(q.x + u_time * 0.1 + i)); noise += 1.0 / i * (0.5 + 0.5 * sin(length(q) + u_time * 0.08)); } vec3 color1 = vec3(0.06, 0.03, 0.02); vec3 color2 = vec3(0.18, 0.08, 0.02); vec3 color3 = vec3(0.1, 0.02, 0.05); vec3 finalColor = mix(color1, color2, noise * 0.5); finalColor = mix(finalColor, color3, clamp(length(p) * 0.3, 0.0, 1.0)); gl_FragColor = vec4(finalColor, 1.0); }`;
+    const cs = (t, s) => { const sh = gl.createShader(t); gl.shaderSource(sh, s); gl.compileShader(sh); return sh; };
+    const prog = gl.createProgram();
+    gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+    gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+    gl.linkProgram(prog); gl.useProgram(prog);
+    const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+    const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos);
+    gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+    const uTime = gl.getUniformLocation(prog, 'u_time');
+    const uRes = gl.getUniformLocation(prog, 'u_resolution');
+    function r(t) { gl.viewport(0, 0, canvas.width, canvas.height); gl.uniform1f(uTime, t * 0.001); gl.uniform2f(uRes, canvas.width, canvas.height); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); requestAnimationFrame(r); }
+    r(0);
+})();
+</script>
+
+<!-- Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(255,153,0,0.1)]">
+    <div class="flex justify-between items-center px-4 sm:px-8 md:px-margin-desktop py-3.5 max-w-container-max mx-auto gap-4">
+        <a href="../index.html" class="font-headline-sm text-base sm:text-xl font-bold tracking-tighter text-amber-400 italic flex items-center gap-2 flex-shrink-0">
+            <span class="material-symbols-outlined text-amber-400">restaurant</span>
+            Akash Nagapure
+        </a>
+
+        <!-- Scrollable Top Menu & Search Bar -->
+        <div class="hidden xl:flex items-center gap-3 overflow-x-auto whitespace-nowrap py-1 px-2 no-scrollbar scroll-smooth" id="nav-menu">
+            <a href="../index.html" class="font-label-caps text-xs text-amber-400 hover:text-amber-200 transition-colors py-1 flex items-center gap-1 border-r border-amber-500/20 pr-4">
+                <span class="material-symbols-outlined text-sm">home</span> Main Hub
+            </a>
+            <a href="#stats" class="font-label-caps text-xs text-slate-300 hover:text-amber-300 transition-colors nav-link py-1">Home</a>
+            <a href="#current-craving" class="font-label-caps text-xs text-slate-300 hover:text-amber-300 transition-colors nav-link py-1">Current Craving</a>
+            <a href="#todo-list" class="font-label-caps text-xs text-slate-300 hover:text-amber-300 transition-colors nav-link py-1">Food To-Do</a>
+            <a href="#favorites" class="font-label-caps text-xs text-slate-300 hover:text-amber-300 transition-colors nav-link py-1">Hall of Fame</a>
+            <a href="#spotlight" class="font-label-caps text-xs text-slate-300 hover:text-amber-300 transition-colors nav-link py-1">Spotlights</a>
+            <a href="#reviews" class="font-label-caps text-xs text-slate-300 hover:text-amber-300 transition-colors nav-link py-1">Reviews</a>
+            <a href="#discussion" class="font-label-caps text-xs text-slate-300 hover:text-amber-300 transition-colors nav-link py-1">Discussion</a>
+
+            <!-- Top Menu Search Input -->
+            <div class="relative ml-2">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-2.5 pointer-events-none text-amber-400/70">
+                <span class="material-symbols-outlined text-sm">search</span>
+              </span>
+              <input type="text" id="food-search-top" oninput="filterFood(this.value)" placeholder="Search dishes..." class="w-36 pl-8 pr-3 py-1 bg-black/60 border border-amber-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 font-mono text-xs transition-all"/>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-toggle-btn" onclick="toggleMobileMenu()" class="xl:hidden p-2 rounded text-amber-400 hover:bg-white/5 focus:outline-none flex items-center gap-1 border border-amber-500/25">
+            <span class="text-xs font-bold uppercase tracking-wider">Menu</span>
+            <span class="material-symbols-outlined text-xl" id="menu-icon">menu</span>
+        </button>
+    </div>
+
+    <!-- Mobile Slide-down Drawer & Search Bar -->
+    <div id="mobile-menu-drawer" class="hidden xl:hidden bg-background/95 border-b border-white/10 backdrop-blur-2xl px-6 py-4 space-y-3 shadow-2xl">
+        <div class="relative mb-2">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-amber-400/70">
+            <span class="material-symbols-outlined text-sm">search</span>
+          </span>
+          <input type="text" id="food-search-mobile" oninput="filterFood(this.value)" placeholder="Search dishes or spots..." class="w-full pl-9 pr-3 py-2 bg-black/80 border border-amber-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 text-xs"/>
+        </div>
+        <a href="../index.html" class="block font-label-caps text-xs text-amber-400 font-bold py-2 border-b border-white/10 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">home</span> Main Hub
+        </a>
+        <a href="#stats" onclick="closeMobileMenu()" class="block font-label-caps text-xs text-slate-300 hover:text-amber-400 py-2 border-b border-white/5">Home</a>
+        <a href="#current-craving" onclick="closeMobileMenu()" class="block font-label-caps text-xs text-slate-300 hover:text-amber-400 py-2 border-b border-white/5">Current Craving</a>
+        <a href="#todo-list" onclick="closeMobileMenu()" class="block font-label-caps text-xs text-slate-300 hover:text-amber-400 py-2 border-b border-white/5">Food To-Do</a>
+        <a href="#favorites" onclick="closeMobileMenu()" class="block font-label-caps text-xs text-slate-300 hover:text-amber-400 py-2 border-b border-white/5">Hall of Fame</a>
+        <a href="#spotlight" onclick="closeMobileMenu()" class="block font-label-caps text-xs text-slate-300 hover:text-amber-400 py-2 border-b border-white/5">Spotlights</a>
+        <a href="#reviews" onclick="closeMobileMenu()" class="block font-label-caps text-xs text-slate-300 hover:text-amber-400 py-2 border-b border-white/5">Reviews</a>
+        <a href="#discussion" onclick="closeMobileMenu()" class="block font-label-caps text-xs text-slate-300 hover:text-amber-400 py-2">Discussion &amp; Q&amp;A</a>
+    </div>
+</nav>
+
+<!-- Floating WhatsApp Widget with Official Logo -->
+<div class="fixed bottom-6 left-6 z-50 flex items-center group">
+    <a href="https://wa.me/919860457155?text=Hi%20Akash,%20I%20visited%20your%20foodie%20portfolio%20and%20wanted%20to%20recommend%20a%20restaurant!" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="relative flex items-center justify-center w-12 h-12 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-full shadow-[0_0_25px_rgba(16,185,129,0.5)] hover:scale-110 transition-all duration-300 cursor-pointer"
+       aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" width="24" height="24" class="w-6 h-6 fill-current text-slate-950">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span class="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-30 pointer-events-none"></span>
+    </a>
+    <div class="absolute left-16 bg-slate-900/90 border border-emerald-500/30 text-emerald-300 font-mono text-xs px-3 py-1.5 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap backdrop-blur-md">
+        Chat on WhatsApp 👋
+    </div>
+</div>
+
+<!-- Floating Fast Navigation / Scroll to Top Widget -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+    <div id="quick-jump-menu" class="hidden glass-card p-3 rounded-xl border border-amber-500/30 shadow-2xl flex flex-col gap-2 min-w-[180px] mb-2 transition-all">
+        <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest px-2 border-b border-white/10 pb-1">Jump To Section</span>
+        <a href="../index.html" class="text-xs text-amber-300 font-bold hover:text-amber-200 px-2 py-1 rounded hover:bg-white/5 flex items-center gap-2 border-b border-white/5 pb-2">
+            <span class="material-symbols-outlined text-sm">home</span> Main Hub
+        </a>
+        <a href="#stats" onclick="toggleQuickJump()" class="text-xs text-slate-300 hover:text-amber-300 px-2 py-1 rounded hover:bg-white/5 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">home</span> Home / Metrics
+        </a>
+        <a href="#current-craving" onclick="toggleQuickJump()" class="text-xs text-slate-300 hover:text-amber-300 px-2 py-1 rounded hover:bg-white/5 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">local_fire_department</span> Current Craving
+        </a>
+        <a href="#todo-list" onclick="toggleQuickJump()" class="text-xs text-slate-300 hover:text-amber-300 px-2 py-1 rounded hover:bg-white/5 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">checklist</span> Food To-Do
+        </a>
+        <a href="#favorites" onclick="toggleQuickJump()" class="text-xs text-slate-300 hover:text-amber-300 px-2 py-1 rounded hover:bg-white/5 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">hotel_class</span> Hall of Fame
+        </a>
+        <a href="#spotlight" onclick="toggleQuickJump()" class="text-xs text-slate-300 hover:text-amber-300 px-2 py-1 rounded hover:bg-white/5 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">restaurant_menu</span> Spotlights
+        </a>
+        <a href="#reviews" onclick="toggleQuickJump()" class="text-xs text-slate-300 hover:text-amber-300 px-2 py-1 rounded hover:bg-white/5 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">rate_review</span> Critic Reviews
+        </a>
+        <a href="#discussion" onclick="toggleQuickJump()" class="text-xs text-slate-300 hover:text-amber-300 px-2 py-1 rounded hover:bg-white/5 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">forum</span> Discussion
+        </a>
+    </div>
+
+    <div class="flex items-center gap-2">
+        <button onclick="toggleQuickJump()" class="p-3 bg-slate-900/90 hover:bg-amber-500/20 text-amber-400 border border-amber-500/40 rounded-full shadow-2xl backdrop-blur-md transition-all flex items-center justify-center cursor-pointer" aria-label="Quick Jump Menu">
+            <span class="material-symbols-outlined text-xl">segment</span>
+        </button>
+        <button onclick="scrollToTop()" class="p-3 bg-amber-500 text-slate-950 hover:bg-amber-400 font-bold rounded-full shadow-2xl transition-all flex items-center justify-center cursor-pointer" aria-label="Scroll to top">
+            <span class="material-symbols-outlined text-xl">arrow_upward</span>
+        </button>
+    </div>
+</div>
+
+<main class="relative pt-24 md:pt-32 pb-20 px-4 sm:px-6 md:px-margin-desktop max-w-container-max mx-auto space-y-16 md:space-y-24 flex-grow w-full">
+
+    <!-- Food Dashboard Metrics -->
+    <section id="stats" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 scroll-mt-24">
+        <div class="glass-card p-4 sm:p-6 flex flex-col items-center justify-center text-center rounded-lg">
+            <span class="material-symbols-outlined text-amber-400 text-3xl sm:text-4xl mb-1 sm:mb-2">lunch_dining</span>
+            <div class="font-headline-md text-2xl sm:text-3xl text-amber-400 font-bold">640+</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase font-bold tracking-wider">Dishes Tried</div>
+        </div>
+        <div class="glass-card p-4 sm:p-6 flex flex-col items-center justify-center text-center rounded-lg">
+            <span class="material-symbols-outlined text-amber-400 text-3xl sm:text-4xl mb-1 sm:mb-2">storefront</span>
+            <div class="font-headline-md text-2xl sm:text-3xl text-amber-400 font-bold">185</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase font-bold tracking-wider">Spots Visited</div>
+        </div>
+        <div class="glass-card p-4 sm:p-6 flex flex-col items-center justify-center text-center rounded-lg">
+            <span class="material-symbols-outlined text-amber-400 text-3xl sm:text-4xl mb-1 sm:mb-2">local_fire_department</span>
+            <div class="font-headline-md text-2xl sm:text-3xl text-amber-400 font-bold">92%</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase font-bold tracking-wider">Spice Tolerance</div>
+        </div>
+        <div class="glass-card p-4 sm:p-6 flex flex-col items-center justify-center text-center rounded-lg">
+            <span class="material-symbols-outlined text-amber-400 text-3xl sm:text-4xl mb-1 sm:mb-2">hotel_class</span>
+            <div class="font-headline-md text-2xl sm:text-3xl text-amber-400 font-bold">42</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase font-bold tracking-wider">Signature Dishes</div>
+        </div>
+    </section>
+
+    <!-- Current Craving Section (Hero Banner) -->
+    <section id="current-craving" class="overflow-hidden scroll-mt-24">
+        <div class="flex items-center gap-4 mb-6 md:mb-8">
+            <h2 class="font-headline-md text-xl sm:text-2xl text-amber-400 italic tracking-tight font-bold">CURRENT CRAVINGS</h2>
+            <div class="h-px flex-grow bg-white/10"></div>
+        </div>
+        
+        <div class="relative w-full min-h-[480px] sm:min-h-[380px] md:aspect-[2.8/1] rounded-xl overflow-hidden glass-card">
+            <!-- Slide 1: Mutton Curry -->
+            <div class="carousel-slide active absolute inset-0">
+                <img alt="Mutton Curry" class="w-full h-full object-cover" src="../images/Food_Images/Mutton_Curry.avif"/>
+                <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background via-background/70 md:via-background/40 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 md:inset-y-0 md:left-0 flex flex-col justify-end md:justify-center p-6 sm:p-8 md:p-12 max-w-xl">
+                    <span class="text-amber-400 font-label-caps text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] mb-2">WEEKEND OBSESSION</span>
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl text-amber-200 mb-2 font-extrabold leading-none">Mutton Curry</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm mb-4">Succulent goat meat simmered in a fiery, aromatic thick masala sauce.</p>
+                    <div class="flex items-center gap-4 flex-wrap">
+                        <span class="text-amber-400 font-bold text-lg">Rating: 9.8/10</span>
+                        <span class="px-2 py-0.5 bg-amber-500/20 text-amber-300 text-xs rounded border border-amber-500/30">Artisanal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Chicken Biryani -->
+            <div class="carousel-slide absolute inset-0">
+                <img alt="Chicken Biryani" class="w-full h-full object-cover" src="../images/Food_Images/Chicken_Biryani.avif"/>
+                <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background via-background/70 md:via-background/40 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 md:inset-y-0 md:left-0 flex flex-col justify-end md:justify-center p-6 sm:p-8 md:p-12 max-w-xl">
+                    <span class="text-amber-400 font-label-caps text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] mb-2">MIDNIGHT COMFORT</span>
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl text-amber-200 mb-2 font-extrabold leading-none">Chicken Biryani</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm mb-4">Fragrant basmati rice layered with juicy, spiced chicken pieces, fragrant saffron, and caramelized onions.</p>
+                    <div class="flex items-center gap-4 flex-wrap">
+                        <span class="text-amber-400 font-bold text-lg">Rating: 9.9/10</span>
+                        <span class="px-2 py-0.5 bg-amber-500/20 text-amber-300 text-xs rounded border border-amber-500/30">Umami Bomb</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/50 hover:bg-white/10 border border-white/10 transition-colors z-20 text-white cursor-pointer" onclick="prevSlide()" aria-label="Previous slide">
+                <span class="material-symbols-outlined text-lg sm:text-2xl">chevron_left</span>
+            </button>
+            <button class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/50 hover:bg-white/10 border border-white/10 transition-colors z-20 text-white cursor-pointer" onclick="nextSlide()" aria-label="Next slide">
+                <span class="material-symbols-outlined text-lg sm:text-2xl">chevron_right</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Food To-Do / Bucket List -->
+    <section id="todo-list" class="scroll-mt-24">
+        <div class="flex items-center gap-4 mb-6 md:mb-8">
+            <h2 class="font-headline-md text-xl sm:text-2xl text-amber-400 italic tracking-tight font-bold">FOOD BUCKET LIST</h2>
+            <div class="h-px flex-grow bg-white/10"></div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6" id="food-bucket-grid">
+            
+            <!-- Pune Item 1 -->
+            <div class="flip-card aspect-[2/3] cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card overflow-hidden">
+                        <img alt="Puneri Misal Pav" class="w-full h-full object-cover" src="../images/Food_Images/misalpav.avif"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+                        <div class="absolute top-2 right-2">
+                            <span class="text-[8px] sm:text-[9px] bg-red-600 text-white px-1.5 sm:px-2 py-0.5 rounded-full font-bold">MUST TRY</span>
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4">
+                            <div class="font-label-caps text-xs text-amber-300 mb-0.5">Puneri Misal Pav</div>
+                            <div class="text-[9px] sm:text-[10px] text-slate-400 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[12px] text-amber-400">touch_app</span> Click to Flip
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-between border border-amber-500/40 bg-slate-900/95 text-center">
+                        <div class="space-y-2 mt-2">
+                            <span class="material-symbols-outlined text-amber-400 text-2xl">restaurant</span>
+                            <h4 class="font-bold text-xs text-amber-300">Puneri Misal Pav</h4>
+                            <div class="h-px bg-white/10 w-full my-2"></div>
+                            <p class="text-[11px] text-slate-300"><strong class="text-amber-400 block mb-0.5">TARGET SPOT:</strong> Kattakirr Misal</p>
+                            <p class="text-[10px] text-slate-400"><strong class="text-slate-300 block mb-0.5">LOCATION:</strong> Pune, Maharashtra</p>
+                        </div>
+                        <span class="text-[8px] bg-amber-500/20 text-amber-300 py-1 rounded border border-amber-500/30 uppercase font-bold">Pune Special</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pune Item 2 -->
+            <div class="flip-card aspect-[2/3] cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card overflow-hidden">
+                        <img alt="SPDP Vaishali" class="w-full h-full object-cover" src="../images/Food_Images/spdp.avif"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+                        <div class="absolute top-2 right-2">
+                            <span class="text-[8px] sm:text-[9px] bg-amber-500/20 text-amber-300 px-1.5 sm:px-2 py-0.5 rounded-full font-bold">HIGH</span>
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4">
+                            <div class="font-label-caps text-xs text-amber-300 mb-0.5">SPDP (Sev Puri Dahi Puri)</div>
+                            <div class="text-[9px] sm:text-[10px] text-slate-400 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[12px] text-amber-400">touch_app</span> Click to Flip
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-between border border-amber-500/40 bg-slate-900/95 text-center">
+                        <div class="space-y-2 mt-2">
+                            <span class="material-symbols-outlined text-amber-400 text-2xl">restaurant</span>
+                            <h4 class="font-bold text-xs text-amber-300">SPDP (Dahi Puri)</h4>
+                            <div class="h-px bg-white/10 w-full my-2"></div>
+                            <p class="text-[11px] text-slate-300"><strong class="text-amber-400 block mb-0.5">TARGET SPOT:</strong> Vaishali Restaurant</p>
+                            <p class="text-[10px] text-slate-400"><strong class="text-slate-300 block mb-0.5">LOCATION:</strong> FC Road, Pune</p>
+                        </div>
+                        <span class="text-[8px] bg-amber-500/20 text-amber-300 py-1 rounded border border-amber-500/30 uppercase font-bold">Iconic Chaat</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pune Item 3 -->
+            <div class="flip-card aspect-[2/3] cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card overflow-hidden">
+                        <img alt="Mango Mastani" class="w-full h-full object-cover" src="../images/Food_Images/mangomastani.avif"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+                        <div class="absolute top-2 right-2">
+                            <span class="text-[8px] sm:text-[9px] bg-white/10 text-slate-300 px-1.5 sm:px-2 py-0.5 rounded-full font-bold">FAVORITE</span>
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4">
+                            <div class="font-label-caps text-xs text-amber-300 mb-0.5">Mango Mastani</div>
+                            <div class="text-[9px] sm:text-[10px] text-slate-400 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[12px] text-amber-400">touch_app</span> Click to Flip
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-between border border-amber-500/40 bg-slate-900/95 text-center">
+                        <div class="space-y-2 mt-2">
+                            <span class="material-symbols-outlined text-amber-400 text-2xl">restaurant</span>
+                            <h4 class="font-bold text-xs text-amber-300">Mango Mastani</h4>
+                            <div class="h-px bg-white/10 w-full my-2"></div>
+                            <p class="text-[11px] text-slate-300"><strong class="text-amber-400 block mb-0.5">TARGET SPOT:</strong> Sujata Mastani</p>
+                            <p class="text-[10px] text-slate-400"><strong class="text-slate-300 block mb-0.5">LOCATION:</strong> Sadashiv Peth, Pune</p>
+                        </div>
+                        <span class="text-[8px] bg-amber-500/20 text-amber-300 py-1 rounded border border-amber-500/30 uppercase font-bold">Thick Shake</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amravati Item 1 -->
+            <div class="flip-card aspect-[2/3] cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card overflow-hidden">
+                        <img alt="Sambhar Vadi Amravati" class="w-full h-full object-cover" src="../images/Food_Images/sambharwadi.avif"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+                        <div class="absolute top-2 right-2">
+                            <span class="text-[8px] sm:text-[9px] bg-red-600 text-white px-1.5 sm:px-2 py-0.5 rounded-full font-bold">CRITICAL</span>
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4">
+                            <div class="font-label-caps text-xs text-amber-300 mb-0.5">Sambhar Vadi & Gila Vada</div>
+                            <div class="text-[9px] sm:text-[10px] text-slate-400 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[12px] text-amber-400">touch_app</span> Click to Flip
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-between border border-amber-500/40 bg-slate-900/95 text-center">
+                        <div class="space-y-2 mt-2">
+                            <span class="material-symbols-outlined text-amber-400 text-2xl">restaurant</span>
+                            <h4 class="font-bold text-xs text-amber-300">Sambhar Vadi & Gila Vada</h4>
+                            <div class="h-px bg-white/10 w-full my-2"></div>
+                            <p class="text-[11px] text-slate-300"><strong class="text-amber-400 block mb-0.5">TARGET SPOT:</strong> Raghuvir Sweets</p>
+                            <p class="text-[10px] text-slate-400"><strong class="text-slate-300 block mb-0.5">LOCATION:</strong> Rajkamal Chowk, Amravati</p>
+                        </div>
+                        <span class="text-[8px] bg-amber-500/20 text-amber-300 py-1 rounded border border-amber-500/30 uppercase font-bold">Amravati Legend</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amravati Item 2 -->
+            <div class="flip-card aspect-[2/3] cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card overflow-hidden">
+                        <img alt="Aaloo Bonda Rassa" class="w-full h-full object-cover" src="../images/Food_Images/alubonda.avif"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+                        <div class="absolute top-2 right-2">
+                            <span class="text-[8px] sm:text-[9px] bg-amber-500/20 text-amber-300 px-1.5 sm:px-2 py-0.5 rounded-full font-bold">HIGH</span>
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4">
+                            <div class="font-label-caps text-xs text-amber-300 mb-0.5">Aaloo Bonda with Rassa</div>
+                            <div class="text-[9px] sm:text-[10px] text-slate-400 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[12px] text-amber-400">touch_app</span> Click to Flip
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-between border border-amber-500/40 bg-slate-900/95 text-center">
+                        <div class="space-y-2 mt-2">
+                            <span class="material-symbols-outlined text-amber-400 text-2xl">restaurant</span>
+                            <h4 class="font-bold text-xs text-amber-300">Aaloo Bonda Rassa</h4>
+                            <div class="h-px bg-white/10 w-full my-2"></div>
+                            <p class="text-[11px] text-slate-300"><strong class="text-amber-400 block mb-0.5">TARGET SPOT:</strong> Panchavati Chowk Stall</p>
+                            <p class="text-[10px] text-slate-400"><strong class="text-slate-300 block mb-0.5">LOCATION:</strong> Panchavati, Amravati</p>
+                        </div>
+                        <span class="text-[8px] bg-amber-500/20 text-amber-300 py-1 rounded border border-amber-500/30 uppercase font-bold">Spicy Street</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amravati Item 3 -->
+            <div class="flip-card aspect-[2/3] cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card overflow-hidden">
+                        <img alt="Amravati Gup Chup" class="w-full h-full object-cover" src="../images/Food_Images/Panipuri.avif"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+                        <div class="absolute top-2 right-2">
+                            <span class="text-[8px] sm:text-[9px] bg-white/10 text-slate-300 px-1.5 sm:px-2 py-0.5 rounded-full font-bold">POPULAR</span>
+                        </div>
+                        <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4">
+                            <div class="font-label-caps text-xs text-amber-300 mb-0.5">Amravati Special Gup Chup</div>
+                            <div class="text-[9px] sm:text-[10px] text-slate-400 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[12px] text-amber-400">touch_app</span> Click to Flip
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-between border border-amber-500/40 bg-slate-900/95 text-center">
+                        <div class="space-y-2 mt-2">
+                            <span class="material-symbols-outlined text-amber-400 text-2xl">restaurant</span>
+                            <h4 class="font-bold text-xs text-amber-300">Amravati Gup Chup</h4>
+                            <div class="h-px bg-white/10 w-full my-2"></div>
+                            <p class="text-[11px] text-slate-300"><strong class="text-amber-400 block mb-0.5">TARGET SPOT:</strong> Farshi Stop Chaat</p>
+                            <p class="text-[10px] text-slate-400"><strong class="text-slate-300 block mb-0.5">LOCATION:</strong> Deep Nagar, Amravati</p>
+                        </div>
+                        <span class="text-[8px] bg-amber-500/20 text-amber-300 py-1 rounded border border-amber-500/30 uppercase font-bold">Tangy Puris</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Hall of Fame -->
+    <section id="favorites" class="scroll-mt-24">
+        <div class="flex items-center gap-4 mb-6 md:mb-8">
+            <h2 class="font-headline-md text-xl sm:text-2xl text-amber-400 italic tracking-tight font-bold">HALL OF FAME DISHES</h2>
+            <div class="h-px flex-grow bg-white/10"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" id="hall-of-fame-grid">
+            
+            <!-- Dish 1 -->
+            <div class="flip-card h-36 cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card p-4 flex gap-4 rounded-lg">
+                        <div class="w-20 h-28 flex-shrink-0 rounded-md overflow-hidden relative">
+                            <img alt="Butter Chicken" class="w-full h-full object-cover" src="../images/placeholder.gif"/>
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h4 class="font-bold text-amber-300 mb-1">Old Delhi Butter Chicken</h4>
+                                <div class="space-y-1 text-[10px] text-slate-400">
+                                    <div class="flex justify-between"><span>Style</span><span class="text-amber-400">Smoky Gravy</span></div>
+                                    <div class="flex justify-between"><span>City</span><span class="text-amber-400">Delhi, India</span></div>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-[9px] font-bold text-amber-400 inline-block px-2 py-0.5 border border-amber-500/30 w-fit">PERFECT 10/10</div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-center items-center text-center rounded-lg border border-amber-500/40 bg-slate-900/95">
+                        <span class="material-symbols-outlined text-amber-400 mb-1">pin_drop</span>
+                        <h4 class="font-bold text-xs text-amber-300">Old Delhi Butter Chicken</h4>
+                        <div class="text-[11px] text-slate-300 mt-1"><strong>Spot:</strong> Moti Mahal Deluxe</div>
+                        <div class="text-[10px] text-slate-400">Daryaganj, Old Delhi, India</div>
+                        <span class="mt-2 text-[8px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">VISITED & APPROVED</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dish 2 -->
+            <div class="flip-card h-36 cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card p-4 flex gap-4 rounded-lg">
+                        <div class="w-20 h-28 flex-shrink-0 rounded-md overflow-hidden relative">
+                            <img alt="Otoro Nigiri" class="w-full h-full object-cover" src="../images/placeholder.gif"/>
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h4 class="font-bold text-amber-300 mb-1">Otoro Nigiri Omakase</h4>
+                                <div class="space-y-1 text-[10px] text-slate-400">
+                                    <div class="flex justify-between"><span>Style</span><span class="text-amber-400">Fatty Tuna</span></div>
+                                    <div class="flex justify-between"><span>City</span><span class="text-amber-400">Tokyo, Japan</span></div>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-[9px] font-bold text-amber-400 inline-block px-2 py-0.5 border border-amber-500/30 w-fit">SUPREME FRESHNESS</div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-center items-center text-center rounded-lg border border-amber-500/40 bg-slate-900/95">
+                        <span class="material-symbols-outlined text-amber-400 mb-1">pin_drop</span>
+                        <h4 class="font-bold text-xs text-amber-300">Otoro Nigiri Omakase</h4>
+                        <div class="text-[11px] text-slate-300 mt-1"><strong>Spot:</strong> Ginza Kyubey</div>
+                        <div class="text-[10px] text-slate-400">Chuo-ku, Tokyo, Japan</div>
+                        <span class="mt-2 text-[8px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">VISITED & APPROVED</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dish 3 -->
+            <div class="flip-card h-36 cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card p-4 flex gap-4 rounded-lg">
+                        <div class="w-20 h-28 flex-shrink-0 rounded-md overflow-hidden relative">
+                            <img alt="Mutton Biryani" class="w-full h-full object-cover" src="../images/Food_Images/Mutton_Curry.avif"/>
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h4 class="font-bold text-amber-300 mb-1">Dum Mutton Biryani</h4>
+                                <div class="space-y-1 text-[10px] text-slate-400">
+                                    <div class="flex justify-between"><span>Style</span><span class="text-amber-400">Slow Cooked</span></div>
+                                    <div class="flex justify-between"><span>City</span><span class="text-amber-400">Hyderabad, India</span></div>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-[9px] font-bold text-amber-400 inline-block px-2 py-0.5 border border-amber-500/30 w-fit">LEGENDARY AROMA</div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-center items-center text-center rounded-lg border border-amber-500/40 bg-slate-900/95">
+                        <span class="material-symbols-outlined text-amber-400 mb-1">pin_drop</span>
+                        <h4 class="font-bold text-xs text-amber-300">Dum Mutton Biryani</h4>
+                        <div class="text-[11px] text-slate-300 mt-1"><strong>Spot:</strong> Bawarchi Restaurant</div>
+                        <div class="text-[10px] text-slate-400 font-mono">RTC X Roads, Hyderabad</div>
+                        <span class="mt-2 text-[8px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">VISITED & APPROVED</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dish 4 -->
+            <div class="flip-card h-36 cursor-pointer food-search-item">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass-card p-4 flex gap-4 rounded-lg">
+                        <div class="w-20 h-28 flex-shrink-0 rounded-md overflow-hidden relative">
+                            <img alt="Smash Burger" class="w-full h-full object-cover" src="../images/placeholder.gif"/>
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h4 class="font-bold text-amber-300 mb-1">Double Smash Burger</h4>
+                                <div class="space-y-1 text-[10px] text-slate-400">
+                                    <div class="flex justify-between"><span>Style</span><span class="text-amber-400">Crispy Edges</span></div>
+                                    <div class="flex justify-between"><span>City</span><span class="text-amber-400">Local Craft</span></div>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-[9px] font-bold text-amber-400 inline-block px-2 py-0.5 border border-amber-500/30 w-fit">JUICY MASTERPIECE</div>
+                        </div>
+                    </div>
+                    <div class="flip-card-back glass-card p-4 flex flex-col justify-center items-center text-center rounded-lg border border-amber-500/40 bg-slate-900/95">
+                        <span class="material-symbols-outlined text-amber-400 mb-1">pin_drop</span>
+                        <h4 class="font-bold text-xs text-amber-300">Double Smash Burger</h4>
+                        <div class="text-[11px] text-slate-300 mt-1"><strong>Spot:</strong> Burger Craft House</div>
+                        <div class="text-[10px] text-slate-400">Downtown Food Hub</div>
+                        <span class="mt-2 text-[8px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">VISITED & APPROVED</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Spotlights: Favorite Cuisines & Street Food -->
+    <section id="spotlight" class="grid grid-cols-1 lg:grid-cols-2 gap-8 scroll-mt-24">
+        <div>
+            <h2 class="font-headline-sm text-lg sm:text-headline-sm text-amber-400 mb-6 italic font-bold">GO-TO CUISINES</h2>
+            <div class="space-y-4">
+                <div class="glass-card flex p-4 gap-4 sm:gap-6 group rounded-lg items-center food-search-item">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-amber-500/30 flex-shrink-0 group-hover:border-amber-400">
+                        <img alt="Puran Poli" class="w-full h-full object-cover" src="../images/placeholder.gif"/>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-base sm:text-lg text-amber-300 mb-1 font-bold">Puran Poli</h4>
+                        <p class="italic text-slate-300 text-xs sm:text-sm">"Traditional sweet flatbread stuffed with spiced chana dal, jaggery &amp; topped with melted pure ghee."</p>
+                    </div>
+                </div>
+                <div class="glass-card flex p-4 gap-4 sm:gap-6 group rounded-lg items-center food-search-item">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-amber-500/30 flex-shrink-0 group-hover:border-amber-400">
+                        <img alt="Sambarwadi" class="w-full h-full object-cover" src="../images/Food_Images/sambharwadi.avif"/>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-base sm:text-lg text-amber-300 mb-1 font-bold">Sambarwadi (Pudachi Wadi)</h4>
+                        <p class="italic text-slate-300 text-xs sm:text-sm">"Spicy Maharashtrian fried roll stuffed with coriander, coconut, and roasted spices."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="font-headline-sm text-lg sm:text-headline-sm text-rose-400 mb-6 italic font-bold">STREET FOOD LEGENDS</h2>
+            <div class="space-y-4">
+                <div class="glass-card flex p-4 gap-4 sm:gap-6 group rounded-lg items-center food-search-item">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-rose-500/30 flex-shrink-0 group-hover:border-rose-400">
+                        <img alt="Crispy Samosa" class="w-full h-full object-cover" src="../images/placeholder.gif"/>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-base sm:text-lg text-rose-300 mb-1 font-bold">Crispy Potato Samosa</h4>
+                        <p class="italic text-slate-300 text-xs sm:text-sm">"Golden fried pastry filled with spiced potato-pea mixture, served with tamarind chutney."</p>
+                    </div>
+                </div>
+                <div class="glass-card flex p-4 gap-4 sm:gap-6 group rounded-lg items-center food-search-item">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-rose-500/30 flex-shrink-0 group-hover:border-rose-400">
+                        <img alt="Pani Puri" class="w-full h-full object-cover" src="../images/Food_Images/Panipuri.avif"/>
+                    </div>
+                    <div>
+                        <h4 class="font-headline-sm text-base sm:text-lg text-rose-300 mb-1 font-bold">Spicy Pani Puri</h4>
+                        <p class="italic text-slate-300 text-xs sm:text-sm">"Crispy hollow puris filled with spicy mint-coriander water, sweet tamarind, and ragda."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="scroll-mt-24">
+        <div class="flex items-center gap-4 mb-6 md:mb-8">
+            <h2 class="font-headline-md text-xl sm:text-2xl text-amber-400 italic tracking-tight font-bold">CRITIC REVIEWS</h2>
+            <div class="h-px flex-grow bg-white/10"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Review Card 1: Chicken Biryani -->
+            <div class="glass-card p-5 sm:p-8 rounded-xl flex flex-col justify-between food-search-item">
+                <div>
+                    <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+                        <h3 class="font-headline-sm text-base sm:text-xl text-amber-300 font-bold">Chicken Dum Biryani</h3>
+                        <div class="bg-amber-500/10 border border-amber-500 text-amber-400 px-2.5 py-0.5 font-bold text-lg rounded">9.9</div>
+                    </div>
+                    
+                    <div class="inline-flex items-center gap-2 bg-white/5 border border-amber-500/30 px-3 py-1 rounded text-xs mb-4 text-slate-300">
+                        <span class="material-symbols-outlined text-amber-400 text-sm">storefront</span>
+                        <span><strong class="text-amber-300">Bawarchi Biryani</strong> — RTC X Roads, Hyderabad</span>
+                    </div>
+
+                    <div class="space-y-4 text-slate-300 text-xs sm:text-sm mb-6">
+                        <p>Slow-cooked in dum style with long-grain basmati rice, tender marination, saffron, and aromatic spices.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-amber-400 font-bold block mb-1">PROS</span>
+                                <ul class="list-disc list-inside text-xs space-y-1 text-slate-400">
+                                    <li>Flavorsome rice layering</li>
+                                    <li>Melt-in-mouth chicken</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="text-rose-400 font-bold block mb-1">CONS</span>
+                                <ul class="list-disc list-inside text-xs space-y-1 text-slate-400">
+                                    <li>Very heavy portion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="review-1-detail" class="review-details border-t border-white/10 pt-4 mt-2">
+                    <h4 class="font-bold text-amber-300 mb-2 text-sm sm:text-base">Flavor Breakdown</h4>
+                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                        The rice grains are perfectly separated and infused with saffron and ghee. The masala blend reaches deep into the chicken, giving every mouthful a rich, savory aroma without being overly oily.
+                    </p>
+                    <div class="grid grid-cols-3 gap-2 text-center text-xs mb-4">
+                        <div class="p-2 bg-white/5 rounded border border-white/5"><span class="block text-amber-400 font-bold">Aroma</span> 10/10</div>
+                        <div class="p-2 bg-white/5 rounded border border-white/5"><span class="block text-amber-400 font-bold">Tenderness</span> 9.8/10</div>
+                        <div class="p-2 bg-white/5 rounded border border-white/5"><span class="block text-amber-400 font-bold">Spice Level</span> 9.5/10</div>
+                    </div>
+                </div>
+
+                <button type="button" onclick="toggleReview('review-1-detail', this)" class="w-full mt-4 py-3 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors font-label-caps text-xs rounded flex items-center justify-center gap-2 text-amber-300 cursor-pointer">
+                    <span class="btn-text">READ FULL REVIEW</span>
+                    <span class="material-symbols-outlined text-sm transition-transform duration-300 icon">expand_more</span>
+                </button>
+            </div>
+
+            <!-- Review Card 2: Mutton Curry -->
+            <div class="glass-card p-5 sm:p-8 rounded-xl flex flex-col justify-between food-search-item">
+                <div>
+                    <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+                        <h3 class="font-headline-sm text-base sm:text-xl text-amber-300 font-bold">Saoji Mutton Curry</h3>
+                        <div class="bg-amber-500/10 border border-amber-500 text-amber-400 px-2.5 py-0.5 font-bold text-lg rounded">9.8</div>
+                    </div>
+
+                    <div class="inline-flex items-center gap-2 bg-white/5 border border-amber-500/30 px-3 py-1 rounded text-xs mb-4 text-slate-300">
+                        <span class="material-symbols-outlined text-amber-400 text-sm">storefront</span>
+                        <span><strong class="text-amber-300">Saoji Bhojanalaya</strong> — Nagpur, Maharashtra</span>
+                    </div>
+
+                    <div class="space-y-4 text-slate-300 text-xs sm:text-sm mb-6">
+                        <p>Fiery Maharashtrian curry simmered slow with black spices, coconut, and tender bone-in goat meat.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-amber-400 font-bold block mb-1">PROS</span>
+                                <ul class="list-disc list-inside text-xs space-y-1 text-slate-400">
+                                    <li>Intense spice punch</li>
+                                    <li>Rich gelatinous gravy</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="text-rose-400 font-bold block mb-1">CONS</span>
+                                <ul class="list-disc list-inside text-xs space-y-1 text-slate-400">
+                                    <li>High spice tolerance needed</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="review-2-detail" class="review-details border-t border-white/10 pt-4 mt-2">
+                    <h4 class="font-bold text-amber-300 mb-2 text-sm sm:text-base">Flavor Breakdown</h4>
+                    <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                        A legendary dish for lovers of heat. The roasted masala paste coats every piece of mutton, yielding a savory, dark, and complex flavor that pairs perfectly with bhakri or roti.
+                    </p>
+                    <div class="grid grid-cols-3 gap-2 text-center text-xs mb-4">
+                        <div class="p-2 bg-white/5 rounded border border-white/5"><span class="block text-amber-400 font-bold">Gravy Depth</span> 10/10</div>
+                        <div class="p-2 bg-white/5 rounded border border-white/5"><span class="block text-amber-400 font-bold">Heat</span> 9.9/10</div>
+                        <div class="p-2 bg-white/5 rounded border border-white/5"><span class="block text-amber-400 font-bold">Authenticity</span> 10/10</div>
+                    </div>
+                </div>
+
+                <button type="button" onclick="toggleReview('review-2-detail', this)" class="w-full mt-4 py-3 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors font-label-caps text-xs rounded flex items-center justify-center gap-2 text-amber-300 cursor-pointer">
+                    <span class="btn-text">READ FULL REVIEW</span>
+                    <span class="material-symbols-outlined text-sm transition-transform duration-300 icon">expand_more</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- No Search Results State -->
+    <div id="no-search-results" class="hidden text-center py-12">
+        <p class="text-amber-400/80 font-mono text-sm">No food items or reviews found matching your search term.</p>
+    </div>
+
+    <!-- THREADED DISCUSSION & COMMENTS SECTION (Wired to Serverless Neon API) -->
+    <section id="discussion" class="scroll-mt-24 border-t border-white/10 pt-12 mt-16 space-y-8">
+        <div class="flex items-center gap-4">
+            <h2 class="font-headline-md text-xl sm:text-2xl text-amber-400 italic tracking-tight font-bold">DISCUSSION &amp; FOODIE Q&amp;A</h2>
+            <div class="h-px flex-grow bg-white/10"></div>
+        </div>
+
+        <form id="comment-form" class="glass-card p-6 sm:p-8 rounded-xl border border-amber-500/30 space-y-4 shadow-2xl">
+            <h3 class="text-lg font-semibold text-amber-300">Join the Conversation</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" id="author" placeholder="Your Name *" required class="w-full p-3.5 bg-slate-900/90 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors text-sm" />
+                <input type="email" id="email" placeholder="Your Email Address *" required class="w-full p-3.5 bg-slate-900/90 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors text-sm" />
+            </div>
+            <div>
+                <textarea id="content" rows="3" placeholder="Recommend a food spot, share your favorite dish, or leave a message..." required class="w-full p-3.5 bg-slate-900/90 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors text-sm"></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-lg transition-colors disabled:opacity-50 text-sm shadow-md cursor-pointer">
+                Post Comment
+            </button>
+        </form>
+
+        <div id="comments-container" class="space-y-6">
+            <p class="text-slate-500 text-sm">Loading discussion...</p>
+        </div>
+    </section>
+
+</main>
+
+<!-- Standardized Compact Footer with Icons -->
+<footer class="w-full py-6 sm:py-8 bg-surface-dim border-t border-amber-500/20 text-center relative z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
+    <div class="flex flex-col items-center justify-center text-center w-full px-4 gap-2.5 max-w-container-max mx-auto">
+        <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-lg flex items-center justify-center bg-black border border-purple-500/50 p-1 shadow-[0_0_12px_rgba(168,85,247,0.4)]">
+                <svg viewBox="0 0 100 100" class="w-full h-full object-contain">
+                    <path d="M25 75 L45 25 L55 25 L75 75 M32 58 L68 58 M70 25 L75 75 L80 35" fill="none" stroke="#a855f7" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="font-sans font-extrabold text-sm text-white tracking-tight">Akash Nagapure</span>
+        </div>
+        
+        <!-- Footer Links with Matching Icons -->
+        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400">
+            <a href="https://www.linkedin.com/in/akash-nagapure" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">share</span> LinkedIn
+            </a>
+            <span>•</span>
+            <a href="mailto:contact@akashnagapure.in" class="hover:text-amber-400 transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">mail</span> Contact Mail
+            </a>
+            <span>•</span>
+            <a href="../Sub_Pages/privacy.html" class="hover:text-amber-400 transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">privacy_tip</span> Privacy Policy
+            </a>
+            <span>•</span>
+            <a href="../Sub_Pages/terms.html" class="hover:text-amber-400 transition-colors flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">description</span> Terms of Service
+            </a>
+        </div>
+
+        <span class="font-mono text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5">© 2026. All Rights Reserved. Curated with Passion.</span>
+    </div>
+</footer>
+
+<script>
+    if (window.lucide) lucide.createIcons();
+
+    const ARTICLE_ID = 'food';
+    const API_URL = '/api/comments';
+
+    // Embedded Vote Manager to guarantee local storage persistence & prevent duplicate voting
+    const VOTE_MANAGER = {
+        getVoteKey(articleId) {
+            return `votes_${articleId}_${this.getUserId()}`;
+        },
+        getUserId() {
+            let userId = localStorage.getItem('portfolio_user_id');
+            if (!userId) {
+                userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                localStorage.setItem('portfolio_user_id', userId);
+            }
+            return userId;
+        },
+        hasVoted(articleId, commentId, action) {
+            const votes = JSON.parse(localStorage.getItem(this.getVoteKey(articleId)) || '{}');
+            return votes[`${commentId}_${action}`] === true;
+        },
+        recordVote(articleId, commentId, action) {
+            const votes = JSON.parse(localStorage.getItem(this.getVoteKey(articleId)) || '{}');
+            votes[`${commentId}_${action}`] = true;
+            localStorage.setItem(this.getVoteKey(articleId), JSON.stringify(votes));
+        },
+        clearVote(articleId, commentId, action) {
+            const votes = JSON.parse(localStorage.getItem(this.getVoteKey(articleId)) || '{}');
+            delete votes[`${commentId}_${action}`];
+            localStorage.setItem(this.getVoteKey(articleId), JSON.stringify(votes));
+        }
+    };
+
+    // Synchronized Foodie Search Filter Function for both Top & Mobile Search inputs
+    function filterFood(query) {
+        const filter = query.toLowerCase().trim();
+        
+        const topInput = document.getElementById('food-search-top');
+        const mobileInput = document.getElementById('food-search-mobile');
+        if (topInput && topInput.value !== query) topInput.value = query;
+        if (mobileInput && mobileInput.value !== query) mobileInput.value = query;
+
+        const items = document.querySelectorAll('.food-search-item');
+        let totalVisible = 0;
+
+        items.forEach(item => {
+            const text = item.innerText.toLowerCase();
+            if (text.includes(filter)) {
+                item.style.display = '';
+                totalVisible++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        const noResultsMsg = document.getElementById('no-search-results');
+        if (totalVisible === 0) {
+            if (noResultsMsg) noResultsMsg.classList.remove('hidden');
+        } else {
+            if (noResultsMsg) noResultsMsg.classList.add('hidden');
+        }
+    }
+
+    async function loadComments() {
+        const container = document.getElementById('comments-container');
+        try {
+            const response = await fetch(`${API_URL}?article_id=${encodeURIComponent(ARTICLE_ID)}`);
+            const comments = await response.json();
+
+            if (!response.ok) throw new Error();
+
+            if (!comments || comments.length === 0) {
+                container.innerHTML = '<p class="text-slate-500 text-sm">No comments yet. Be the first to start the discussion!</p>';
+                return;
+            }
+
+            const commentMap = {};
+            const topLevelComments = [];
+
+            comments.forEach(comment => {
+                comment.replies = [];
+                commentMap[comment.id] = comment;
+                if (comment.parent_id) {
+                    if (commentMap[comment.parent_id]) {
+                        commentMap[comment.parent_id].replies.push(comment);
+                    }
+                } else {
+                    topLevelComments.push(comment);
+                }
+            });
+
+            container.innerHTML = topLevelComments.map(comment => renderCommentNode(comment)).join('');
+            if (window.lucide) lucide.createIcons();
+        } catch (err) {
+            container.innerHTML = '<p class="text-slate-400 text-sm">No active comment server detected. Discussion thread initialized locally.</p>';
+        }
+    }
+
+    function renderCommentNode(comment) {
+        const formattedDate = comment.created_at ? new Date(comment.created_at).toLocaleString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        }) : 'Just now';
+
+        const repliesHTML = comment.replies && comment.replies.length > 0 
+            ? `<div class="mt-4 pl-4 md:pl-6 border-l-2 border-amber-500/30 space-y-4">
+                ${comment.replies.map(reply => renderCommentNode(reply)).join('')}
+               </div>`
+            : '';
+
+        const likedAlready = VOTE_MANAGER.hasVoted(ARTICLE_ID, comment.id, 'like');
+        const dislikedAlready = VOTE_MANAGER.hasVoted(ARTICLE_ID, comment.id, 'dislike');
+
+        const likeClass = likedAlready ? 'opacity-50 pointer-events-none text-emerald-400 border-emerald-500/30' : 'text-slate-400 hover:text-emerald-400';
+        const dislikeClass = dislikedAlready ? 'opacity-50 pointer-events-none text-rose-400 border-rose-500/30' : 'text-slate-400 hover:text-rose-400';
+
+        return `
+            <div class="p-4 sm:p-5 glass-card rounded-2xl border border-slate-800 space-y-3 shadow-xl" id="comment-${comment.id}">
+                <div class="flex items-center justify-between text-xs text-slate-400">
+                    <span class="font-bold text-amber-400 text-sm">${escapeHTML(comment.author)}</span>
+                    <span class="text-slate-500">${formattedDate}</span>
+                </div>
+                
+                <p class="text-slate-300 text-sm whitespace-pre-line leading-relaxed">${escapeHTML(comment.content)}</p>
+                
+                <div class="flex items-center space-x-4 text-xs pt-2 flex-wrap gap-y-2">
+                    <button type="button" onclick="handleVote(event, ${comment.id}, 'like')" class="inline-flex items-center space-x-1 ${likeClass} transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">thumb_up</span>
+                        <span>${comment.likes || 0}</span>
+                    </button>
+                    <button type="button" onclick="handleVote(event, ${comment.id}, 'dislike')" class="inline-flex items-center space-x-1 ${dislikeClass} transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">thumb_down</span>
+                        <span>${comment.dislikes || 0}</span>
+                    </button>
+                    <button type="button" onclick="toggleReplyForm(${comment.id})" class="inline-flex items-center space-x-1 text-amber-400 hover:text-amber-300 font-semibold transition-colors bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/20 cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">reply</span>
+                        <span>Reply</span>
+                    </button>
+                </div>
+
+                <form id="reply-form-${comment.id}" class="hidden space-y-3 mt-4 pt-4 border-t border-slate-800 bg-black/40 p-3 sm:p-4 rounded-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <input type="text" id="reply-author-${comment.id}" placeholder="Your Name *" required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" />
+                        <input type="email" id="reply-email-${comment.id}" placeholder="Your Email *" required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" />
+                    </div>
+                    <textarea id="reply-content-${comment.id}" rows="2" placeholder="Write a reply..." required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea>
+                    <div class="flex space-x-2">
+                        <button type="button" onclick="postReply(${comment.id})" class="px-3.5 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold rounded-lg shadow cursor-pointer">Submit Reply</button>
+                        <button type="button" onclick="toggleReplyForm(${comment.id})" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-lg cursor-pointer">Cancel</button>
+                    </div>
+                </form>
+                ${repliesHTML}
+            </div>
+        `;
+    }
+
+    function toggleReplyForm(commentId) {
+        document.getElementById(`reply-form-${commentId}`).classList.toggle('hidden');
+    }
+
+    async function handleVote(event, id, action) {
+        if (VOTE_MANAGER.hasVoted(ARTICLE_ID, id, action)) {
+            alert("You have already voted on this comment!");
+            return;
+        }
+
+        VOTE_MANAGER.recordVote(ARTICLE_ID, id, action);
+
+        const btn = event.currentTarget;
+        if (btn) {
+            btn.classList.add('opacity-50', 'pointer-events-none');
+        }
+
+        try {
+            const res = await fetch(API_URL, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id, action })
+            });
+            if (res.ok) {
+                await loadComments();
+            } else {
+                VOTE_MANAGER.clearVote(ARTICLE_ID, id, action);
+            }
+        } catch (err) {
+            console.error('Failed to vote', err);
+            VOTE_MANAGER.clearVote(ARTICLE_ID, id, action);
+        }
+    }
+
+    async function postReply(parentId) {
+        const author = document.getElementById(`reply-author-${parentId}`).value;
+        const email = document.getElementById(`reply-email-${parentId}`).value;
+        const content = document.getElementById(`reply-content-${parentId}`).value;
+
+        if (!author.trim() || !email.trim() || !content.trim()) {
+            alert('Please fill out all required fields.');
+            return;
+        }
+
+        try {
+            const res = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ author, email, content, parent_id: parentId, article_id: ARTICLE_ID })
+            });
+            if (res.ok) await loadComments();
+        } catch (err) {
+            alert('Network error.');
+        }
+    }
+
+    document.getElementById('comment-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        const author = document.getElementById('author');
+        const email = document.getElementById('email');
+        const content = document.getElementById('content');
+
+        btn.disabled = true;
+        btn.innerText = 'Posting...';
+
+        try {
+            const res = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ author: author.value, email: email.value, content: content.value, parent_id: null, article_id: ARTICLE_ID })
+            });
+
+            if (res.ok) {
+                author.value = ''; email.value = ''; content.value = '';
+                await loadComments();
+            }
+        } catch (err) {
+            alert('Network error.');
+        } finally {
+            btn.disabled = false;
+            btn.innerText = 'Post Comment';
+        }
+    });
+
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag));
+    }
+
+    loadComments();
+
+    // Mobile Navigation Drawer Toggle
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu-drawer');
+        const icon = document.getElementById('menu-icon');
+        menu.classList.toggle('hidden');
+        icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    }
+
+    function closeMobileMenu() {
+        document.getElementById('mobile-menu-drawer').classList.add('hidden');
+        document.getElementById('menu-icon').textContent = 'menu';
+    }
+
+    // Scroll-to-Top Action
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Floating Jump Menu Overlay Toggle
+    function toggleQuickJump() {
+        const jumpMenu = document.getElementById('quick-jump-menu');
+        jumpMenu.classList.toggle('hidden');
+    }
+
+    // Hero Carousel Logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+
+    function showSlide(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        if (slides[index]) slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        if (slides.length > 0) {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+    }
+
+    function prevSlide() {
+        if (slides.length > 0) {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+    }
+
+    if (slides.length > 0) setInterval(nextSlide, 7000);
+
+    // Toggle Review Expand/Collapse
+    function toggleReview(id, buttonEl) {
+        const detailEl = document.getElementById(id);
+        const btnText = buttonEl.querySelector('.btn-text');
+        const icon = buttonEl.querySelector('.icon');
+
+        if (detailEl.classList.contains('expanded')) {
+            detailEl.classList.remove('expanded');
+            btnText.textContent = "READ FULL REVIEW";
+            icon.style.transform = "rotate(0deg)";
+        } else {
+            detailEl.classList.add('expanded');
+            btnText.textContent = "CLOSE FULL REVIEW";
+            icon.style.transform = "rotate(180deg)";
+        }
+    }
+
+    // Flip card toggle EXCLUSIVELY ON CLICK
+    document.querySelectorAll('.flip-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('flipped');
+        });
+    });
+
+    // Active Navigation Highlight on Scroll (Fixes the stuck underline issue)
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    const navObserverOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+    };
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active-link');
+                    }
+                });
+            }
+        });
+    }, navObserverOptions);
+
+    sections.forEach(section => navObserver.observe(section));
+</script>
+</body>
+</html>
