@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  accent?: string;
+}
+
+const { title, description, accent = '#38bdf8' } = Astro.props;
+const footerLinks = [
+  ['Privacy', '/Sub_Pages/privacy.html'],
+  ['Terms', '/Sub_Pages/terms.html'],
+  ['Maintenance', '/Sub_Pages/maintenance.html'],
+  ['404', '/Sub_Pages/404.html'],
+  ['Access denied', '/Sub_Pages/access-denied.html'],
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} | Akash Nagapure</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body style={`--page-accent: ${accent}`}>
+    <header class="site-header">
+      <a href="/" class="brand">Akash Nagapure</a>
+      <a href="/" class="back-link">Main hub</a>
+    </header>
+    <main class="layout-main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <span>&copy; 2026 Akash Nagapure</span>
+      <nav aria-label="Utility pages">
+        {footerLinks.map(([label, href]) => <a href={href}>{label}</a>)}
+      </nav>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; }
+  .site-header, .site-footer { border-color: color-mix(in srgb, var(--page-accent) 25%, transparent); }
+  .site-header { border-bottom: 1px solid; display: flex; justify-content: space-between; padding: 1.25rem clamp(1rem, 4vw, 4rem); }
+  .brand { color: white; font-weight: 700; text-decoration: none; }
+  .back-link, .site-footer a { color: var(--page-accent); text-decoration: none; }
+  .layout-main { flex: 1; width: min(100% - 2rem, 72rem); margin: 0 auto; padding: clamp(3rem, 8vw, 7rem) 0; }
+  .site-footer { border-top: 1px solid; display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; padding: 1.5rem clamp(1rem, 4vw, 4rem); color: #94a3b8; font: 0.75rem 'JetBrains Mono', monospace; }
+  .site-footer nav { display: flex; flex-wrap: wrap; gap: 0.8rem 1rem; }
+</style>

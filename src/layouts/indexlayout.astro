@@ -1,0 +1,32 @@
+---
+import '../styles/global.css';
+
+interface Props { title?: string; description?: string; }
+const { title = 'Akash Nagapure | Portfolio', description } = Astro.props;
+const footerLinks = [
+  ['Privacy', '/Sub_Pages/privacy.html'], ['Terms', '/Sub_Pages/terms.html'],
+  ['Maintenance', '/Sub_Pages/maintenance.html'], ['404', '/Sub_Pages/404.html'],
+  ['Access denied', '/Sub_Pages/access-denied.html'],
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <header class="site-header"><a href="/" class="brand">Akash Nagapure</a><nav><a href="/Sub_Pages/courses.html">Courses</a></nav></header>
+    <main><slot /></main>
+    <footer class="site-footer"><span>&copy; 2026 Akash Nagapure</span><nav aria-label="Utility pages">{footerLinks.map(([label, href]) => <a href={href}>{label}</a>)}</nav></footer>
+  </body>
+</html>
+<style>
+  :global(body) { min-height: 100vh; display: flex; flex-direction: column; }
+  main { flex: 1; }
+  .site-header { display:flex; justify-content:space-between; padding:1.25rem clamp(1rem,4vw,4rem); border-bottom:1px solid rgba(56,189,248,.25); }
+  .brand { color:#fff; font-weight:700; text-decoration:none; } a { color:#38bdf8; text-decoration:none; }
+  .site-footer { display:flex; flex-wrap:wrap; gap:1rem 2rem; justify-content:space-between; padding:1.5rem clamp(1rem,4vw,4rem); border-top:1px solid rgba(56,189,248,.25); color:#94a3b8; font:.75rem 'JetBrains Mono',monospace; }
+  .site-footer nav { display:flex; flex-wrap:wrap; gap:.8rem 1rem; }
+</style>

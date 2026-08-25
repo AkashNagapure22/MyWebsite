@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Akash Nagapure | Gaming Portfolio</title>
 <meta name="description" content="Explore the gaming portfolio, stats, reviews, and favorite titles of Akash Nagapure." />
-<link rel="canonical" href="https://www.akashnagapure.in/Sub_Pages/Gaming.html" />
+<link rel="canonical" href="https://www.akashnagapure.in/Sub_Pages/Game.html" />
 
 <!-- Open Graph / Social Share Meta Tags -->
 <meta property="og:type" content="website">
@@ -110,12 +110,12 @@
     html {
         scroll-padding-top: 80px;
     }
-    
+
     /* Custom Scrollbar */
     ::-webkit-scrollbar { height: 4px; width: 4px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: linear-gradient(to right, #00dbe7, #7000ff); border-radius: 4px; }
-    
+
     /* Hide Scrollbar for clean horizontal menu scrolling */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -132,7 +132,7 @@
         transform: translateY(-4px) scale(1.01);
     }
     .text-glow { text-shadow: 0 0 10px rgba(0, 219, 231, 0.5); }
-    
+
     @keyframes crown-float {
         0%, 100% { transform: translateY(0) rotate(-5deg); }
         50% { transform: translateY(-5px) rotate(5deg); }
@@ -344,7 +344,7 @@
             <h2 class="font-headline-md text-xl sm:text-headline-md text-primary italic tracking-tight">NOW PLAYING</h2>
             <div class="h-px flex-grow bg-white/10"></div>
         </div>
-        
+
         <!-- Mobile Adaptive Banner Container -->
         <div class="relative w-full min-h-[480px] sm:min-h-[380px] md:aspect-[2.8/1] rounded-xl overflow-hidden glass-card group">
             <!-- Slide 1 -->
@@ -678,7 +678,7 @@
             <div class="h-px flex-grow bg-white/10"></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
+
             <!-- Review Card 1 -->
             <div class="glass-card p-5 sm:p-8 rounded-xl flex flex-col justify-between gaming-search-item">
                 <div>
@@ -792,32 +792,32 @@
         <form id="comment-form" class="glass-card p-6 rounded-xl border border-primary/30 space-y-4">
             <h3 class="text-lg font-semibold text-primary">Join the Conversation</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input 
-                    type="text" 
-                    id="author" 
-                    placeholder="Your Gamertag / Name *" 
-                    required 
+                <input
+                    type="text"
+                    id="author"
+                    placeholder="Your Gamertag / Name *"
+                    required
                     class="w-full p-3 bg-slate-900/90 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors text-sm"
                 />
-                <input 
-                    type="email" 
-                    id="email" 
-                    placeholder="Your Email Address *" 
-                    required 
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email Address *"
+                    required
                     class="w-full p-3 bg-slate-900/90 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors text-sm"
                 />
             </div>
             <div>
-                <textarea 
-                    id="content" 
-                    rows="3" 
-                    placeholder="Drop a game recommendation, share your favorite build, or leave a message..." 
-                    required 
+                <textarea
+                    id="content"
+                    rows="3"
+                    placeholder="Drop a game recommendation, share your favorite build, or leave a message..."
+                    required
                     class="w-full p-3 bg-slate-900/90 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors text-sm"
                 ></textarea>
             </div>
-            <button 
-                type="submit" 
+            <button
+                type="submit"
                 id="submit-btn"
                 class="px-5 py-2.5 bg-primary hover:bg-primary-fixed text-on-primary font-bold rounded-lg transition-colors disabled:opacity-50 text-sm shadow-md cursor-pointer"
             >
@@ -844,7 +844,7 @@
             </div>
             <span class="font-sans font-extrabold text-sm text-white tracking-tight">Akash Nagapure</span>
         </div>
-        
+
         <!-- Footer Links with Matching Icons -->
         <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400">
             <a href="https://www.linkedin.com/in/akash-nagapure" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors flex items-center gap-1">
@@ -906,7 +906,7 @@
     // Synchronized Gaming Search Filter Function for both Top & Mobile Search inputs
     function filterGaming(query) {
         const filter = query.toLowerCase().trim();
-        
+
         const topInput = document.getElementById('gaming-search-top');
         const mobileInput = document.getElementById('gaming-search-mobile');
         if (topInput && topInput.value !== query) topInput.value = query;
@@ -980,7 +980,7 @@
             hour12: true
         }) : 'Just now';
 
-        const repliesHTML = comment.replies && comment.replies.length > 0 
+        const repliesHTML = comment.replies && comment.replies.length > 0
             ? `<div class="mt-4 pl-4 md:pl-6 border-l-2 border-primary/20 space-y-4">
                 ${comment.replies.map(reply => renderCommentNode(reply)).join('')}
                </div>`
@@ -998,9 +998,9 @@
                     <span class="font-bold text-primary text-sm">${escapeHTML(comment.author)}</span>
                     <span class="text-slate-500">${formattedDate}</span>
                 </div>
-                
+
                 <p class="text-slate-300 text-sm whitespace-pre-line leading-relaxed">${escapeHTML(comment.content)}</p>
-                
+
                 <div class="flex items-center space-x-4 text-xs pt-2 flex-wrap gap-y-2">
                     <button type="button" onclick="handleVote(event, ${comment.id}, 'like')" class="inline-flex items-center space-x-1 ${likeClass} transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
                         <span class="material-symbols-outlined text-sm">thumb_up</span>

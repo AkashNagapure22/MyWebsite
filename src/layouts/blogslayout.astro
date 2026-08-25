@@ -1,0 +1,54 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  category?: string;
+}
+
+const { title, description, image = '/images/Blogs_Images/AutopatchA-Z.avif', category = 'Technical blog' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Akash Nagapure" />
+    <link rel="canonical" href={Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url} />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <title>{title} | Akash Nagapure</title>
+  </head>
+  <body>
+    <header class="blog-header">
+      <a href="/" class="brand">Akash Nagapure</a>
+      <a href="/Sub_Pages/Projects.html" class="back-link">All blogs</a>
+    </header>
+    <main>
+      <article class="article-shell">
+        <p class="category">{category}</p>
+        <slot />
+      </article>
+    </main>
+    <footer class="blog-footer">
+      <span>&copy; 2026 Akash Nagapure</span>
+      <nav aria-label="Footer navigation">
+        <a href="/Sub_Pages/privacy.html">Privacy</a>
+        <a href="/Sub_Pages/terms.html">Terms</a>
+      </nav>
+    </footer>
+  </body>
+</html>
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(body) { margin: 0; min-height: 100vh; background: #020617; color: #cbd5e1; font-family: Inter, system-ui, sans-serif; }
+  .blog-header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem clamp(1rem, 5vw, 5rem); border-bottom: 1px solid rgba(56,189,248,.25); }
+  .brand { color: #fff; font-weight: 800; text-decoration: none; } .back-link, .blog-footer a { color: #38bdf8; text-decoration: none; }
+  main { padding: clamp(3rem, 8vw, 7rem) 1rem; } .article-shell { max-width: 52rem; margin: 0 auto; }
+  .category { color: #38bdf8; font: .75rem 'JetBrains Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }
+  .blog-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; padding: 1.5rem clamp(1rem, 5vw, 5rem); border-top: 1px solid rgba(56,189,248,.25); color: #94a3b8; font: .75rem 'JetBrains Mono', monospace; }
+  .blog-footer nav { display: flex; gap: 1rem; }
+</style>

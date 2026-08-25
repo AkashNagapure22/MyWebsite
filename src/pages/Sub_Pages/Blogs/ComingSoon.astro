@@ -1,0 +1,12 @@
+---
+import BlogsLayout from '../../../layouts/blogslayout.astro';
+
+interface Props { title?: string; }
+const { title = 'More technical writing is coming soon' } = Astro.props;
+---
+<BlogsLayout title={title} description="A future technical blog from Akash Nagapure.">
+  <header class="article-header"><h1>{title}</h1><p>This article is being researched and edited. Return soon for the complete guide.</p><a href="/Sub_Pages/Projects.html">Back to blogs</a></header>
+</BlogsLayout>
+<style>
+  .article-header { padding:4rem 0; } h1 { color:#fff; font-size:clamp(2.5rem,7vw,5.5rem); line-height:1; max-width:12ch; } p { font-size:1.1rem; line-height:1.7; } a { color:#38bdf8; }
+</style>

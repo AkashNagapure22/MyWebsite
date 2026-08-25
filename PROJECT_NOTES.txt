@@ -1,0 +1,90 @@
+MY WEBSITE: SIMPLE PROJECT MAP
+================================
+
+WHAT THIS PROJECT IS
+--------------------
+This is Akash Nagapure's personal portfolio. Astro turns files in src/pages
+into web pages. Public files are copied directly to the website.
+
+START HERE
+----------
+src/pages/index.astro       Main portfolio home page: /
+src/pages/404.astro         Automatic page-not-found screen
+src/styles/global.css       Shared site CSS
+astro.config.mjs            Astro settings and website address
+
+PORTFOLIO PAGES
+---------------
+src/pages/Sub_Pages/Coins.astro      Coin collection
+src/pages/Sub_Pages/Food.astro       Food collection
+src/pages/Sub_Pages/Reading.astro    Reading collection
+src/pages/Sub_Pages/Puzzle.astro     Puzzle collection
+src/pages/Sub_Pages/HomeLab.astro    Home lab projects
+src/pages/Sub_Pages/Game.astro       Games collection
+src/pages/Sub_Pages/Projects.astro   Technical projects and blogs
+src/pages/Sub_Pages/Skills.astro     Professional skills
+src/pages/Sub_Pages/courses.astro    Courses and certifications
+src/pages/Sub_Pages/resume.astro     Resume
+
+BLOGS
+-----
+src/pages/Sub_Pages/Blogs/          All blog articles live here.
+src/pages/Sub_Pages/Blogs/Autopatchblog.astro
+								  Complete Microsoft Autopatch article.
+src/pages/Sub_Pages/Blogs/Intune-baselines.astro
+								  Placeholder for a future article.
+src/pages/Sub_Pages/Blogs/SCCM-migration.astro
+								  Placeholder for a future article.
+src/pages/Sub_Pages/Blogs/PowerShell-automation.astro
+								  Placeholder for a future article.
+src/pages/Sub_Pages/Blogs/Windows-365.astro
+								  Placeholder for a future article.
+src/pages/Sub_Pages/Blogs/ComingSoon.astro
+								  Reusable placeholder content component.
+
+UTILITY PAGES
+-------------
+src/pages/Sub_Pages/privacy.astro       Privacy policy
+src/pages/Sub_Pages/terms.astro         Terms and conditions
+src/pages/Sub_Pages/maintenance.astro  Maintenance message when needed
+src/pages/Sub_Pages/access-denied.astro Restricted-page message when needed
+src/pages/Sub_Pages/404.astro          Manual 404 information page
+
+LAYOUTS
+-------
+src/layouts/indexlayout.astro       Lightweight home-page shell
+src/layouts/hobbylayout.astro       Shell for hobby pages
+src/layouts/courseslayout.astro     Shell for courses pages
+src/layouts/legallayout.astro       Shell for utility/legal pages
+src/layouts/blogslayout.astro       Shared SEO/article shell for every blog
+
+PAGE CONNECTIONS
+----------------
+Projects.astro -> Blogs/Autopatchblog.astro
+courses.astro -> the four future blog pages listed above
+Every blog article -> blogslayout.astro
+The original portfolio pages keep their complete page-specific markup and
+scripts, so their visual design and interactive behavior remain unchanged.
+
+DATA AND IMAGES
+---------------
+public/images/                       All collection and portfolio images
+public/Main_page_data/               Logo, profile image, and main-page data
+public/robots.txt                    Search crawler rules
+public/sitemap.xml                   URLs for Google Search Console import
+
+URL RULE
+--------
+Old HTML names are now Astro source files, but the built website keeps the
+same .html URLs. This protects existing bookmarks and search-engine links.
+
+COMMON COMMANDS
+---------------
+npm install                         Install packages
+npm run dev                         Start local development server
+npm run build                       Check and build the website
+npm run preview                     Preview the production build
+
+AUTOSAVE
+--------
+.vscode/settings.json saves edited files after one second automatically.

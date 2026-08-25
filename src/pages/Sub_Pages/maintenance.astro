@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>System Maintenance | Akash Nagapure</title>
+<meta name="robots" content="noindex, follow" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+    .glass-card-3d {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(2, 6, 23, 0.95) 100%);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(245, 158, 11, 0.25);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    }
+</style>
+</head>
+<body class="bg-[#020617] text-slate-100 min-h-screen flex flex-col justify-between font-sans selection:bg-amber-500 selection:text-slate-950">
+<canvas id="three-bg-canvas" class="fixed inset-0 w-full h-full -z-10 pointer-events-none"></canvas>
+
+<div class="flex-grow flex items-center justify-center px-4 py-20">
+    <div class="glass-card-3d p-8 sm:p-12 rounded-3xl max-w-xl w-full text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 to-rose-500"></div>
+        <div class="w-20 h-20 bg-amber-950/80 border border-amber-500/40 rounded-2xl mx-auto flex items-center justify-center text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+            <span class="material-symbols-outlined text-3xl animate-spin">settings</span>
+        </div>
+        <div class="space-y-2">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Scheduled Infrastructure Upgrade</h1>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Portfolio nodes and homelab databases are undergoing routine cluster maintenance and script synchronization. Normal availability will resume shortly.
+            </p>
+        </div>
+        <div class="pt-2 font-mono text-xs text-amber-400/90 bg-amber-950/30 border border-amber-500/20 p-3 rounded-xl">
+            STATUS: PIPELINE REBUILD IN PROGRESS
+        </div>
+    </div>
+</div>
+
+<footer class="py-6 text-center text-xs font-mono text-slate-500 border-t border-white/5">
+    © 2026 Akash Nagapure. All Rights Reserved. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+</footer>
+<script>
+  let scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 50;
+  let renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-bg-canvas'), alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  let geom = new THREE.BufferGeometry(), count = 1800, pos = new Float32Array(count * 3);
+  for(let i=0; i<count*3; i+=3) { pos[i] = (Math.random()-0.5)*400; pos[i+1] = (Math.random()-0.5)*400; pos[i+2] = (Math.random()-0.5)*200; }
+  geom.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  let mesh = new THREE.Points(geom, new THREE.PointsMaterial({ color: 0xf59e0b, size: 0.8, transparent: true, opacity: 0.7 }));
+  scene.add(mesh);
+  function animate() { requestAnimationFrame(animate); mesh.rotation.x += 0.001; renderer.render(scene, camera); }
+  animate();
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Access Denied | Akash Nagapure</title>
+<meta name="robots" content="noindex, follow" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+    .glass-card-3d {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(2, 6, 23, 0.95) 100%);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(244, 63, 94, 0.25);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    }
+</style>
+</head>
+<body class="bg-[#020617] text-slate-100 min-h-screen flex flex-col justify-between font-sans selection:bg-rose-500 selection:text-slate-950">
+<canvas id="three-bg-canvas" class="fixed inset-0 w-full h-full -z-10 pointer-events-none"></canvas>
+
+<div class="flex-grow flex items-center justify-center px-4 py-20">
+    <div class="glass-card-3d p-8 sm:p-12 rounded-3xl max-w-xl w-full text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-500 to-amber-500"></div>
+        <div class="w-20 h-20 bg-rose-950/80 border border-rose-500/40 rounded-2xl mx-auto flex items-center justify-center text-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.3)]">
+            <span class="font-mono text-2xl font-extrabold">403</span>
+        </div>
+        <div class="space-y-2">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Access Restricted</h1>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Security policy enforcement has blocked your connection to this restricted administrative node or repository segment.
+            </p>
+        </div>
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/index.html" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 bg-slate-900 border border-slate-700 hover:border-sky-400 text-white font-bold rounded-xl shadow-lg transition-all text-sm font-mono">
+                <span>Back to Safety</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer class="py-6 text-center text-xs font-mono text-slate-500 border-t border-white/5">
+    © 2026 Akash Nagapure. All Rights Reserved. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+</footer>
+<script>
+  let scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 50;
+  let renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-bg-canvas'), alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  let geom = new THREE.BufferGeometry(), count = 1500, pos = new Float32Array(count * 3);
+  for(let i=0; i<count*3; i+=3) { pos[i] = (Math.random()-0.5)*400; pos[i+1] = (Math.random()-0.5)*400; pos[i+2] = (Math.random()-0.5)*200; }
+  geom.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  let mesh = new THREE.Points(geom, new THREE.PointsMaterial({ color: 0xf43f5e, size: 0.8, transparent: true, opacity: 0.6 }));
+  scene.add(mesh);
+  function animate() { requestAnimationFrame(animate); mesh.rotation.y -= 0.001; renderer.render(scene, camera); }
+  animate();
+</script>
+</body>
+</html>

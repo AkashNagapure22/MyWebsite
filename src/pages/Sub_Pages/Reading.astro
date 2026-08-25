@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Akash Nagapure | Literary Portfolio</title>
+<link rel="canonical" href="https://www.akashnagapure.in/Sub_Pages/Reading.html" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -38,12 +39,12 @@
 </script>
 <style>
     html { scroll-padding-top: 80px; }
-    
+
     /* Custom Scrollbar */
     ::-webkit-scrollbar { height: 4px; width: 4px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #00bfff, #8a2be2); border-radius: 4px; }
-    
+
     /* Hide Scrollbar for clean horizontal menu scrolling */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -251,11 +252,11 @@
             <h2 class="font-headline-md text-xl sm:text-2xl text-sky-400 italic tracking-tight font-bold">CURRENTLY READING</h2>
             <div class="h-px flex-grow bg-white/10"></div>
         </div>
-        
+
         <div class="relative w-full min-h-[480px] sm:min-h-[380px] md:aspect-[2.8/1] rounded-xl overflow-hidden glass-card group">
             <!-- Slide 1: Corporate Chanakya -->
             <div class="carousel-slide active absolute inset-0 reading-search-item">
-                <img src="images/Corporate_chanakya.jpg.jpg" alt="Corporate Chanakya Book Cover" class="w-full h-full object-cover"/>
+                <img src="/images/Corporate_chanakya.jpg.jpg" alt="Corporate Chanakya Book Cover" class="w-full h-full object-cover"/>
                 <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background via-background/70 md:via-background/40 to-transparent"></div>
                 <div class="absolute inset-x-0 bottom-0 md:inset-y-0 md:left-0 flex flex-col justify-end md:justify-center p-6 sm:p-8 md:p-12 max-w-xl">
                     <span class="text-sky-400 font-label-caps text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] mb-2">ANCIENT STRATEGY &amp; LEADERSHIP</span>
@@ -315,7 +316,7 @@
             <div class="h-px flex-grow bg-white/10"></div>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6" id="reading-tbr-grid">
-            
+
             <div class="glass-card group aspect-[2/3] relative overflow-hidden rounded-lg reading-search-item">
                 <img alt="Rework Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=600&auto=format&fit=crop"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
@@ -386,7 +387,7 @@
             <div class="h-px flex-grow bg-white/10"></div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6" id="reading-fame-grid">
-            
+
             <div class="glass-card p-4 flex gap-4 group rounded-lg reading-search-item">
                 <div class="w-20 h-28 flex-shrink-0 rounded-md overflow-hidden relative">
                     <img alt="Bhagavad Gita" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=400&auto=format&fit=crop"/>
@@ -518,7 +519,7 @@
             <div class="h-px flex-grow bg-white/10"></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
+
             <!-- Review Card 1: Bhagavad Gita -->
             <div class="glass-card p-5 sm:p-8 rounded-xl flex flex-col justify-between reading-search-item">
                 <div>
@@ -673,32 +674,32 @@
         <form id="comment-form" class="glass-card p-6 rounded-xl border border-sky-500/30 space-y-4">
             <h3 class="text-lg font-semibold text-sky-300">Join the Conversation</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input 
-                    type="text" 
-                    id="author" 
-                    placeholder="Your Name *" 
-                    required 
+                <input
+                    type="text"
+                    id="author"
+                    placeholder="Your Name *"
+                    required
                     class="w-full p-3 bg-slate-900/90 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors text-sm font-mono"
                 />
-                <input 
-                    type="email" 
-                    id="email" 
-                    placeholder="Your Email Address *" 
-                    required 
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email Address *"
+                    required
                     class="w-full p-3 bg-slate-900/90 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors text-sm font-mono"
                 />
             </div>
             <div>
-                <textarea 
-                    id="content" 
-                    rows="3" 
-                    placeholder="Recommend a book, share your thoughts on a quote, or leave a message..." 
-                    required 
+                <textarea
+                    id="content"
+                    rows="3"
+                    placeholder="Recommend a book, share your thoughts on a quote, or leave a message..."
+                    required
                     class="w-full p-3 bg-slate-900/90 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors text-sm"
                 ></textarea>
             </div>
-            <button 
-                type="submit" 
+            <button
+                type="submit"
                 id="submit-btn"
                 class="px-5 py-2.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold rounded-lg transition-colors disabled:opacity-50 text-sm shadow-md cursor-pointer font-mono"
             >
@@ -725,7 +726,7 @@
             </div>
             <span class="font-sans font-extrabold text-sm text-white tracking-tight">Akash Nagapure</span>
         </div>
-        
+
         <!-- Footer Links with Matching Icons -->
         <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400">
             <a href="https://www.linkedin.com/in/akash-nagapure" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors flex items-center gap-1">
@@ -787,7 +788,7 @@
     // Synchronized Library Search Filter Function for both Top & Mobile Search inputs
     function filterReading(query) {
         const filter = query.toLowerCase().trim();
-        
+
         const topInput = document.getElementById('reading-search-top');
         const mobileInput = document.getElementById('reading-search-mobile');
         if (topInput && topInput.value !== query) topInput.value = query;
@@ -861,7 +862,7 @@
             hour12: true
         }) : 'Just now';
 
-        const repliesHTML = comment.replies && comment.replies.length > 0 
+        const repliesHTML = comment.replies && comment.replies.length > 0
             ? `<div class="mt-4 pl-4 md:pl-6 border-l-2 border-sky-500/20 space-y-4">
                 ${comment.replies.map(reply => renderCommentNode(reply)).join('')}
                </div>`
@@ -879,9 +880,9 @@
                     <span class="font-bold text-sky-400 text-sm font-mono">${escapeHTML(comment.author)}</span>
                     <span class="text-slate-500 font-mono">${formattedDate}</span>
                 </div>
-                
+
                 <p class="text-slate-300 text-sm whitespace-pre-line leading-relaxed">${escapeHTML(comment.content)}</p>
-                
+
                 <div class="flex items-center space-x-4 text-xs pt-2 flex-wrap gap-y-2">
                     <button type="button" onclick="handleVote(event, ${comment.id}, 'like')" class="inline-flex items-center space-x-1 ${likeClass} transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
                         <span class="material-symbols-outlined text-sm">thumb_up</span>
