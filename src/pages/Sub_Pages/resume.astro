@@ -1,585 +1,1005 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="dark scroll-smooth" lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Primary SEO Meta Tags -->
-  <title>Akash Nagapure | Curriculum Vitae & Professional Resume</title>
-  <meta name="title" content="Akash Nagapure | Microsoft Intune, SCCM & VMware Architect Resume">
-  <meta name="description" content="Curriculum Vitae of Akash Nagapure - Microsoft Certified EUC & Intune Specialist with 10+ years of progressive experience." />
-  <link rel="canonical" href="https://www.akashnagapure.in/Sub_Pages/resume.html" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <!-- Primary SEO Meta Tags -->
+    <title>Akash Nagapure | Curriculum Vitae & Professional Resume</title>
+    <meta
+      name="title"
+      content="Akash Nagapure | Microsoft Intune, SCCM & VMware Architect Resume"
+    />
+    <meta
+      name="description"
+      content="Curriculum Vitae of Akash Nagapure - Microsoft Certified EUC & Intune Specialist with 10+ years of progressive experience."
+    />
+    <link
+      rel="canonical"
+      href="https://www.akashnagapure.in/Sub_Pages/resume.html"
+    />
 
-  <!-- Core Styling and Icons -->
-  <script is:inline src="https://cdn.tailwindcss.com"></script>
-  <script is:inline src="https://unpkg.com/lucide@latest"></script>
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
 
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-            mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
-          },
-          colors: {
-            slate: {
-              850: "#0f172a", 
-              950: "#020617", 
+    <!-- Core Styling and Icons -->
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline src="https://unpkg.com/lucide@latest"></script>
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+    ></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+              mono: [
+                "JetBrains Mono",
+                "ui-monospace",
+                "SFMono-Regular",
+                "monospace",
+              ],
             },
-            "surface-dim": "#0d0b12"
-          }
+            colors: {
+              slate: {
+                850: "#0f172a",
+                950: "#020617",
+              },
+              "surface-dim": "#0d0b12",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+      #portfolio-navbar {
+        position: relative !important;
+      }
+      body {
+        padding-top: 0 !important;
+        background-color: #020617;
+        color: #f8fafc;
+        overflow-x: hidden;
+        perspective: 1200px;
+      }
+      main {
+        padding-top: 0 !important;
+      }
+      #three-bg-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -10;
+        pointer-events: none;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #38bdf8;
+      }
+      .glass-card-3d {
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.85) 0%,
+          rgba(2, 6, 23, 0.95) 100%
+        );
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(56, 189, 248, 0.18);
+        box-shadow:
+          0 25px 50px -12px rgba(0, 0, 0, 0.9),
+          inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+          0 0 30px rgba(56, 189, 248, 0.05);
+        transform-style: preserve-3d;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .glass-card-3d:hover {
+        border-color: rgba(56, 189, 248, 0.55);
+        box-shadow:
+          0 40px 70px -15px rgba(56, 189, 248, 0.25),
+          0 0 50px rgba(56, 189, 248, 0.15);
+      }
+      .holo-glow {
+        position: relative;
+      }
+      .holo-glow::after {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        background: linear-gradient(
+          45deg,
+          #38bdf8,
+          transparent,
+          #6366f1,
+          transparent,
+          #38bdf8
+        );
+        border-radius: inherit;
+        z-index: -1;
+        opacity: 0.3;
+        filter: blur(12px);
+        transition: opacity 0.3s ease;
+      }
+      .holo-glow:hover::after {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-sky-500/20 selection:text-sky-300"
+  >
+    <canvas id="three-bg-canvas"></canvas>
+    <script>
+      let scene, camera, renderer, particlesGeo, particlesMesh, gridHelper;
+      let mouseX = 0,
+        mouseY = 0;
+      let targetX = 0,
+        targetY = 0;
+
+      function init3DBackground() {
+        const canvas = document.getElementById("three-bg-canvas");
+        if (!canvas) return;
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(
+          60,
+          window.innerWidth / window.innerHeight,
+          0.1,
+          1000,
+        );
+        camera.position.z = 50;
+
+        renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          antialias: true,
+          alpha: true,
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const count = 3500;
+        particlesGeo = new THREE.BufferGeometry();
+        const positions = new Float32Array(count * 3);
+
+        for (let i = 0; i < count * 3; i += 3) {
+          positions[i] = (Math.random() - 0.5) * 500;
+          positions[i + 1] = (Math.random() - 0.5) * 600;
+          positions[i + 2] = (Math.random() - 0.5) * 300;
+        }
+        particlesGeo.setAttribute(
+          "position",
+          new THREE.BufferAttribute(positions, 3),
+        );
+
+        const particleMat = new THREE.PointsMaterial({
+          color: 0x38bdf8,
+          size: 0.8,
+          transparent: true,
+          opacity: 0.9,
+          blending: THREE.AdditiveBlending,
+        });
+
+        particlesMesh = new THREE.Points(particlesGeo, particleMat);
+        scene.add(particlesMesh);
+
+        gridHelper = new THREE.GridHelper(600, 60, 0x0284c7, 0x0f172a);
+        gridHelper.position.y = -100;
+        gridHelper.material.transparent = true;
+        gridHelper.material.opacity = 0.25;
+        scene.add(gridHelper);
+
+        document.addEventListener("mousemove", (event) => {
+          mouseX = (event.clientX - window.innerWidth / 2) * 0.0005;
+          mouseY = (event.clientY - window.innerHeight / 2) * 0.0005;
+        });
+
+        window.addEventListener("resize", () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+      }
+
+      let clock = new THREE.Clock();
+      function animate3DBackground() {
+        requestAnimationFrame(animate3DBackground);
+        const elapsedTime = clock.getElapsedTime();
+
+        targetX += (mouseX - targetX) * 0.05;
+        targetY += (mouseY - targetY) * 0.05;
+
+        if (particlesMesh) {
+          particlesMesh.rotation.y = elapsedTime * 0.02 + targetX;
+          particlesMesh.rotation.x = elapsedTime * 0.01 + targetY;
+        }
+        if (gridHelper) {
+          gridHelper.rotation.y = elapsedTime * 0.005;
+        }
+        if (renderer && scene && camera) {
+          renderer.render(scene, camera);
         }
       }
-    }
-  </script>
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 5rem;
-    }
-    #portfolio-navbar {
-      position: relative !important;
-    }
-    body {
-      padding-top: 0 !important;
-      background-color: #020617;
-      color: #f8fafc;
-      overflow-x: hidden;
-      perspective: 1200px;
-    }
-    main {
-      padding-top: 0 !important;
-    }
-    #three-bg-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -10;
-      pointer-events: none;
-    }
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #020617;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #38bdf8;
-    }
-    .glass-card-3d {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(2, 6, 23, 0.95) 100%);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border: 1px solid rgba(56, 189, 248, 0.18);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
-                0 0 30px rgba(56, 189, 248, 0.05);
-      transform-style: preserve-3d;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .glass-card-3d:hover {
-      border-color: rgba(56, 189, 248, 0.55);
-      box-shadow: 0 40px 70px -15px rgba(56, 189, 248, 0.25),
-                0 0 50px rgba(56, 189, 248, 0.15);
-    }
-    .holo-glow {
-      position: relative;
-    }
-    .holo-glow::after {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(45deg, #38bdf8, transparent, #6366f1, transparent, #38bdf8);
-      border-radius: inherit;
-      z-index: -1;
-      opacity: 0.3;
-      filter: blur(12px);
-      transition: opacity 0.3s ease;
-    }
-    .holo-glow:hover::after {
-      opacity: 0.8;
-    }
-  </style>
-</head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-sky-500/20 selection:text-sky-300">
+      window.addEventListener("DOMContentLoaded", () => {
+        init3DBackground();
+        animate3DBackground();
+      });
+    </script>
 
-<canvas id="three-bg-canvas"></canvas>
-<script>
-  let scene, camera, renderer, particlesGeo, particlesMesh, gridHelper;
-  let mouseX = 0, mouseY = 0;
-  let targetX = 0, targetY = 0;
+    <header>
+      <nav
+        id="portfolio-navbar"
+        class="relative w-full z-50 transition-all duration-300 bg-slate-950/90 backdrop-blur-xl py-3 border-b border-sky-500/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-12">
+            <a
+              href="../index.html"
+              class="flex items-center space-x-3 group cursor-pointer"
+            >
+              <div
+                class="h-10 w-auto flex items-center justify-center shrink-0 bg-transparent overflow-hidden filter drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]"
+              >
+                <img
+                  src="/Main_page_data/Logo.avif"
+                  alt="Akash Nagapure Logo"
+                  width="40"
+                  height="40"
+                  loading="eager"
+                  class="h-full w-auto object-contain logo-vibrant"
+                  onerror="this.onerror=null; this.src='/Main_page_data/placeholder.gif';"
+                />
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="font-sans font-bold text-lg text-white tracking-tight leading-none drop-shadow"
+                >
+                  Akash Nagapure
+                </span>
+                <span
+                  class="font-mono text-[10px] text-sky-400 font-medium tracking-widest mt-1"
+                >
+                  Fleet Architect
+                </span>
+              </div>
+            </a>
 
-  function init3DBackground() {
-    const canvas = document.getElementById('three-bg-canvas');
-    if (!canvas) return;
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 50;
+            <!-- Clean Main Menu (Home Only) -->
+            <div class="hidden lg:flex items-center space-x-1">
+              <a
+                href="../index.html"
+                class="nav-item-link px-4 py-2 rounded-md font-sans text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 border border-transparent transition-all flex items-center gap-1.5"
+              >
+                <span class="material-symbols-outlined text-sm">home</span> Main Hub
+                / Home
+              </a>
+            </div>
 
-    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    const count = 3500;
-    particlesGeo = new THREE.BufferGeometry();
-    const positions = new Float32Array(count * 3);
-
-    for (let i = 0; i < count * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 500;
-      positions[i + 1] = (Math.random() - 0.5) * 600;
-      positions[i + 2] = (Math.random() - 0.5) * 300;
-    }
-    particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-    const particleMat = new THREE.PointsMaterial({
-      color: 0x38bdf8,
-      size: 0.8,
-      transparent: true,
-      opacity: 0.9,
-      blending: THREE.AdditiveBlending
-    });
-
-    particlesMesh = new THREE.Points(particlesGeo, particleMat);
-    scene.add(particlesMesh);
-
-    gridHelper = new THREE.GridHelper(600, 60, 0x0284c7, 0x0f172a);
-    gridHelper.position.y = -100;
-    gridHelper.material.transparent = true;
-    gridHelper.material.opacity = 0.25;
-    scene.add(gridHelper);
-
-    document.addEventListener('mousemove', (event) => {
-      mouseX = (event.clientX - window.innerWidth / 2) * 0.0005;
-      mouseY = (event.clientY - window.innerHeight / 2) * 0.0005;
-    });
-
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-  }
-
-  let clock = new THREE.Clock();
-  function animate3DBackground() {
-    requestAnimationFrame(animate3DBackground);
-    const elapsedTime = clock.getElapsedTime();
-
-    targetX += (mouseX - targetX) * 0.05;
-    targetY += (mouseY - targetY) * 0.05;
-
-    if(particlesMesh) {
-      particlesMesh.rotation.y = elapsedTime * 0.02 + targetX;
-      particlesMesh.rotation.x = elapsedTime * 0.01 + targetY;
-    }
-    if(gridHelper) {
-      gridHelper.rotation.y = elapsedTime * 0.005;
-    }
-    if (renderer && scene && camera) {
-      renderer.render(scene, camera);
-    }
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    init3DBackground();
-    animate3DBackground();
-  });
-</script>
-
-<header>
-<nav id="portfolio-navbar" class="relative w-full z-50 transition-all duration-300 bg-slate-950/90 backdrop-blur-xl py-3 border-b border-sky-500/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-12">
-      <a href="../index.html" class="flex items-center space-x-3 group cursor-pointer">
-        <div class="h-10 w-auto flex items-center justify-center shrink-0 bg-transparent overflow-hidden filter drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]">
-          <img src="/Main_page_data/Logo.avif" alt="Akash Nagapure Logo" width="40" height="40" loading="eager" class="h-full w-auto object-contain logo-vibrant" onerror="this.onerror=null; this.src='/Main_page_data/placeholder.gif';" />
-        </div>
-        <div class="flex flex-col">
-          <span class="font-sans font-bold text-lg text-white tracking-tight leading-none drop-shadow">
-            Akash Nagapure
-          </span>
-          <span class="font-mono text-[10px] text-sky-400 font-medium tracking-widest mt-1">
-            Fleet Architect
-          </span>
-        </div>
-      </a>
-
-      <!-- Clean Main Menu (Home Only) -->
-      <div class="hidden lg:flex items-center space-x-1">
-        <a href="../index.html" class="nav-item-link px-4 py-2 rounded-md font-sans text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 border border-transparent transition-all flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-sm">home</span> Main Hub / Home
-        </a>
-      </div>
-
-      <div class="flex items-center lg:hidden">
-        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div id="mobile-menu-drawer" class="hidden lg:hidden bg-slate-900/98 border-b border-white/10 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-1">
-    <a href="../index.html" class="block w-full text-left px-4 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 flex items-center gap-2">
-      <span class="material-symbols-outlined text-sm">home</span> Main Hub / Home
-    </a>
-  </div>
-</nav>
-</header>
-
-<main class="flex-grow py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-4xl mx-auto space-y-8">
-    
-    <!-- Resume Top Action Bar with Photo -->
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 glass-card-3d p-6 rounded-2xl holo-glow">
-      <div class="flex items-center space-x-5 text-center sm:text-left">
-        <div class="relative shrink-0">
-          <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-sky-500 to-indigo-500 opacity-40 blur-sm"></div>
-          <img src="/Main_page_data/akash_profile_1781110763642.avif" alt="Akash Nagapure Profile" width="85" height="85" class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover border-2 border-sky-400/50 shadow-inner grayscale hover:grayscale-0 transition-all duration-300" onerror="this.onerror=null; this.src='/Main_page_data/placeholder.gif';" />
-        </div>
-        <div>
-          <h1 class="font-sans text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Akash S. Nagapure</h1>
-          <p class="font-mono text-xs text-sky-400 font-semibold uppercase tracking-wider mt-1">Microsoft Certified EUC & Intune Specialist</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-3 shrink-0">
-        <a href="/Main_page_data/Akash_Resume.pdf" download="Akash_Resume.pdf" class="inline-flex items-center space-x-2 px-5 py-3 bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950 font-sans font-extrabold text-xs rounded-xl shadow-lg transition-all">
-          <i data-lucide="download" class="w-4 h-4"></i>
-          <span>Download PDF Resume</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Contact details card -->
-    <div class="glass-card-3d p-6 rounded-2xl grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
-      <div class="flex items-center space-x-2 text-slate-300">
-        <i data-lucide="phone" class="w-4 h-4 text-sky-400"></i>
-        <span>+91 9860457155</span>
-      </div>
-      <div class="flex items-center space-x-2 text-slate-300">
-        <i data-lucide="mail" class="w-4 h-4 text-sky-400"></i>
-        <span>akashnagapure@live.com</span>
-      </div>
-      <div class="flex items-center space-x-2 text-slate-300">
-        <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i>
-        <a href="https://www.linkedin.com/in/anagapure" target="_blank" class="hover:text-sky-300 underline">linkedin.com/in/anagapure</a>
-      </div>
-    </div>
-
-    <!-- Professional Summary -->
-    <div class="glass-card-3d p-7 rounded-2xl space-y-3">
-      <div class="flex items-center space-x-3">
-        <i data-lucide="user-check" class="w-5 h-5 text-sky-400"></i>
-        <h2 class="font-sans text-xl font-bold text-white uppercase tracking-wider">Professional Summary</h2>
-      </div>
-      <p class="font-sans text-slate-300 text-sm leading-relaxed text-justify">
-        Microsoft Certified EUC & Intune Specialist with 10+ years of progressive experience architecting secure, scalable modern endpoint management environments. Proven expertise in zero-touch provisioning (Autopilot/Autopatch), GPO migration, cloud infrastructure transitions, and enterprise automation via PowerShell. Adept at driving global device lifecycle management, compliance enforcement, and virtualization across hybrid enterprise architectures.
-      </p>
-    </div>
-
-    <!-- Core Competencies -->
-    <div class="glass-card-3d p-7 rounded-2xl space-y-4">
-      <div class="flex items-center space-x-3">
-        <i data-lucide="cpu" class="w-5 h-5 text-sky-400"></i>
-        <h2 class="font-sans text-xl font-bold text-white uppercase tracking-wider">Core Competencies</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-sans">
-        <div class="bg-slate-900/80 p-4 rounded-xl border border-white/10 space-y-1">
-          <strong class="text-sky-300 font-mono text-sm block">Microsoft Intune</strong>
-          <p class="text-slate-300">Device Enrollment, Compliance & Configuration Policies, App Deployment, Update Rings, Windows Autopilot & Autopatch – Setup, Connected Cache.</p>
-        </div>
-        <div class="bg-slate-900/80 p-4 rounded-xl border border-white/10 space-y-1">
-          <strong class="text-sky-300 font-mono text-sm block">SCCM / MECM</strong>
-          <p class="text-slate-300">Task Sequence Management, OSD, Driver Import, Patch Deployment, DP Configuration, Maintenance.</p>
-        </div>
-        <div class="bg-slate-900/80 p-4 rounded-xl border border-white/10 space-y-1">
-          <strong class="text-sky-300 font-mono text-sm block">Cloud & Virtualization</strong>
-          <p class="text-slate-300">Co-Management (SCCM + Intune), Azure AD, Conditional Access, Defender for Endpoint, AVD, Windows 365, Citrix, FSLogix, Workspace ONE, VMware Horizon.</p>
-        </div>
-        <div class="bg-slate-900/80 p-4 rounded-xl border border-white/10 space-y-1">
-          <strong class="text-sky-300 font-mono text-sm block">Automation & Security</strong>
-          <p class="text-slate-300">PowerShell Automation, SQL Reporting, GPO Migration to Intune, BitLocker, Disk Encryption, LAPS, ITIL Process Adherence.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Work Experience -->
-    <div class="glass-card-3d p-7 rounded-2xl space-y-6">
-      <div class="flex items-center space-x-3">
-        <i data-lucide="briefcase" class="w-5 h-5 text-sky-400"></i>
-        <h2 class="font-sans text-xl font-bold text-white uppercase tracking-wider">Work Experience</h2>
-      </div>
-
-      <div class="space-y-6">
-        <div class="border-l-2 border-sky-400 pl-4 space-y-2">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-            <h3 class="font-bold text-white text-base">Specialist – Technical Specialist | Hexaware Technologies</h3>
-            <span class="font-mono text-xs text-sky-400 font-semibold">14/02/2026 – Present</span>
+            <div class="flex items-center lg:hidden">
+              <button
+                id="mobile-menu-btn"
+                onclick="toggleMobileMenu()"
+                class="p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none"
+                aria-label="Toggle Menu"
+              >
+                <i data-lucide="menu" class="w-6 h-6"></i>
+              </button>
+            </div>
           </div>
-          <p class="font-mono text-xs text-slate-400 italic">Client: Hiscox (EU)</p>
-          <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-300">
-            <li>Led enterprise-wide migration of user home drives (H: Drive) to Microsoft OneDrive, enabling secure cloud-based file access and collaboration.</li>
-            <li>Designed and implemented enterprise-grade endpoint management solutions using Microsoft Intune across distributed environments.</li>
-            <li>Architected and deployed Modern Workplace solutions leveraging Intune, Autopilot, and Azure AD, improving device provisioning time.</li>
-            <li>Led design and integration of virtual desktop infrastructure (VDI) using Azure Virtual Desktop, Windows 365, and Citrix for secure remote access.</li>
-            <li>Implemented profile management and optimization using FSLogix, enhancing login performance in VDI environments.</li>
-            <li>Built and maintained gold images using Microsoft Deployment Toolkit, ensuring standardized and scalable image deployment.</li>
-            <li>Defined and enforced device compliance policies, security baselines, and conditional access aligned with enterprise standards.</li>
-          </ul>
         </div>
 
-        <div class="border-l-2 border-sky-400 pl-4 space-y-2">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-            <h3 class="font-bold text-white text-base">Medline Industries India Pvt. Ltd, Pune</h3>
-            <span class="font-mono text-xs text-sky-400 font-semibold">31/01/2020 – 13/02/2026</span>
-          </div>
-          <p class="font-mono text-xs text-slate-400 italic">Progressive Roles: Specialist – EUC (2024–2026) | Senior Administrator – EUC (2022–2024) | EUC Administrator (2020–2021)</p>
-          <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-300">
-            <li>Led device lifecycle management for 5000+ endpoints using Intune and SCCM.</li>
-            <li>Managed Windows Autopatch setup including ring deployment and Connected Cache configuration.</li>
-            <li>Migrated 200+ on-prem GPOs to Intune using custom MDM configuration profiles.</li>
-            <li>Managed SCCM OSD deployments: image creation, driver import automation, and PXE troubleshooting.</li>
-            <li>Developed SQL & PowerShell scripts for device health, patch compliance, and SLA dashboards.</li>
-            <li>Executed monthly patching lifecycles across test, pilot, and production deployment rings.</li>
-            <li>Managed Azure Virtual Desktop environment including host pools, session hosts, application groups, and workspaces.</li>
-          </ul>
+        <div
+          id="mobile-menu-drawer"
+          class="hidden lg:hidden bg-slate-900/98 border-b border-white/10 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-1"
+        >
+          <a
+            href="../index.html"
+            class="block w-full text-left px-4 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 flex items-center gap-2"
+          >
+            <span class="material-symbols-outlined text-sm">home</span> Main Hub /
+            Home
+          </a>
         </div>
+      </nav>
+    </header>
 
-        <div class="border-l-2 border-sky-400 pl-4 space-y-2">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-            <h3 class="font-bold text-white text-base">Specialist – EUC Administrator (C2R) | Rectitude HR Solutions</h3>
-            <span class="font-mono text-xs text-sky-400 font-semibold">23/09/2019 – 30/01/2020</span>
-          </div>
-          <p class="font-mono text-xs text-slate-400 italic">Client: Medline Industries India Pvt. Ltd, Pune</p>
-          <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-300">
-            <li>Provided dedicated endpoint engineering and support for Medline enterprise systems.</li>
-            <li>Assisted in initial configuration of Intune device enrollment pipelines and compliance monitoring.</li>
-          </ul>
-        </div>
-
-        <div class="border-l-2 border-sky-400 pl-4 space-y-2">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-            <h3 class="font-bold text-white text-base">Process Associate | Capgemini Technology Services</h3>
-            <span class="font-mono text-xs text-sky-400 font-semibold">19/11/2018 – 23/09/2019</span>
-          </div>
-          <p class="font-mono text-xs text-slate-400 italic">Client: IBM Merge Healthcare</p>
-          <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-300">
-            <li>Supported global clients on DICOM/HL7 and healthcare platforms, delivering L2 support for Windows OS and applications.</li>
-            <li>Managed Salesforce CRM for ticketing, executed SQL database queries, and maintained SLA adherence.</li>
-          </ul>
-        </div>
-
-        <div class="border-l-2 border-sky-400 pl-4 space-y-2">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-            <h3 class="font-bold text-white text-base">Customer Support Engineer | VDA Info Solutions</h3>
-            <span class="font-mono text-xs text-sky-400 font-semibold">01/02/2016 – 14/11/2018</span>
-          </div>
-          <p class="font-mono text-xs text-slate-400 italic">Client Location: Cognizant Technology Solutions (I) Pvt. Ltd, Pune</p>
-          <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-300">
-            <li>Delivered IT infrastructure support for 24K+ users in an ODC environment and managed desktop/laptop refresh for 6000+ endpoints.</li>
-            <li>Monitored SCCM, BIOS, boot compliance, and device patch levels while managing ageing tickets.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Certifications & Academic Profile Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="glass-card-3d p-7 rounded-2xl space-y-4">
-        <div class="flex items-center space-x-3">
-          <i data-lucide="award" class="w-5 h-5 text-sky-400"></i>
-          <h2 class="font-sans text-lg font-bold text-white uppercase tracking-wider">Certifications</h2>
-        </div>
-        <ul class="space-y-2 text-xs font-sans text-slate-300">
-          <li class="flex items-center space-x-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span>Microsoft Certified: Azure Fundamentals (AZ-900)</span></li>
-          <li class="flex items-center space-x-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span>Microsoft Certified: Azure Administrator Associate (AZ-104)</span></li>
-          <li class="flex items-center space-x-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span>ITIL 4 Foundation (Certificate No: GR671001549AN)</span></li>
-        </ul>
-      </div>
-
-      <div class="glass-card-3d p-7 rounded-2xl space-y-4">
-        <div class="flex items-center space-x-3">
-          <i data-lucide="graduation-cap" class="w-5 h-5 text-sky-400"></i>
-          <h2 class="font-sans text-lg font-bold text-white uppercase tracking-wider">Academic Profile</h2>
-        </div>
-        <ul class="space-y-2 text-xs font-sans text-slate-300">
-          <li><strong>B.E. in Computer Science & Engg.</strong> | IBSS COE, SGBAU Amravati (2014) – 63.06%</li>
-          <li><strong>HSC</strong> | Brijlal Biyani Science College, Amravati (2010) – 56.33%</li>
-          <li><strong>SSC</strong> | Shri Ram Krishan Krida Vidyalaya, Amravati (2008) – 67.83%</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Hobbies & Personal Details -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="glass-card-3d p-7 rounded-2xl space-y-4">
-        <div class="flex items-center space-x-3">
-          <i data-lucide="compass" class="w-5 h-5 text-sky-400"></i>
-          <h2 class="font-sans text-lg font-bold text-white uppercase tracking-wider">Hobbies</h2>
-        </div>
-        <ul class="space-y-2 text-xs font-sans text-slate-300 list-disc list-inside">
-          <li>Coin collection & Numismatics</li>
-          <li>Surfing the Internet & Reading tech/strategy books</li>
-        </ul>
-      </div>
-
-      <div class="glass-card-3d p-7 rounded-2xl space-y-4">
-        <div class="flex items-center space-x-3">
-          <i data-lucide="user" class="w-5 h-5 text-sky-400"></i>
-          <h2 class="font-sans text-lg font-bold text-white uppercase tracking-wider">Personal Details</h2>
-        </div>
-        <ul class="space-y-1.5 text-xs font-sans text-slate-300">
-          <li><strong>Full Name:</strong> Mr. Akash Subhashrao Nagapure</li>
-          <li><strong>Date of Birth:</strong> 22 October 1992</li>
-          <li><strong>Address:</strong> Olark Residency, Moshi Pradhikaran, Sector 9, Pune 412105</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Declaration -->
-    <div class="glass-card-3d p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between text-xs text-slate-300 gap-4">
-      <p class="italic">I hereby declare that the information provided above is true to the best of my knowledge and belief.</p>
-      <div class="text-right shrink-0 font-mono">
-        <p class="text-sky-400 font-bold">Place: AMRAVATI</p>
-        <p class="text-white">Akash S. Nagapure</p>
-      </div>
-    </div>
-
-    <!-- Threaded Discussion & Comments Section -->
-    <section id="discussion" class="scroll-mt-28 border-t border-sky-500/20 pt-14 mt-16 space-y-8">
-        <div class="flex items-center gap-4">
-            <h2 class="font-headline-md text-xl sm:text-2xl text-sky-400 italic tracking-tight font-bold">CAREER DISCUSSION &amp; Q&amp;A</h2>
-            <div class="h-px flex-grow bg-white/10"></div>
-        </div>
-
-        <form id="comment-form" class="glass-card-3d p-6 sm:p-8 rounded-2xl border border-sky-500/30 space-y-5 shadow-2xl">
-            <h3 class="text-lg font-semibold text-sky-300 tracking-tight font-mono">Leave a Note or Professional Inquiry</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" id="author" placeholder="Your Name / Handle *" required class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono" />
-                <input type="email" id="email" placeholder="Your Email Address *" required class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono" />
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Resume Top Action Bar with Photo -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-6 glass-card-3d p-6 rounded-2xl holo-glow"
+        >
+          <div class="flex items-center space-x-5 text-center sm:text-left">
+            <div class="relative shrink-0">
+              <div
+                class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-sky-500 to-indigo-500 opacity-40 blur-sm"
+              >
+              </div>
+              <img
+                src="/Main_page_data/akash_profile_1781110763642.avif"
+                alt="Akash Nagapure Profile"
+                width="85"
+                height="85"
+                class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover border-2 border-sky-400/50 shadow-inner grayscale hover:grayscale-0 transition-all duration-300"
+                onerror="this.onerror=null; this.src='/Main_page_data/placeholder.gif';"
+              />
             </div>
             <div>
-                <textarea id="content" rows="3" placeholder="Share feedback regarding experience, ask about enterprise architecture, or start a discussion..." required class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm"></textarea>
+              <h1
+                class="font-sans text-2xl sm:text-3xl font-extrabold text-white tracking-tight"
+              >
+                Akash S. Nagapure
+              </h1>
+              <p
+                class="font-mono text-xs text-sky-400 font-semibold uppercase tracking-wider mt-1"
+              >
+                Microsoft Certified EUC & Intune Specialist
+              </p>
             </div>
-            <button type="submit" id="submit-btn" class="px-6 py-3 bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950 font-bold rounded-xl transition-all disabled:opacity-50 text-sm shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-105 cursor-pointer font-mono">
-                Post Comment
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <a
+              href="/Main_page_data/Akash_Resume.pdf"
+              download="Akash_Resume.pdf"
+              class="inline-flex items-center space-x-2 px-5 py-3 bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950 font-sans font-extrabold text-xs rounded-xl shadow-lg transition-all"
+            >
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Download PDF Resume</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact details card -->
+        <div
+          class="glass-card-3d p-6 rounded-2xl grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono"
+        >
+          <div class="flex items-center space-x-2 text-slate-300">
+            <i data-lucide="phone" class="w-4 h-4 text-sky-400"></i>
+            <span>+91 9860457155</span>
+          </div>
+          <div class="flex items-center space-x-2 text-slate-300">
+            <i data-lucide="mail" class="w-4 h-4 text-sky-400"></i>
+            <span>akashnagapure@live.com</span>
+          </div>
+          <div class="flex items-center space-x-2 text-slate-300">
+            <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i>
+            <a
+              href="https://www.linkedin.com/in/anagapure"
+              target="_blank"
+              class="hover:text-sky-300 underline">linkedin.com/in/anagapure</a
+            >
+          </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="glass-card-3d p-7 rounded-2xl space-y-3">
+          <div class="flex items-center space-x-3">
+            <i data-lucide="user-check" class="w-5 h-5 text-sky-400"></i>
+            <h2
+              class="font-sans text-xl font-bold text-white uppercase tracking-wider"
+            >
+              Professional Summary
+            </h2>
+          </div>
+          <p
+            class="font-sans text-slate-300 text-sm leading-relaxed text-justify"
+          >
+            Microsoft Certified EUC & Intune Specialist with 10+ years of
+            progressive experience architecting secure, scalable modern endpoint
+            management environments. Proven expertise in zero-touch provisioning
+            (Autopilot/Autopatch), GPO migration, cloud infrastructure
+            transitions, and enterprise automation via PowerShell. Adept at
+            driving global device lifecycle management, compliance enforcement,
+            and virtualization across hybrid enterprise architectures.
+          </p>
+        </div>
+
+        <!-- Core Competencies -->
+        <div class="glass-card-3d p-7 rounded-2xl space-y-4">
+          <div class="flex items-center space-x-3">
+            <i data-lucide="cpu" class="w-5 h-5 text-sky-400"></i>
+            <h2
+              class="font-sans text-xl font-bold text-white uppercase tracking-wider"
+            >
+              Core Competencies
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-sans">
+            <div
+              class="bg-slate-900/80 p-4 rounded-xl border border-white/10 space-y-1"
+            >
+              <strong class="text-sky-300 font-mono text-sm block"
+                >Microsoft Intune</strong
+              >
+              <p class="text-slate-300">
+                Device Enrollment, Compliance & Configuration Policies, App
+                Deployment, Update Rings, Windows Autopilot & Autopatch – Setup,
+                Connected Cache.
+              </p>
+            </div>
+            <div
+              class="bg-slate-900/80 p-4 rounded-xl border border-white/10 space-y-1"
+            >
+              <strong class="text-sky-300 font-mono text-sm block"
+                >SCCM / MECM</strong
+              >
+              <p class="text-slate-300">
+                Task Sequence Management, OSD, Driver Import, Patch Deployment,
+                DP Configuration, Maintenance.
+              </p>
+            </div>
+            <div
+              class="bg-slate-900/80 p-4 rounded-xl border border-white/10 space-y-1"
+            >
+              <strong class="text-sky-300 font-mono text-sm block"
+                >Cloud & Virtualization</strong
+              >
+              <p class="text-slate-300">
+                Co-Management (SCCM + Intune), Azure AD, Conditional Access,
+                Defender for Endpoint, AVD, Windows 365, Citrix, FSLogix,
+                Workspace ONE, VMware Horizon.
+              </p>
+            </div>
+            <div
+              class="bg-slate-900/80 p-4 rounded-xl border border-white/10 space-y-1"
+            >
+              <strong class="text-sky-300 font-mono text-sm block"
+                >Automation & Security</strong
+              >
+              <p class="text-slate-300">
+                PowerShell Automation, SQL Reporting, GPO Migration to Intune,
+                BitLocker, Disk Encryption, LAPS, ITIL Process Adherence.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="glass-card-3d p-7 rounded-2xl space-y-6">
+          <div class="flex items-center space-x-3">
+            <i data-lucide="briefcase" class="w-5 h-5 text-sky-400"></i>
+            <h2
+              class="font-sans text-xl font-bold text-white uppercase tracking-wider"
+            >
+              Work Experience
+            </h2>
+          </div>
+
+          <div class="space-y-6">
+            <div class="border-l-2 border-sky-400 pl-4 space-y-2">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between"
+              >
+                <h3 class="font-bold text-white text-base">
+                  Specialist – Technical Specialist | Hexaware Technologies
+                </h3>
+                <span class="font-mono text-xs text-sky-400 font-semibold"
+                  >14/02/2026 – Present</span
+                >
+              </div>
+              <p class="font-mono text-xs text-slate-400 italic">
+                Client: Hiscox (EU)
+              </p>
+              <ul
+                class="list-disc list-inside space-y-1.5 text-xs text-slate-300"
+              >
+                <li>
+                  Led enterprise-wide migration of user home drives (H: Drive)
+                  to Microsoft OneDrive, enabling secure cloud-based file access
+                  and collaboration.
+                </li>
+                <li>
+                  Designed and implemented enterprise-grade endpoint management
+                  solutions using Microsoft Intune across distributed
+                  environments.
+                </li>
+                <li>
+                  Architected and deployed Modern Workplace solutions leveraging
+                  Intune, Autopilot, and Azure AD, improving device provisioning
+                  time.
+                </li>
+                <li>
+                  Led design and integration of virtual desktop infrastructure
+                  (VDI) using Azure Virtual Desktop, Windows 365, and Citrix for
+                  secure remote access.
+                </li>
+                <li>
+                  Implemented profile management and optimization using FSLogix,
+                  enhancing login performance in VDI environments.
+                </li>
+                <li>
+                  Built and maintained gold images using Microsoft Deployment
+                  Toolkit, ensuring standardized and scalable image deployment.
+                </li>
+                <li>
+                  Defined and enforced device compliance policies, security
+                  baselines, and conditional access aligned with enterprise
+                  standards.
+                </li>
+              </ul>
+            </div>
+
+            <div class="border-l-2 border-sky-400 pl-4 space-y-2">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between"
+              >
+                <h3 class="font-bold text-white text-base">
+                  Medline Industries India Pvt. Ltd, Pune
+                </h3>
+                <span class="font-mono text-xs text-sky-400 font-semibold"
+                  >31/01/2020 – 13/02/2026</span
+                >
+              </div>
+              <p class="font-mono text-xs text-slate-400 italic">
+                Progressive Roles: Specialist – EUC (2024–2026) | Senior
+                Administrator – EUC (2022–2024) | EUC Administrator (2020–2021)
+              </p>
+              <ul
+                class="list-disc list-inside space-y-1.5 text-xs text-slate-300"
+              >
+                <li>
+                  Led device lifecycle management for 5000+ endpoints using
+                  Intune and SCCM.
+                </li>
+                <li>
+                  Managed Windows Autopatch setup including ring deployment and
+                  Connected Cache configuration.
+                </li>
+                <li>
+                  Migrated 200+ on-prem GPOs to Intune using custom MDM
+                  configuration profiles.
+                </li>
+                <li>
+                  Managed SCCM OSD deployments: image creation, driver import
+                  automation, and PXE troubleshooting.
+                </li>
+                <li>
+                  Developed SQL & PowerShell scripts for device health, patch
+                  compliance, and SLA dashboards.
+                </li>
+                <li>
+                  Executed monthly patching lifecycles across test, pilot, and
+                  production deployment rings.
+                </li>
+                <li>
+                  Managed Azure Virtual Desktop environment including host
+                  pools, session hosts, application groups, and workspaces.
+                </li>
+              </ul>
+            </div>
+
+            <div class="border-l-2 border-sky-400 pl-4 space-y-2">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between"
+              >
+                <h3 class="font-bold text-white text-base">
+                  Specialist – EUC Administrator (C2R) | Rectitude HR Solutions
+                </h3>
+                <span class="font-mono text-xs text-sky-400 font-semibold"
+                  >23/09/2019 – 30/01/2020</span
+                >
+              </div>
+              <p class="font-mono text-xs text-slate-400 italic">
+                Client: Medline Industries India Pvt. Ltd, Pune
+              </p>
+              <ul
+                class="list-disc list-inside space-y-1.5 text-xs text-slate-300"
+              >
+                <li>
+                  Provided dedicated endpoint engineering and support for
+                  Medline enterprise systems.
+                </li>
+                <li>
+                  Assisted in initial configuration of Intune device enrollment
+                  pipelines and compliance monitoring.
+                </li>
+              </ul>
+            </div>
+
+            <div class="border-l-2 border-sky-400 pl-4 space-y-2">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between"
+              >
+                <h3 class="font-bold text-white text-base">
+                  Process Associate | Capgemini Technology Services
+                </h3>
+                <span class="font-mono text-xs text-sky-400 font-semibold"
+                  >19/11/2018 – 23/09/2019</span
+                >
+              </div>
+              <p class="font-mono text-xs text-slate-400 italic">
+                Client: IBM Merge Healthcare
+              </p>
+              <ul
+                class="list-disc list-inside space-y-1.5 text-xs text-slate-300"
+              >
+                <li>
+                  Supported global clients on DICOM/HL7 and healthcare
+                  platforms, delivering L2 support for Windows OS and
+                  applications.
+                </li>
+                <li>
+                  Managed Salesforce CRM for ticketing, executed SQL database
+                  queries, and maintained SLA adherence.
+                </li>
+              </ul>
+            </div>
+
+            <div class="border-l-2 border-sky-400 pl-4 space-y-2">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between"
+              >
+                <h3 class="font-bold text-white text-base">
+                  Customer Support Engineer | VDA Info Solutions
+                </h3>
+                <span class="font-mono text-xs text-sky-400 font-semibold"
+                  >01/02/2016 – 14/11/2018</span
+                >
+              </div>
+              <p class="font-mono text-xs text-slate-400 italic">
+                Client Location: Cognizant Technology Solutions (I) Pvt. Ltd,
+                Pune
+              </p>
+              <ul
+                class="list-disc list-inside space-y-1.5 text-xs text-slate-300"
+              >
+                <li>
+                  Delivered IT infrastructure support for 24K+ users in an ODC
+                  environment and managed desktop/laptop refresh for 6000+
+                  endpoints.
+                </li>
+                <li>
+                  Monitored SCCM, BIOS, boot compliance, and device patch levels
+                  while managing ageing tickets.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications & Academic Profile Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-card-3d p-7 rounded-2xl space-y-4">
+            <div class="flex items-center space-x-3">
+              <i data-lucide="award" class="w-5 h-5 text-sky-400"></i>
+              <h2
+                class="font-sans text-lg font-bold text-white uppercase tracking-wider"
+              >
+                Certifications
+              </h2>
+            </div>
+            <ul class="space-y-2 text-xs font-sans text-slate-300">
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"
+                ></i><span
+                  >Microsoft Certified: Azure Fundamentals (AZ-900)</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"
+                ></i><span
+                  >Microsoft Certified: Azure Administrator Associate (AZ-104)</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"
+                ></i><span
+                  >ITIL 4 Foundation (Certificate No: GR671001549AN)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card-3d p-7 rounded-2xl space-y-4">
+            <div class="flex items-center space-x-3">
+              <i data-lucide="graduation-cap" class="w-5 h-5 text-sky-400"></i>
+              <h2
+                class="font-sans text-lg font-bold text-white uppercase tracking-wider"
+              >
+                Academic Profile
+              </h2>
+            </div>
+            <ul class="space-y-2 text-xs font-sans text-slate-300">
+              <li>
+                <strong>B.E. in Computer Science & Engg.</strong> | IBSS COE, SGBAU
+                Amravati (2014) – 63.06%
+              </li>
+              <li>
+                <strong>HSC</strong> | Brijlal Biyani Science College, Amravati (2010)
+                – 56.33%
+              </li>
+              <li>
+                <strong>SSC</strong> | Shri Ram Krishan Krida Vidyalaya, Amravati
+                (2008) – 67.83%
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Hobbies & Personal Details -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-card-3d p-7 rounded-2xl space-y-4">
+            <div class="flex items-center space-x-3">
+              <i data-lucide="compass" class="w-5 h-5 text-sky-400"></i>
+              <h2
+                class="font-sans text-lg font-bold text-white uppercase tracking-wider"
+              >
+                Hobbies
+              </h2>
+            </div>
+            <ul
+              class="space-y-2 text-xs font-sans text-slate-300 list-disc list-inside"
+            >
+              <li>Coin collection & Numismatics</li>
+              <li>Surfing the Internet & Reading tech/strategy books</li>
+            </ul>
+          </div>
+
+          <div class="glass-card-3d p-7 rounded-2xl space-y-4">
+            <div class="flex items-center space-x-3">
+              <i data-lucide="user" class="w-5 h-5 text-sky-400"></i>
+              <h2
+                class="font-sans text-lg font-bold text-white uppercase tracking-wider"
+              >
+                Personal Details
+              </h2>
+            </div>
+            <ul class="space-y-1.5 text-xs font-sans text-slate-300">
+              <li><strong>Full Name:</strong> Mr. Akash Subhashrao Nagapure</li>
+              <li><strong>Date of Birth:</strong> 22 October 1992</li>
+              <li>
+                <strong>Address:</strong> Olark Residency, Moshi Pradhikaran, Sector
+                9, Pune 412105
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Declaration -->
+        <div
+          class="glass-card-3d p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between text-xs text-slate-300 gap-4"
+        >
+          <p class="italic">
+            I hereby declare that the information provided above is true to the
+            best of my knowledge and belief.
+          </p>
+          <div class="text-right shrink-0 font-mono">
+            <p class="text-sky-400 font-bold">Place: AMRAVATI</p>
+            <p class="text-white">Akash S. Nagapure</p>
+          </div>
+        </div>
+
+        <!-- Threaded Discussion & Comments Section -->
+        <section
+          id="discussion"
+          class="scroll-mt-28 border-t border-sky-500/20 pt-14 mt-16 space-y-8"
+        >
+          <div class="flex items-center gap-4">
+            <h2
+              class="font-headline-md text-xl sm:text-2xl text-sky-400 italic tracking-tight font-bold"
+            >
+              CAREER DISCUSSION &amp; Q&amp;A
+            </h2>
+            <div class="h-px flex-grow bg-white/10"></div>
+          </div>
+
+          <form
+            id="comment-form"
+            class="glass-card-3d p-6 sm:p-8 rounded-2xl border border-sky-500/30 space-y-5 shadow-2xl"
+          >
+            <h3
+              class="text-lg font-semibold text-sky-300 tracking-tight font-mono"
+            >
+              Leave a Note or Professional Inquiry
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input
+                type="text"
+                id="author"
+                placeholder="Your Name / Handle *"
+                required
+                class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono"
+              />
+              <input
+                type="email"
+                id="email"
+                placeholder="Your Email Address *"
+                required
+                class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono"
+              />
+            </div>
+            <div>
+              <textarea
+                id="content"
+                rows="3"
+                placeholder="Share feedback regarding experience, ask about enterprise architecture, or start a discussion..."
+                required
+                class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              id="submit-btn"
+              class="px-6 py-3 bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950 font-bold rounded-xl transition-all disabled:opacity-50 text-sm shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-105 cursor-pointer font-mono"
+            >
+              Post Comment
             </button>
-        </form>
+          </form>
 
-        <div id="comments-container" class="space-y-6">
-            <p class="text-slate-500 text-sm font-mono">Loading discussion...</p>
-        </div>
-    </section>
+          <div id="comments-container" class="space-y-6">
+            <p class="text-slate-500 text-sm font-mono">
+              Loading discussion...
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
 
-  </div>
-</main>
-
-<!-- Standardized Compact Footer with Icons -->
-<footer class="w-full py-6 sm:py-8 bg-surface-dim border-t border-sky-500/20 text-center relative z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
-    <div class="flex flex-col items-center justify-center text-center w-full px-4 gap-2.5 max-w-7xl mx-auto">
+    <!-- Standardized Compact Footer with Icons -->
+    <footer
+      class="w-full py-6 sm:py-8 bg-surface-dim border-t border-sky-500/20 text-center relative z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]"
+    >
+      <div
+        class="flex flex-col items-center justify-center text-center w-full px-4 gap-2.5 max-w-7xl mx-auto"
+      >
         <div class="flex items-center gap-2.5">
-            <div class="w-7 h-7 rounded-lg flex items-center justify-center bg-black border border-purple-500/50 p-1 shadow-[0_0_12px_rgba(168,85,247,0.4)]">
-                <svg viewBox="0 0 100 100" class="w-full h-full object-contain">
-                    <path d="M25 75 L45 25 L55 25 L75 75 M32 58 L68 58 M70 25 L75 75 L80 35" fill="none" stroke="#a855f7" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <span class="font-sans font-extrabold text-sm text-white tracking-tight">Akash Nagapure</span>
+          <div
+            class="w-7 h-7 rounded-lg flex items-center justify-center bg-black border border-purple-500/50 p-1 shadow-[0_0_12px_rgba(168,85,247,0.4)]"
+          >
+            <svg viewBox="0 0 100 100" class="w-full h-full object-contain">
+              <path
+                d="M25 75 L45 25 L55 25 L75 75 M32 58 L68 58 M70 25 L75 75 L80 35"
+                fill="none"
+                stroke="#a855f7"
+                stroke-width="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <span
+            class="font-sans font-extrabold text-sm text-white tracking-tight"
+            >Akash Nagapure</span
+          >
         </div>
-        
+
         <!-- Footer Links with Matching Icons -->
-        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400">
-            <a href="https://www.linkedin.com/in/anagapure" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">share</span> LinkedIn
-            </a>
-            <span>•</span>
-            <a href="mailto:akashnagapure@live.com" class="hover:text-sky-400 transition-colors flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">mail</span> Contact Mail
-            </a>
-            <span>•</span>
-            <a href="privacy.html" class="hover:text-sky-400 transition-colors flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">privacy_tip</span> Privacy Policy
-            </a>
-            <span>•</span>
-            <a href="terms.html" class="hover:text-sky-400 transition-colors flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">description</span> Terms of Service
-            </a>
+        <div
+          class="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400"
+        >
+          <a
+            href="https://www.linkedin.com/in/anagapure"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-sky-400 transition-colors flex items-center gap-1"
+          >
+            <span class="material-symbols-outlined text-sm">share</span> LinkedIn
+          </a>
+          <span>•</span>
+          <a
+            href="mailto:akashnagapure@live.com"
+            class="hover:text-sky-400 transition-colors flex items-center gap-1"
+          >
+            <span class="material-symbols-outlined text-sm">mail</span> Contact Mail
+          </a>
+          <span>•</span>
+          <a
+            href="privacy.html"
+            class="hover:text-sky-400 transition-colors flex items-center gap-1"
+          >
+            <span class="material-symbols-outlined text-sm">privacy_tip</span> Privacy
+            Policy
+          </a>
+          <span>•</span>
+          <a
+            href="terms.html"
+            class="hover:text-sky-400 transition-colors flex items-center gap-1"
+          >
+            <span class="material-symbols-outlined text-sm">description</span> Terms
+            of Service
+          </a>
         </div>
 
-        <span class="font-mono text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5">© 2026. All Rights Reserved. Engineered with Precision.</span>
-    </div>
-</footer>
+        <span
+          class="font-mono text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5"
+          >© 2026. All Rights Reserved. Engineered with Precision.</span
+        >
+      </div>
+    </footer>
 
-<script>
-    if (window.lucide) lucide.createIcons();
+    <script>
+      if (window.lucide) lucide.createIcons();
 
-    const ARTICLE_ID = 'resume';
-    const API_URL = '/api/comments';
+      const ARTICLE_ID = "resume";
+      const API_URL = "/api/comments";
 
-    async function loadComments() {
-        const container = document.getElementById('comments-container');
+      async function loadComments() {
+        const container = document.getElementById("comments-container");
         try {
-            const response = await fetch(`${API_URL}?article_id=${encodeURIComponent(ARTICLE_ID)}`);
-            const comments = await response.json();
+          const response = await fetch(
+            `${API_URL}?article_id=${encodeURIComponent(ARTICLE_ID)}`,
+            {
+              headers: { Accept: "application/json" },
+            },
+          );
 
-            if (!response.ok) throw new Error();
+          if (!response.ok) {
+            throw new Error(`Server status ${response.status}`);
+          }
 
-            if (!comments || comments.length === 0) {
-                container.innerHTML = '<p class="text-slate-500 text-sm font-mono">No comments yet. Be the first to start the discussion!</p>';
-                return;
+          const comments = await response.json();
+
+          if (!comments || comments.length === 0) {
+            container.innerHTML =
+              '<p class="text-slate-500 text-sm font-mono">No comments yet. Be the first to start the discussion!</p>';
+            return;
+          }
+
+          const commentMap = {};
+          const topLevelComments = [];
+
+          comments.forEach((comment) => {
+            comment.replies = [];
+            commentMap[comment.id] = comment;
+            if (comment.parent_id) {
+              if (commentMap[comment.parent_id]) {
+                commentMap[comment.parent_id].replies.push(comment);
+              }
+            } else {
+              topLevelComments.push(comment);
             }
+          });
 
-            const commentMap = {};
-            const topLevelComments = [];
-
-            comments.forEach(comment => {
-                comment.replies = [];
-                commentMap[comment.id] = comment;
-                if (comment.parent_id) {
-                    if (commentMap[comment.parent_id]) {
-                        commentMap[comment.parent_id].replies.push(comment);
-                    }
-                } else {
-                    topLevelComments.push(comment);
-                }
-            });
-
-            container.innerHTML = topLevelComments.map(comment => renderCommentNode(comment)).join('');
-            if (window.lucide) lucide.createIcons();
+          container.innerHTML = topLevelComments
+            .map((comment) => renderCommentNode(comment))
+            .join("");
+          if (window.lucide) lucide.createIcons();
         } catch (err) {
-            container.innerHTML = '<p class="text-slate-400 text-sm font-mono">No active comment server detected. Discussion thread initialized locally.</p>';
+          console.warn("API load error:", err);
+          container.innerHTML =
+            '<p class="text-slate-400 text-sm font-mono">Comments API unavailable in static preview mode. Live Neon DB requires deployment via Vercel.</p>';
         }
-    }
+      }
 
-    function renderCommentNode(comment) {
-        const formattedDate = comment.created_at ? new Date(comment.created_at).toLocaleString('en-US', {
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric',
-            hour: 'numeric',
-            minute: '2-digit',
-            hour12: true
-        }) : 'Just now';
+      function renderCommentNode(comment) {
+        const formattedDate = comment.created_at
+          ? new Date(comment.created_at).toLocaleString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true,
+            })
+          : "Just now";
 
-        const repliesHTML = comment.replies && comment.replies.length > 0 
+        const repliesHTML =
+          comment.replies && comment.replies.length > 0
             ? `<div class="mt-4 pl-4 md:pl-6 border-l-2 border-sky-500/20 space-y-4">
-                ${comment.replies.map(reply => renderCommentNode(reply)).join('')}
+                ${comment.replies.map((reply) => renderCommentNode(reply)).join("")}
                </div>`
-            : '';
+            : "";
 
         return `
             <div class="p-5 glass-card-3d rounded-2xl border border-slate-800 space-y-3 shadow-xl" id="comment-${comment.id}">
@@ -587,15 +1007,15 @@
                     <span class="font-bold text-sky-400 text-sm font-mono">${escapeHTML(comment.author)}</span>
                     <span class="text-slate-500 font-mono">${formattedDate}</span>
                 </div>
-                
+
                 <p class="text-slate-300 text-sm whitespace-pre-line leading-relaxed">${escapeHTML(comment.content)}</p>
-                
+
                 <div class="flex items-center space-x-4 text-xs pt-2">
-                    <button type="button" onclick="handleVote(${comment.id}, 'like')" class="inline-flex items-center space-x-1 text-slate-400 hover:text-emerald-400 transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
+                    <button type="button" onclick="handleVote('${comment.id}', 'like')" class="inline-flex items-center space-x-1 text-slate-400 hover:text-emerald-400 transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
                         <span class="material-symbols-outlined text-sm">thumb_up</span>
                         <span>${comment.likes || 0}</span>
                     </button>
-                    <button type="button" onclick="handleVote(${comment.id}, 'dislike')" class="inline-flex items-center space-x-1 text-slate-400 hover:text-rose-400 transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
+                    <button type="button" onclick="handleVote('${comment.id}', 'dislike')" class="inline-flex items-center space-x-1 text-slate-400 hover:text-rose-400 transition-colors bg-black/40 px-2.5 py-1 rounded-lg border border-white/5 cursor-pointer">
                         <span class="material-symbols-outlined text-sm">thumb_down</span>
                         <span>${comment.dislikes || 0}</span>
                     </button>
@@ -605,104 +1025,157 @@
                     </button>
                 </div>
 
-                <form id="reply-form-${comment.id}" class="hidden space-y-3 mt-4 pt-4 border-t border-slate-800 bg-black/40 p-4 rounded-xl">
+                <form id="reply-form-${comment.id}" class="hidden space-y-3 mt-4 pt-4 border-t border-slate-800 bg-black/40 p-4 rounded-xl" onsubmit="event.preventDefault(); postReply(${comment.id});">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <input type="text" id="reply-author-${comment.id}" placeholder="Your Name *" required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 font-mono" />
                         <input type="email" id="reply-email-${comment.id}" placeholder="Your Email *" required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 font-mono" />
                     </div>
                     <textarea id="reply-content-${comment.id}" rows="2" placeholder="Write a reply..." required class="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500"></textarea>
                     <div class="flex space-x-2">
-                        <button type="button" onclick="postReply(${comment.id})" class="px-3.5 py-1.5 bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold rounded-lg shadow font-mono cursor-pointer">Submit Reply</button>
+                        <button type="submit" class="px-3.5 py-1.5 bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold rounded-lg shadow font-mono cursor-pointer">Submit Reply</button>
                         <button type="button" onclick="toggleReplyForm(${comment.id})" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-lg font-mono cursor-pointer">Cancel</button>
                     </div>
                 </form>
                 ${repliesHTML}
             </div>
         `;
-    }
+      }
 
-    function toggleReplyForm(commentId) {
-        document.getElementById(`reply-form-${commentId}`).classList.toggle('hidden');
-    }
+      window.toggleReplyForm = function (commentId) {
+        document
+          .getElementById(`reply-form-${commentId}`)
+          .classList.toggle("hidden");
+      };
 
-    async function handleVote(id, action) {
+      window.handleVote = async function (id, action) {
         try {
-            const res = await fetch(API_URL, {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id, action })
-            });
-            if (res.ok) await loadComments();
+          const res = await fetch(API_URL, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id, action }),
+          });
+          if (res.ok) await loadComments();
         } catch (err) {
-            console.error('Failed to vote');
+          console.error("Failed to vote", err);
         }
-    }
+      };
 
-    async function postReply(parentId) {
-        const author = document.getElementById(`reply-author-${parentId}`).value;
-        const email = document.getElementById(`reply-email-${parentId}`).value;
-        const content = document.getElementById(`reply-content-${parentId}`).value;
+      window.postReply = async function (parentId) {
+        const author = document
+          .getElementById(`reply-author-${parentId}`)
+          .value.trim();
+        const email = document
+          .getElementById(`reply-email-${parentId}`)
+          .value.trim();
+        const content = document
+          .getElementById(`reply-content-${parentId}`)
+          .value.trim();
 
-        if (!author.trim() || !email.trim() || !content.trim()) {
-            alert('Please fill out all required fields.');
+        if (!author || !email || !content || !email.includes("@")) {
+          alert("Please fill out all required fields with a valid email.");
+          return;
+        }
+
+        try {
+          const res = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              author,
+              email,
+              content,
+              parent_id: parentId,
+              article_id: ARTICLE_ID,
+            }),
+          });
+          if (res.ok) {
+            await loadComments();
+          } else {
+            const data = await res.json();
+            alert(data.error || "Failed to post reply.");
+          }
+        } catch (err) {
+          alert("Network error.");
+        }
+      };
+
+      document
+        .getElementById("comment-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const btn = document.getElementById("submit-btn");
+          const authorInput = document.getElementById("author");
+          const emailInput = document.getElementById("email");
+          const contentInput = document.getElementById("content");
+
+          const author = authorInput.value.trim();
+          const email = emailInput.value.trim();
+          const content = contentInput.value.trim();
+
+          if (!author || !email || !content || !email.includes("@")) {
+            alert(
+              'Please provide your name, a valid email address containing "@", and comment content.',
+            );
             return;
-        }
+          }
 
-        try {
+          btn.disabled = true;
+          btn.innerText = "Posting...";
+
+          try {
             const res = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ author, email, content, parent_id: parentId, article_id: ARTICLE_ID })
-            });
-            if (res.ok) await loadComments();
-        } catch (err) {
-            alert('Network error.');
-        }
-    }
-
-    document.getElementById('comment-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = document.getElementById('submit-btn');
-        const author = document.getElementById('author');
-        const email = document.getElementById('email');
-        const content = document.getElementById('content');
-
-        btn.disabled = true;
-        btn.innerText = 'Posting...';
-
-        try {
-            const res = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ author: author.value, email: email.value, content: content.value, parent_id: null, article_id: ARTICLE_ID })
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                author,
+                email,
+                content,
+                parent_id: null,
+                article_id: ARTICLE_ID,
+              }),
             });
 
             if (res.ok) {
-                author.value = ''; email.value = ''; content.value = '';
-                await loadComments();
+              authorInput.value = "";
+              emailInput.value = "";
+              contentInput.value = "";
+              await loadComments();
+            } else {
+              const data = await res.json();
+              alert(data.error || "Failed to post comment.");
             }
-        } catch (err) {
-            alert('Network error.');
-        } finally {
+          } catch (err) {
+            alert("Network error.");
+          } finally {
             btn.disabled = false;
-            btn.innerText = 'Post Comment';
-        }
-    });
+            btn.innerText = "Post Comment";
+          }
+        });
 
-    function escapeHTML(str) {
-        return str.replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag));
-    }
+      function escapeHTML(str) {
+        return str.replace(
+          /[&<>'"]/g,
+          (tag) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              "'": "&#39;",
+              '"': "&quot;",
+            })[tag] || tag,
+        );
+      }
 
-    loadComments();
+      loadComments();
 
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu-drawer');
-        menu.classList.toggle('hidden');
-    }
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu-drawer");
+        menu.classList.toggle("hidden");
+      }
 
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
-</body>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+  </body>
 </html>
