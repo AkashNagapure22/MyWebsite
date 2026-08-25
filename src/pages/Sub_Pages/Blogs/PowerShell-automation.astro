@@ -14,16 +14,14 @@ import BlogsLayout from '../../../layouts/blogslayout.astro';
     <h2>Sample Automation Script</h2>
     <p>Here is a clean snippet used to read a CSV list of user principal names (UPNs) and append them dynamically to your designated Intune targeted security group:</p>
 
-    <pre class="code-box"><code>
-Connect-MgGraph -Scopes "Group.ReadWrite.All"
+    <pre class="code-box"><code>{`Connect-MgGraph -Scopes "Group.ReadWrite.All"
 $GroupId = "your-target-group-object-id"
-$Users = Import-Csv "C:\Temp\users.csv"
+$Users = Import-Csv "C:\\Temp\\users.csv"
 
 foreach ($User in $Users) {
     $UserObj = Get-MgUser -UserId $User.Email
     New-MgGroupMember -GroupId $GroupId -DirectoryObjectId $UserObj.Id
-}
-    </code></pre>
+}`}</code></pre>
 
     <h2>Verification & Troubleshooting</h2>
     <p>Always inspect group logs or check the portal to verify membership synchronization speed, especially when handling dynamic versus assigned rules.</p>
