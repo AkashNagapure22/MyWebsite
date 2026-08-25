@@ -1,4 +1,25 @@
 ---
-import ComingSoon from './ComingSoon.astro';
+import BlogsLayout from '../../../layouts/blogslayout.astro';
 ---
-<ComingSoon title="SCCM to Intune: Planning the Migration" />
+<BlogsLayout title="SCCM Migration to Latest Version: Upgrading MECM Infrastructure" description="A complete walkthrough for planning, executing, and validating a successful SCCM site upgrade to the latest production version.">
+  <header class="article-header">
+    <h1>SCCM Migration to Latest Version</h1>
+    <p class="dek">A technical blueprint for upgrading Microsoft Endpoint Configuration Manager (MECM) to ensure modern feature set integration and security compliance.</p>
+    <p class="meta">By Akash Nagapure · August 2026 · 7 min read</p>
+  </header>
+  <div class="prose">
+    <h2>Pre-Upgrade Assessment & Readiness</h2>
+    <p>Before initiating any console upgrade, verify site database compatibility, Windows Server OS baselines, and SQL Server versions. Review the upgrade checklist in the console and test connectivity across all primary and secondary sites.</p>
+    <h2>Handling Content and Client Agents</h2>
+    <p>Plan your client agent rollout strategy using pre-production collections. Ensure boundary groups and distribution point configurations remain stable during the site server transition to avoid packet loss or download failures.</p>
+    <h2>Post-Upgrade Validation</h2>
+    <p>Monitor `ccmsetup.log`, `distmgr.log`, and `sitecomp.log` post-upgrade to confirm all site components, management points, and fallback status points are running the latest build successfully.</p>
+  </div>
+</BlogsLayout>
+<style>
+  .article-header h1 { color:#fff; font-size:clamp(2.5rem,7vw,5.5rem); line-height:1; max-width:12ch; margin:1rem 0; }
+  .dek { font-size:1.15rem; line-height:1.7; max-width:42rem; }
+  .meta { color:#38bdf8; font:.75rem 'JetBrains Mono',monospace; }
+  .prose { max-width:42rem; font-size:1.05rem; line-height:1.8; margin-top:2rem; }
+  .prose h2 { color:#fff; margin-top:2.5rem; }
+</style>

@@ -1,776 +1,1639 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="dark scroll-smooth" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Akash Nagapure | Advanced Academy & Training Tracks</title>
-<meta name="description" content="Explore professional certifications, advanced academy courses, and specialized technical training completed by Akash Nagapure across Microsoft, LinkedIn Learning, Pluralsight, and Udemy." />
-<link rel="canonical" href="https://www.akashnagapure.in/Sub_Pages/courses.html" />
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Akash Nagapure | Advanced Academy & Training Tracks</title>
+        <meta
+            name="description"
+            content="Explore professional certifications, advanced academy courses, and specialized technical training completed by Akash Nagapure across Microsoft, LinkedIn Learning, Pluralsight, and Udemy."
+        />
+        <link
+            rel="canonical"
+            href="https://www.akashnagapure.in/Sub_Pages/courses.html"
+        />
 
-<!-- Open Graph Meta Tags -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.akashnagapure.in/Sub_Pages/courses.html">
-<meta property="og:title" content="Akash Nagapure | Advanced Academy & Training Tracks">
-<meta property="og:description" content="Explore professional certifications and technical training across Microsoft, LinkedIn, Pluralsight, and Udemy.">
-<meta property="og:image" content="https://www.akashnagapure.in/images/Main_Page_Images/hobby_homelab.avif">
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://www.akashnagapure.in/Sub_Pages/courses.html"
+        />
+        <meta
+            property="og:title"
+            content="Akash Nagapure | Advanced Academy & Training Tracks"
+        />
+        <meta
+            property="og:description"
+            content="Explore professional certifications and technical training across Microsoft, LinkedIn, Pluralsight, and Udemy."
+        />
+        <meta
+            property="og:image"
+            content="https://www.akashnagapure.in/images/Main_Page_Images/hobby_homelab.avif"
+        />
 
-<script is:inline src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script is:inline src="https://unpkg.com/lucide@latest"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script
+            is:inline
+            src="https://cdn.tailwindcss.com?plugins=forms,container-queries"
+        ></script>
+        <script is:inline src="https://unpkg.com/lucide@latest"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@700;800&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            is:inline
+            src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+        ></script>
 
-<script is:inline id="tailwind-config">
-    tailwind.config = {
-        darkMode: "class",
-        theme: {
-            extend: {
-                "colors": {
-                    "primary": "#38bdf8",
-                    "primary-glow": "#0ea5e9",
-                    "secondary": "#6366f1",
-                    "surface-container": "#0f172a",
-                    "background": "#020617",
-                    "surface-dim": "#020617"
+        <script is:inline id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#38bdf8",
+                            "primary-glow": "#0ea5e9",
+                            secondary: "#6366f1",
+                            "surface-container": "#0f172a",
+                            background: "#020617",
+                            "surface-dim": "#020617",
+                        },
+                        fontFamily: {
+                            "headline-md": ["Geist", "sans-serif"],
+                            "label-caps": ["JetBrains Mono", "monospace"],
+                            "body-md": ["Inter", "sans-serif"],
+                        },
+                    },
                 },
-                "fontFamily": {
-                    "headline-md": ["Geist", "sans-serif"],
-                    "label-caps": ["JetBrains Mono", "monospace"],
-                    "body-md": ["Inter", "sans-serif"]
-                }
+            };
+        </script>
+
+        <style>
+            html {
+                scroll-padding-top: 100px;
+                scroll-behavior: smooth;
             }
-        }
-    }
-</script>
 
-<style>
-    html { scroll-padding-top: 100px; scroll-behavior: smooth; }
+            ::-webkit-scrollbar {
+                height: 6px;
+                width: 6px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #020617;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(to bottom, #38bdf8, #6366f1);
+                border-radius: 4px;
+            }
 
-    ::-webkit-scrollbar { height: 6px; width: 6px; }
-    ::-webkit-scrollbar-track { background: #020617; }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #38bdf8, #6366f1); border-radius: 4px; }
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
 
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-    /* 3D Glassmorphism Cards */
-    .glass-card-3d {
-        background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(2, 6, 23, 0.95) 100%);
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
-        border: 1px solid rgba(56, 189, 248, 0.18);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9),
+            /* 3D Glassmorphism Cards */
+            .glass-card-3d {
+                background: linear-gradient(
+                    135deg,
+                    rgba(15, 23, 42, 0.85) 0%,
+                    rgba(2, 6, 23, 0.95) 100%
+                );
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                border: 1px solid rgba(56, 189, 248, 0.18);
+                box-shadow:
+                    0 25px 50px -12px rgba(0, 0, 0, 0.9),
                     inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
                     0 0 30px rgba(56, 189, 248, 0.05);
-        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    }
-    .glass-card-3d:hover {
-        border-color: rgba(56, 189, 248, 0.55);
-        box-shadow: 0 40px 70px -15px rgba(56, 189, 248, 0.25),
+                transition:
+                    border-color 0.3s ease,
+                    box-shadow 0.3s ease,
+                    transform 0.3s ease;
+            }
+            .glass-card-3d:hover {
+                border-color: rgba(56, 189, 248, 0.55);
+                box-shadow:
+                    0 40px 70px -15px rgba(56, 189, 248, 0.25),
                     0 0 50px rgba(56, 189, 248, 0.15);
-        transform: translateY(-3px);
-    }
+                transform: translateY(-3px);
+            }
 
-    /* Holographic Glow Accent */
-    .holo-glow {
-        position: relative;
-    }
-    .holo-glow::after {
-        content: '';
-        position: absolute;
-        inset: -2px;
-        background: linear-gradient(45deg, #38bdf8, transparent, #6366f1, transparent, #38bdf8);
-        border-radius: inherit;
-        z-index: -1;
-        opacity: 0.3;
-        filter: blur(12px);
-        transition: opacity 0.3s ease;
-    }
-    .holo-glow:hover::after {
-        opacity: 0.8;
-    }
+            /* Holographic Glow Accent */
+            .holo-glow {
+                position: relative;
+            }
+            .holo-glow::after {
+                content: "";
+                position: absolute;
+                inset: -2px;
+                background: linear-gradient(
+                    45deg,
+                    #38bdf8,
+                    transparent,
+                    #6366f1,
+                    transparent,
+                    #38bdf8
+                );
+                border-radius: inherit;
+                z-index: -1;
+                opacity: 0.3;
+                filter: blur(12px);
+                transition: opacity 0.3s ease;
+            }
+            .holo-glow:hover::after {
+                opacity: 0.8;
+            }
 
-    /* 3D Card Flip Perspective Containers */
-    .flip-card-container {
-      perspective: 1200px;
-    }
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      transform-style: preserve-3d;
-    }
-    .flip-card-container.is-flipped .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-    .flip-card-front, .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      border-radius: 0.75rem;
-    }
-    .flip-card-back {
-      transform: rotateY(180deg);
-    }
+            /* 3D Card Flip Perspective Containers */
+            .flip-card-container {
+                perspective: 1200px;
+            }
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+                transform-style: preserve-3d;
+            }
+            .flip-card-container.is-flipped .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+            .flip-card-front,
+            .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                border-radius: 0.75rem;
+            }
+            .flip-card-back {
+                transform: rotateY(180deg);
+            }
 
-    /* Active Nav Class for Scroll Spy */
-    .nav-link.active-link {
-        color: #38bdf8 !important;
-        border-bottom: 2px solid #38bdf8;
-    }
-</style>
-</head>
-<body class="bg-background text-slate-100 overflow-x-hidden font-body-md selection:bg-sky-500 selection:text-slate-950 min-h-screen flex flex-col justify-between">
+            /* Active Nav Class for Scroll Spy */
+            .nav-link.active-link {
+                color: #38bdf8 !important;
+                border-bottom: 2px solid #38bdf8;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-background text-slate-100 overflow-x-hidden font-body-md selection:bg-sky-500 selection:text-slate-950 min-h-screen flex flex-col justify-between"
+    >
+        <!-- Full-Page 3D Cinematic Particle & Tech Grid Background -->
+        <canvas
+            id="three-bg-canvas"
+            class="fixed inset-0 w-full h-full -z-10 pointer-events-none"
+        ></canvas>
+        <script>
+            let scene,
+                camera,
+                renderer,
+                particlesGeo,
+                particlesMesh,
+                gridHelper;
+            let mouseX = 0,
+                mouseY = 0;
+            let targetX = 0,
+                targetY = 0;
 
-<!-- Full-Page 3D Cinematic Particle & Tech Grid Background -->
-<canvas id="three-bg-canvas" class="fixed inset-0 w-full h-full -z-10 pointer-events-none"></canvas>
-<script>
-  let scene, camera, renderer, particlesGeo, particlesMesh, gridHelper;
-  let mouseX = 0, mouseY = 0;
-  let targetX = 0, targetY = 0;
+            function init3DBackground() {
+                const canvas = document.getElementById("three-bg-canvas");
+                if (!canvas) return;
+                scene = new THREE.Scene();
+                camera = new THREE.PerspectiveCamera(
+                    60,
+                    window.innerWidth / window.innerHeight,
+                    0.1,
+                    1000,
+                );
+                camera.position.z = 50;
 
-  function init3DBackground() {
-    const canvas = document.getElementById('three-bg-canvas');
-    if (!canvas) return;
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 50;
+                renderer = new THREE.WebGLRenderer({
+                    canvas: canvas,
+                    antialias: true,
+                    alpha: true,
+                });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                const count = 3500;
+                particlesGeo = new THREE.BufferGeometry();
+                const positions = new Float32Array(count * 3);
 
-    const count = 3500;
-    particlesGeo = new THREE.BufferGeometry();
-    const positions = new Float32Array(count * 3);
+                for (let i = 0; i < count * 3; i += 3) {
+                    positions[i] = (Math.random() - 0.5) * 500;
+                    positions[i + 1] = (Math.random() - 0.5) * 600;
+                    positions[i + 2] = (Math.random() - 0.5) * 300;
+                }
+                particlesGeo.setAttribute(
+                    "position",
+                    new THREE.BufferAttribute(positions, 3),
+                );
 
-    for (let i = 0; i < count * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 500;
-      positions[i + 1] = (Math.random() - 0.5) * 600;
-      positions[i + 2] = (Math.random() - 0.5) * 300;
-    }
-    particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                const particleMat = new THREE.PointsMaterial({
+                    color: 0x38bdf8,
+                    size: 0.8,
+                    transparent: true,
+                    opacity: 0.9,
+                    blending: THREE.AdditiveBlending,
+                });
 
-    const particleMat = new THREE.PointsMaterial({
-      color: 0x38bdf8,
-      size: 0.8,
-      transparent: true,
-      opacity: 0.9,
-      blending: THREE.AdditiveBlending
-    });
+                particlesMesh = new THREE.Points(particlesGeo, particleMat);
+                scene.add(particlesMesh);
 
-    particlesMesh = new THREE.Points(particlesGeo, particleMat);
-    scene.add(particlesMesh);
+                gridHelper = new THREE.GridHelper(600, 60, 0x0284c7, 0x0f172a);
+                gridHelper.position.y = -100;
+                gridHelper.material.transparent = true;
+                gridHelper.material.opacity = 0.25;
+                scene.add(gridHelper);
 
-    gridHelper = new THREE.GridHelper(600, 60, 0x0284c7, 0x0f172a);
-    gridHelper.position.y = -100;
-    gridHelper.material.transparent = true;
-    gridHelper.material.opacity = 0.25;
-    scene.add(gridHelper);
+                document.addEventListener("mousemove", (event) => {
+                    mouseX = (event.clientX - window.innerWidth / 2) * 0.0005;
+                    mouseY = (event.clientY - window.innerHeight / 2) * 0.0005;
+                });
 
-    document.addEventListener('mousemove', (event) => {
-      mouseX = (event.clientX - window.innerWidth / 2) * 0.0005;
-      mouseY = (event.clientY - window.innerHeight / 2) * 0.0005;
-    });
+                window.addEventListener("resize", () => {
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                });
+            }
 
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-  }
+            let clock = new THREE.Clock();
+            function animate3DBackground() {
+                requestAnimationFrame(animate3DBackground);
+                const elapsedTime = clock.getElapsedTime();
+                targetX += (mouseX - targetX) * 0.05;
+                targetY += (mouseY - targetY) * 0.05;
 
-  let clock = new THREE.Clock();
-  function animate3DBackground() {
-    requestAnimationFrame(animate3DBackground);
-    const elapsedTime = clock.getElapsedTime();
-    targetX += (mouseX - targetX) * 0.05;
-    targetY += (mouseY - targetY) * 0.05;
+                if (particlesMesh) {
+                    particlesMesh.rotation.y = elapsedTime * 0.02 + targetX;
+                    particlesMesh.rotation.x = elapsedTime * 0.01 + targetY;
+                }
+                if (gridHelper) gridHelper.rotation.y = elapsedTime * 0.005;
+                if (renderer && scene && camera) renderer.render(scene, camera);
+            }
 
-    if(particlesMesh) {
-      particlesMesh.rotation.y = elapsedTime * 0.02 + targetX;
-      particlesMesh.rotation.x = elapsedTime * 0.01 + targetY;
-    }
-    if(gridHelper) gridHelper.rotation.y = elapsedTime * 0.005;
-    if (renderer && scene && camera) renderer.render(scene, camera);
-  }
+            window.addEventListener("DOMContentLoaded", () => {
+                init3DBackground();
+                animate3DBackground();
+            });
+        </script>
 
-  window.addEventListener('DOMContentLoaded', () => {
-    init3DBackground();
-    animate3DBackground();
-  });
-</script>
-
-<!-- Navigation Shell with Platform Categories & Search Bar in Top Menu -->
-<nav class="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-xl border-b border-sky-500/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 gap-4">
-      <a href="../../index.html" class="flex items-center space-x-3 group cursor-pointer flex-shrink-0">
-        <div class="h-9 w-auto flex items-center justify-center shrink-0 bg-transparent overflow-hidden filter drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]">
-          <img src="/Main_page_data/Logo.avif" alt="Logo" width="36" height="30" class="h-full w-auto object-contain logo-vibrant" onerror="this.onerror=null; this.src='/Main_page_data/placeholder.gif';" />
-        </div>
-        <div class="flex flex-col">
-          <span class="font-sans font-bold text-base text-white tracking-tight leading-none">Akash Nagapure</span>
-          <span class="font-mono text-[9px] text-sky-400 font-medium tracking-widest whitespace-nowrap mt-1">Courses & Academy Hub</span>
-        </div>
-      </a>
-
-      <!-- Platform Categories & Search Bar on Top Menu with .nav-link for Scroll Spy -->
-      <div class="hidden xl:flex items-center space-x-3 overflow-x-auto no-scrollbar py-1" id="nav-menu">
-        <a href="../../index.html" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all whitespace-nowrap">Home</a>
-        <a href="#microsoft" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link">Microsoft</a>
-        <a href="#linkedin" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link">LinkedIn</a>
-        <a href="#pluralsight" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link">Pluralsight</a>
-        <a href="#udemy" class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link">Udemy</a>
-
-        <!-- Top Menu Search Input -->
-        <div class="relative ml-2">
-          <span class="absolute inset-y-0 left-0 flex items-center pl-2.5 pointer-events-none text-slate-400">
-            <span class="material-symbols-outlined text-sm">search</span>
-          </span>
-          <input type="text" id="course-search-top" oninput="filterCourses(this.value)" placeholder="Search courses..." class="w-48 pl-8 pr-3 py-1.5 bg-black/60 border border-sky-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 font-mono text-xs transition-all"/>
-        </div>
-      </div>
-
-      <div class="flex items-center xl:hidden">
-        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Menu">
-          <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
-        </button>
-      </div>
-    </div>
- </div>
-
- <div id="mobile-menu-drawer" class="hidden xl:hidden bg-slate-900/98 border-b border-white/10 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-3 font-mono text-xs">
-    <!-- Mobile Menu Search Bar -->
-    <div class="relative">
-      <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
-        <span class="material-symbols-outlined text-sm">search</span>
-      </span>
-      <input type="text" id="course-search-mobile" oninput="filterCourses(this.value)" placeholder="Search courses..." class="w-full pl-9 pr-3 py-2 bg-black/80 border border-sky-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 text-xs"/>
-    </div>
-    <a href="../../index.html" class="block px-4 py-2.5 rounded-md text-slate-300 hover:bg-slate-800">Home</a>
-    <a href="#microsoft" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800">Microsoft</a>
-    <a href="#linkedin" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800">LinkedIn Learning</a>
-    <a href="#pluralsight" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800">Pluralsight</a>
-    <a href="#udemy" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800">Udemy</a>
- </div>
-</nav>
-
-<!-- Floating WhatsApp Widget with Official Logo -->
-<div class="fixed bottom-6 left-6 z-50 flex items-center group">
-    <a href="https://wa.me/919860457155?text=Hi%20Akash,%20I%20visited%20your%20portfolio%20courses%20page%20and%20would%20like%20to%20connect%20regarding%20technical%20consulting!"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="relative flex items-center justify-center w-12 h-12 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-full shadow-[0_0_25px_rgba(16,185,129,0.5)] hover:scale-110 transition-all duration-300 cursor-pointer"
-       aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24" width="24" height="24" class="w-6 h-6 fill-current text-slate-950">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
-        <span class="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-30 pointer-events-none"></span>
-    </a>
-    <div class="absolute left-16 bg-slate-900/90 border border-emerald-500/30 text-emerald-300 font-mono text-xs px-3 py-1.5 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap backdrop-blur-md">
-        Chat on WhatsApp 👋
-    </div>
-</div>
-
-<!-- Scroll to Top Widget -->
-<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
-    <button onclick="scrollToTop()" class="p-3 bg-sky-400 text-slate-950 hover:bg-sky-300 font-bold rounded-full shadow-2xl transition-all flex items-center justify-center cursor-pointer" aria-label="Scroll to top">
-        <span class="material-symbols-outlined text-xl">arrow_upward</span>
-    </button>
-</div>
-
-<main class="content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 space-y-16 flex-grow w-full">
-
-    <section class="courses-section">
-        <!-- Hero Section -->
-        <div class="glass-card-3d rounded-2xl p-8 sm:p-12 mb-12 relative overflow-hidden holo-glow">
-            <div class="max-w-3xl space-y-4">
-                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-indigo-950 border border-indigo-500/30 rounded-full font-mono text-xs text-indigo-400 uppercase tracking-wider">
-                    Advanced Academy & Training Tracks
-                </div>
-                <h1 class="font-sans text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-                    Completed Courses & Specialized Certifications
-                </h1>
-                <p class="font-sans text-slate-300 text-base sm:text-lg leading-relaxed">
-                    Continuous professional development logs tracking advanced administration modules, cloud infrastructure engineering, and diagnostic problem-solving frameworks. (Click any card to flip for details)
-                </p>
-            </div>
-        </div>
-
-        <!-- COURSES CATEGORIZED BY PLATFORM -->
-        <div class="space-y-16">
-
-            <!-- MICROSOFT TRACK -->
-            <div id="microsoft" class="space-y-6 scroll-mt-32 course-category-block">
-                <div class="flex items-center gap-4 border-b border-indigo-500/30 pb-3">
-                    <span class="material-symbols-outlined text-indigo-400 text-3xl">verified</span>
-                    <h2 class="font-headline-md text-xl sm:text-2xl text-white font-bold">Microsoft Official Workshops & Cert Prep</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-indigo-400 font-bold">MICROSOFT</span><span class="text-slate-400">Jan 2024</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">WorkshopPLUS - Intune and Configuration Manager: Co-Management</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-indigo-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-indigo-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(99,102,241,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Advanced engineering modules focused on co-management attaches, boundary group linking, and shifting legacy configurations straight to Intune.</p>
-                            </div>
+        <!-- Navigation Shell with Platform Categories & Search Bar in Top Menu -->
+        <nav
+            class="fixed top-0 w-full z-50 bg-slate-950/90 backdrop-blur-xl border-b border-sky-500/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16 gap-4">
+                    <a
+                        href="../../index.html"
+                        class="flex items-center space-x-3 group cursor-pointer flex-shrink-0"
+                    >
+                        <div
+                            class="h-9 w-auto flex items-center justify-center shrink-0 bg-transparent overflow-hidden filter drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]"
+                        >
+                            <img
+                                src="/Main_page_data/Logo.avif"
+                                alt="Logo"
+                                width="36"
+                                height="30"
+                                class="h-full w-auto object-contain logo-vibrant"
+                                onerror="this.onerror=null; this.src='/Main_page_data/placeholder.gif';"
+                            />
                         </div>
+                        <div class="flex flex-col">
+                            <span
+                                class="font-sans font-bold text-base text-white tracking-tight leading-none"
+                                >Akash Nagapure</span
+                            >
+                            <span
+                                class="font-mono text-[9px] text-sky-400 font-medium tracking-widest whitespace-nowrap mt-1"
+                                >Courses & Academy Hub</span
+                            >
+                        </div>
+                    </a>
+
+                    <!-- Platform Categories & Search Bar on Top Menu with .nav-link for Scroll Spy -->
+                    <div
+                        class="hidden xl:flex items-center space-x-3 overflow-x-auto no-scrollbar py-1"
+                        id="nav-menu"
+                    >
+                        <a
+                            href="../../index.html"
+                            class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all whitespace-nowrap"
+                            >Home</a
+                        >
+                        <a
+                            href="#microsoft"
+                            class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link"
+                            >Microsoft</a
+                        >
+                        <a
+                            href="#linkedin"
+                            class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link"
+                            >LinkedIn</a
+                        >
+                        <a
+                            href="#pluralsight"
+                            class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link"
+                            >Pluralsight</a
+                        >
+                        <a
+                            href="#udemy"
+                            class="px-3 py-1.5 rounded-md font-sans text-xs font-medium text-slate-300 hover:text-sky-400 transition-all font-mono whitespace-nowrap nav-link"
+                            >Udemy</a
+                        >
+
+                        <!-- Top Menu Search Input -->
+                        <div class="relative ml-2">
+                            <span
+                                class="absolute inset-y-0 left-0 flex items-center pl-2.5 pointer-events-none text-slate-400"
+                            >
+                                <span class="material-symbols-outlined text-sm"
+                                    >search</span
+                                >
+                            </span>
+                            <input
+                                type="text"
+                                id="course-search-top"
+                                oninput="filterCourses(this.value)"
+                                placeholder="Search courses..."
+                                class="w-48 pl-8 pr-3 py-1.5 bg-black/60 border border-sky-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 font-mono text-xs transition-all"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="flex items-center xl:hidden">
+                        <button
+                            id="mobile-menu-btn"
+                            onclick="toggleMobileMenu()"
+                            class="p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none"
+                            aria-label="Toggle Menu"
+                        >
+                            <span
+                                class="material-symbols-outlined text-2xl"
+                                id="menu-icon">menu</span
+                            >
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- LINKEDIN LEARNING TRACK -->
-            <div id="linkedin" class="space-y-6 scroll-mt-32 course-category-block">
-                <div class="flex items-center gap-4 border-b border-indigo-500/30 pb-3">
-                    <span class="material-symbols-outlined text-indigo-400 text-3xl">school</span>
-                    <h2 class="font-headline-md text-xl sm:text-2xl text-white font-bold">LinkedIn Learning Cert Prep & Professional Skills</h2>
+            <div
+                id="mobile-menu-drawer"
+                class="hidden xl:hidden bg-slate-900/98 border-b border-white/10 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-3 font-mono text-xs"
+            >
+                <!-- Mobile Menu Search Bar -->
+                <div class="relative">
+                    <span
+                        class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400"
+                    >
+                        <span class="material-symbols-outlined text-sm"
+                            >search</span
+                        >
+                    </span>
+                    <input
+                        type="text"
+                        id="course-search-mobile"
+                        oninput="filterCourses(this.value)"
+                        placeholder="Search courses..."
+                        class="w-full pl-9 pr-3 py-2 bg-black/80 border border-sky-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 text-xs"
+                    />
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-sky-400 font-bold">LINKEDIN</span><span class="text-slate-400">Dec 2025</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">Microsoft 365 Endpoint Administrator Associate (MD-102) Cert Prep</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-sky-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Official preparation blueprint focused on modern system deployment, software delivery profiles, and global tenant policy enforcement rules.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-sky-400 font-bold">LINKEDIN</span><span class="text-slate-400">Mar 2025</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">Learning Power BI Desktop</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-sky-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Data visualization training built to convert raw server infrastructure logs into interactive real-time patch compliance dashboard grids.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-sky-400 font-bold">LINKEDIN</span><span class="text-slate-400">Jan 2024</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">Problem-Solving Techniques</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-sky-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Systematic diagnostic methodology maps used to map root-cause failures, isolate log metrics, and streamline multi-tier escalation streams.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-sky-400 font-bold">LINKEDIN</span><span class="text-slate-400">Aug 2024</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">MD-102 Cert Prep: 2 Manage Identity and Compliance</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-sky-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Zero-trust access modeling rules targeting Entra ID configuration frameworks, conditional access parameters, and endpoint security baselines.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-sky-400 font-bold">LINKEDIN</span><span class="text-slate-400">Jul 2024</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">Critical Thinking</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-sky-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Logic parsing modules built to eradicate data bias during system debugging routines, improving response times for active live production incidents.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-sky-400 font-bold">LINKEDIN</span><span class="text-slate-400">Jun 2024</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">MD-102 Cert Prep: 1 Deploy Windows Client</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-sky-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Focuses on structural OS provisioning channels, data state preservation profiles, and seamless enterprise image distribution tracks.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-sky-400 font-bold">LINKEDIN</span><span class="text-slate-400">Dec 2023</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">Windows Autopilot Essential Training</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-sky-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Zero-touch onboarding strategies mapping corporate hardware hash data aggregation straight into operational factory configuration frameworks.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-sky-400 font-bold">LINKEDIN</span><span class="text-slate-400">Dec 2023</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">Streamlining Your Work with Copilot</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-sky-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Generative AI prompt design engineering geared toward expediting PowerShell scripting pipelines, rule formatting, and automated code review routines.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-sky-400 font-bold">LINKEDIN</span><span class="text-slate-400">Dec 2023</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">Windows 365: Deploy, Provision, and Manage</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-sky-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Cloud VDI provisioning maps handling network connection configurations, custom system image scaling, and persistent user virtualization workspaces.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a
+                    href="../../index.html"
+                    class="block px-4 py-2.5 rounded-md text-slate-300 hover:bg-slate-800"
+                    >Home</a
+                >
+                <a
+                    href="#microsoft"
+                    onclick="toggleMobileMenu()"
+                    class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800"
+                    >Microsoft</a
+                >
+                <a
+                    href="#linkedin"
+                    onclick="toggleMobileMenu()"
+                    class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800"
+                    >LinkedIn Learning</a
+                >
+                <a
+                    href="#pluralsight"
+                    onclick="toggleMobileMenu()"
+                    class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800"
+                    >Pluralsight</a
+                >
+                <a
+                    href="#udemy"
+                    onclick="toggleMobileMenu()"
+                    class="block px-4 py-2.5 rounded-md text-sky-400 hover:bg-slate-800"
+                    >Udemy</a
+                >
             </div>
+        </nav>
 
-            <!-- TECHNICAL BLOG READING -->
-            <div id="blogs" class="space-y-6 scroll-mt-32 course-category-block">
-                <div class="flex items-center gap-4 border-b border-indigo-500/30 pb-3">
-                    <span class="material-symbols-outlined text-sky-400 text-3xl">article</span>
-                    <h2 class="font-headline-md text-xl sm:text-2xl text-white font-bold">Technical Blog Reading</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2"><span class="text-sky-400 font-bold text-xs font-mono">TECHNICAL BLOG</span><h3 class="text-white font-sans font-bold text-base">Intune Security Baselines: A Practical Starting Point</h3></div>
-                                <a href="Blogs/Intune-baselines.html" class="text-sky-400 font-mono text-xs">Read article →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2"><span class="text-sky-400 font-bold text-xs font-mono">TECHNICAL BLOG</span><h3 class="text-white font-sans font-bold text-base">SCCM to Intune: Planning the Migration</h3></div>
-                                <a href="Blogs/SCCM-migration.html" class="text-sky-400 font-mono text-xs">Read article →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2"><span class="text-sky-400 font-bold text-xs font-mono">TECHNICAL BLOG</span><h3 class="text-white font-sans font-bold text-base">PowerShell Automation for Endpoint Operations</h3></div>
-                                <a href="Blogs/PowerShell-automation.html" class="text-sky-400 font-mono text-xs">Read article →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2"><span class="text-sky-400 font-bold text-xs font-mono">TECHNICAL BLOG</span><h3 class="text-white font-sans font-bold text-base">Windows 365 Cloud PC: Deployment Notes</h3></div>
-                                <a href="Blogs/Windows-365.html" class="text-sky-400 font-mono text-xs">Read article →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PLURAL SIGHT TRACK -->
-            <div id="pluralsight" class="space-y-6 scroll-mt-32 course-category-block">
-                <div class="flex items-center gap-4 border-b border-indigo-500/30 pb-3">
-                    <span class="material-symbols-outlined text-indigo-400 text-3xl">smart_display</span>
-                    <h2 class="font-headline-md text-xl sm:text-2xl text-white font-bold">Pluralsight Cloud Engineering</h2>
-                </div>
-                <p class="text-xs text-slate-400 font-mono italic">Advanced enterprise networking and automation tracks logging in progress.</p>
-            </div>
-
-            <!-- UDEMY TRACK -->
-            <div id="udemy" class="space-y-6 scroll-mt-32 course-category-block">
-                <div class="flex items-center gap-4 border-b border-indigo-500/30 pb-3">
-                    <span class="material-symbols-outlined text-indigo-400 text-3xl">play_lesson</span>
-                    <h2 class="font-headline-md text-xl sm:text-2xl text-white font-bold">Udemy Advanced Technical Tracks</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-amber-400 font-bold">UDEMY</span><span class="text-slate-400">April 2026</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">Azure Deep Dive : Complete Virtual Machine (VM) Course</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-amber-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-amber-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(245,158,11,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Comprehensive track covering compute topologies, high-availability architecture across availability zones, and secure hypervisor baselines.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card-container h-[220px] cursor-pointer course-card" onclick="this.classList.toggle('is-flipped')">
-                        <div class="flip-card-inner w-full h-full">
-                            <div class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full">
-                                <div class="space-y-2">
-                                    <div class="flex items-center justify-between text-xs font-mono"><span class="text-amber-400 font-bold">UDEMY</span><span class="text-slate-400">Mar 2024</span></div>
-                                    <h3 class="text-white font-sans font-bold text-base line-clamp-2">Microsoft Endpoint Configuration Manager (MECM) Training</h3>
-                                </div>
-                                <span class="font-mono text-[10px] text-amber-400">Click to flip for details →</span>
-                            </div>
-                            <div class="flip-card-back bg-slate-900 border border-amber-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(245,158,11,0.3)]">
-                                <p class="text-slate-300 text-xs leading-relaxed">Mastery course tracking boundaries, deployment task sequences, SCCM packaging pipelines, and site client synchronization optimization.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- No Search Results State -->
-        <div id="no-search-results" class="hidden text-center py-12">
-            <p class="text-slate-400 font-mono text-sm">No courses or certifications found matching your search.</p>
-        </div>
-    </section>
-
-    <!-- THREADED DISCUSSION & COMMENTS SECTION (Wired to Serverless Neon API) -->
-    <section id="discussion" class="scroll-mt-28 border-t border-sky-500/20 pt-14 mt-16 space-y-8">
-        <div class="flex items-center gap-4">
-            <h2 class="font-headline-md text-xl sm:text-2xl text-sky-400 italic tracking-tight font-bold">COURSES Q&amp;A &amp; DISCUSSION</h2>
-            <div class="h-px flex-grow bg-white/10"></div>
-        </div>
-
-        <form id="comment-form" class="glass-card-3d p-6 sm:p-8 rounded-2xl border border-sky-500/30 space-y-5 shadow-2xl">
-            <h3 class="text-lg font-semibold text-sky-300 tracking-tight font-mono">Ask About Certifications or Training</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" id="author" placeholder="Your Name / Handle *" required class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono" />
-                <input type="email" id="email" placeholder="Your Email Address *" required class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono" />
-            </div>
-            <div>
-                <textarea id="content" rows="3" placeholder="Leave a comment or question about any certification track..." required class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm"></textarea>
-            </div>
-            <button type="submit" id="submit-btn" class="px-6 py-3 bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950 font-bold rounded-xl transition-all disabled:opacity-50 text-sm shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-105 cursor-pointer font-mono">
-                Post Comment
-            </button>
-        </form>
-
-        <div id="comments-container" class="space-y-6">
-            <p class="text-slate-500 text-sm font-mono">Loading discussion...</p>
-        </div>
-    </section>
-
-</main>
-
-<footer class="w-full py-6 sm:py-8 bg-surface-dim border-t border-sky-500/20 text-center relative z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
-    <div class="flex flex-col items-center justify-center text-center w-full px-4 gap-2.5 max-w-7xl mx-auto">
-        <div class="flex items-center gap-2.5">
-            <div class="w-7 h-7 rounded-lg flex items-center justify-center bg-black border border-purple-500/50 p-1 shadow-[0_0_12px_rgba(168,85,247,0.4)]">
-                <svg viewBox="0 0 100 100" class="w-full h-full object-contain">
-                    <path d="M25 75 L45 25 L55 25 L75 75 M32 58 L68 58 M70 25 L75 75 L80 35" fill="none" stroke="#a855f7" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Floating WhatsApp Widget with Official Logo -->
+        <div class="fixed bottom-6 left-6 z-50 flex items-center group">
+            <a
+                href="https://wa.me/919860457155?text=Hi%20Akash,%20I%20visited%20your%20portfolio%20courses%20page%20and%20would%20like%20to%20connect%20regarding%20technical%20consulting!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="relative flex items-center justify-center w-12 h-12 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-full shadow-[0_0_25px_rgba(16,185,129,0.5)] hover:scale-110 transition-all duration-300 cursor-pointer"
+                aria-label="Chat on WhatsApp"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    class="w-6 h-6 fill-current text-slate-950"
+                >
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                    ></path>
                 </svg>
+                <span
+                    class="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-30 pointer-events-none"
+                ></span>
+            </a>
+            <div
+                class="absolute left-16 bg-slate-900/90 border border-emerald-500/30 text-emerald-300 font-mono text-xs px-3 py-1.5 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap backdrop-blur-md"
+            >
+                Chat on WhatsApp 👋
             </div>
-            <span class="font-sans font-extrabold text-sm text-white tracking-tight">Akash Nagapure</span>
         </div>
 
-        <!-- Footer Links with Matching Icons -->
-        <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400">
-            <a href="https://www.linkedin.com/in/anagapure" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">share</span> LinkedIn
-            </a>
-            <span>•</span>
-            <a href="mailto:akashnagapure@live.com" class="hover:text-sky-400 transition-colors flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">mail</span> Contact Mail
-            </a>
-            <span>•</span>
-            <a href="../Sub_Pages/privacy.html" class="hover:text-sky-400 transition-colors flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">privacy_tip</span> Privacy Policy
-            </a>
-            <span>•</span>
-            <a href="../Sub_Pages/terms.html" class="hover:text-sky-400 transition-colors flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">description</span> Terms of Service
-            </a>
+        <!-- Scroll to Top Widget -->
+        <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+            <button
+                onclick="scrollToTop()"
+                class="p-3 bg-sky-400 text-slate-950 hover:bg-sky-300 font-bold rounded-full shadow-2xl transition-all flex items-center justify-center cursor-pointer"
+                aria-label="Scroll to top"
+            >
+                <span class="material-symbols-outlined text-xl"
+                    >arrow_upward</span
+                >
+            </button>
         </div>
 
-        <span class="font-mono text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5">© 2026. All Rights Reserved. Engineered with Precision.</span>
-    </div>
-</footer>
+        <main
+            class="content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 space-y-16 flex-grow w-full"
+        >
+            <section class="courses-section">
+                <!-- Hero Section -->
+                <div
+                    class="glass-card-3d rounded-2xl p-8 sm:p-12 mb-12 relative overflow-hidden holo-glow"
+                >
+                    <div class="max-w-3xl space-y-4">
+                        <div
+                            class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-indigo-950 border border-indigo-500/30 rounded-full font-mono text-xs text-indigo-400 uppercase tracking-wider"
+                        >
+                            Advanced Academy & Training Tracks
+                        </div>
+                        <h1
+                            class="font-sans text-3xl sm:text-5xl font-extrabold text-white tracking-tight"
+                        >
+                            Completed Courses & Specialized Certifications
+                        </h1>
+                        <p
+                            class="font-sans text-slate-300 text-base sm:text-lg leading-relaxed"
+                        >
+                            Continuous professional development logs tracking
+                            advanced administration modules, cloud
+                            infrastructure engineering, and diagnostic
+                            problem-solving frameworks. (Click any card to flip
+                            for details)
+                        </p>
+                    </div>
+                </div>
 
-<script>
-    if (window.lucide) lucide.createIcons();
+                <!-- COURSES CATEGORIZED BY PLATFORM -->
+                <div class="space-y-16">
+                    <!-- MICROSOFT TRACK -->
+                    <div
+                        id="microsoft"
+                        class="space-y-6 scroll-mt-32 course-category-block"
+                    >
+                        <div
+                            class="flex items-center gap-4 border-b border-indigo-500/30 pb-3"
+                        >
+                            <span
+                                class="material-symbols-outlined text-indigo-400 text-3xl"
+                                >verified</span
+                            >
+                            <h2
+                                class="font-headline-md text-xl sm:text-2xl text-white font-bold"
+                            >
+                                Microsoft Official Workshops & Cert Prep
+                            </h2>
+                        </div>
 
-    const ARTICLE_ID = 'courses';
-    const API_URL = '/api/comments';
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        >
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-indigo-400 font-bold"
+                                                    >MICROSOFT</span
+                                                ><span class="text-slate-400"
+                                                    >Jan 2024</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                WorkshopPLUS - Intune and
+                                                Configuration Manager:
+                                                Co-Management
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-indigo-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-indigo-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(99,102,241,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Advanced engineering modules focused
+                                            on co-management attaches, boundary
+                                            group linking, and shifting legacy
+                                            configurations straight to Intune.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    // Embedded Vote Manager to guarantee local storage persistence
-    const VOTE_MANAGER = {
-        getVoteKey(articleId) {
-            return `votes_${articleId}_${this.getUserId()}`;
-        },
-        getUserId() {
-            let userId = localStorage.getItem('portfolio_user_id');
-            if (!userId) {
-                userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-                localStorage.setItem('portfolio_user_id', userId);
-            }
-            return userId;
-        },
-        hasVoted(articleId, commentId, action) {
-            const votes = JSON.parse(localStorage.getItem(this.getVoteKey(articleId)) || '{}');
-            return votes[`${commentId}_${action}`] === true;
-        },
-        recordVote(articleId, commentId, action) {
-            const votes = JSON.parse(localStorage.getItem(this.getVoteKey(articleId)) || '{}');
-            votes[`${commentId}_${action}`] = true;
-            localStorage.setItem(this.getVoteKey(articleId), JSON.stringify(votes));
-        },
-        clearVote(articleId, commentId, action) {
-            const votes = JSON.parse(localStorage.getItem(this.getVoteKey(articleId)) || '{}');
-            delete votes[`${commentId}_${action}`];
-            localStorage.setItem(this.getVoteKey(articleId), JSON.stringify(votes));
-        }
-    };
+                    <!-- LINKEDIN LEARNING TRACK -->
+                    <div
+                        id="linkedin"
+                        class="space-y-6 scroll-mt-32 course-category-block"
+                    >
+                        <div
+                            class="flex items-center gap-4 border-b border-indigo-500/30 pb-3"
+                        >
+                            <span
+                                class="material-symbols-outlined text-indigo-400 text-3xl"
+                                >school</span
+                            >
+                            <h2
+                                class="font-headline-md text-xl sm:text-2xl text-white font-bold"
+                            >
+                                LinkedIn Learning Cert Prep & Professional
+                                Skills
+                            </h2>
+                        </div>
 
-    // Synchronized Course Search Filter Function for both Top & Mobile Search inputs
-    function filterCourses(query) {
-        const filter = query.toLowerCase().trim();
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        >
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-sky-400 font-bold"
+                                                    >LINKEDIN</span
+                                                ><span class="text-slate-400"
+                                                    >Dec 2025</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                Microsoft 365 Endpoint
+                                                Administrator Associate (MD-102)
+                                                Cert Prep
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-sky-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Official preparation blueprint
+                                            focused on modern system deployment,
+                                            software delivery profiles, and
+                                            global tenant policy enforcement
+                                            rules.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-        const topInput = document.getElementById('course-search-top');
-        const mobileInput = document.getElementById('course-search-mobile');
-        if (topInput && topInput.value !== query) topInput.value = query;
-        if (mobileInput && mobileInput.value !== query) mobileInput.value = query;
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-sky-400 font-bold"
+                                                    >LINKEDIN</span
+                                                ><span class="text-slate-400"
+                                                    >Mar 2025</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                Learning Power BI Desktop
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-sky-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Data visualization training built to
+                                            convert raw server infrastructure
+                                            logs into interactive real-time
+                                            patch compliance dashboard grids.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-        const categoryBlocks = document.querySelectorAll('.course-category-block');
-        let totalVisibleCards = 0;
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-sky-400 font-bold"
+                                                    >LINKEDIN</span
+                                                ><span class="text-slate-400"
+                                                    >Jan 2024</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                Problem-Solving Techniques
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-sky-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Systematic diagnostic methodology
+                                            maps used to map root-cause
+                                            failures, isolate log metrics, and
+                                            streamline multi-tier escalation
+                                            streams.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-        categoryBlocks.forEach(block => {
-            const cards = block.querySelectorAll('.course-card');
-            let blockVisibleCount = 0;
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-sky-400 font-bold"
+                                                    >LINKEDIN</span
+                                                ><span class="text-slate-400"
+                                                    >Aug 2024</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                MD-102 Cert Prep: 2 Manage
+                                                Identity and Compliance
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-sky-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Zero-trust access modeling rules
+                                            targeting Entra ID configuration
+                                            frameworks, conditional access
+                                            parameters, and endpoint security
+                                            baselines.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-            cards.forEach(card => {
-                const text = card.innerText.toLowerCase();
-                if (text.includes(filter)) {
-                    card.style.display = '';
-                    blockVisibleCount++;
-                    totalVisibleCards++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-sky-400 font-bold"
+                                                    >LINKEDIN</span
+                                                ><span class="text-slate-400"
+                                                    >Jul 2024</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                Critical Thinking
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-sky-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Logic parsing modules built to
+                                            eradicate data bias during system
+                                            debugging routines, improving
+                                            response times for active live
+                                            production incidents.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-            if (blockVisibleCount === 0) {
-                block.style.display = 'none';
-            } else {
-                block.style.display = '';
-            }
-        });
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-sky-400 font-bold"
+                                                    >LINKEDIN</span
+                                                ><span class="text-slate-400"
+                                                    >Jun 2024</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                MD-102 Cert Prep: 1 Deploy
+                                                Windows Client
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-sky-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Focuses on structural OS
+                                            provisioning channels, data state
+                                            preservation profiles, and seamless
+                                            enterprise image distribution
+                                            tracks.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-        const noResultsMsg = document.getElementById('no-search-results');
-        if (noResultsMsg) {
-            if (totalVisibleCards === 0) {
-                noResultsMsg.classList.remove('hidden');
-            } else {
-                noResultsMsg.classList.add('hidden');
-            }
-        }
-    }
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-sky-400 font-bold"
+                                                    >LINKEDIN</span
+                                                ><span class="text-slate-400"
+                                                    >Dec 2023</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                Windows Autopilot Essential
+                                                Training
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-sky-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Zero-touch onboarding strategies
+                                            mapping corporate hardware hash data
+                                            aggregation straight into
+                                            operational factory configuration
+                                            frameworks.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-    async function loadComments() {
-        const container = document.getElementById('comments-container');
-        try {
-            const response = await fetch(`${API_URL}?article_id=${encodeURIComponent(ARTICLE_ID)}`);
-            const comments = await response.json();
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-sky-400 font-bold"
+                                                    >LINKEDIN</span
+                                                ><span class="text-slate-400"
+                                                    >Dec 2023</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                Streamlining Your Work with
+                                                Copilot
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-sky-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Generative AI prompt design
+                                            engineering geared toward expediting
+                                            PowerShell scripting pipelines, rule
+                                            formatting, and automated code
+                                            review routines.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
-            if (!response.ok) throw new Error();
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-sky-400 font-bold"
+                                                    >LINKEDIN</span
+                                                ><span class="text-slate-400"
+                                                    >Dec 2023</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                Windows 365: Deploy, Provision,
+                                                and Manage
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-sky-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-sky-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(56,189,248,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Cloud VDI provisioning maps handling
+                                            network connection configurations,
+                                            custom system image scaling, and
+                                            persistent user virtualization
+                                            workspaces.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            if (!comments || comments.length === 0) {
-                container.innerHTML = '<p class="text-slate-500 text-sm font-mono">No comments yet. Be the first to start the discussion!</p>';
-                return;
-            }
+                    <!-- TECHNICAL BLOG READING -->
+                    <div
+                        id="blogs"
+                        class="space-y-6 scroll-mt-32 course-category-block"
+                    >
+                        <div
+                            class="flex items-center gap-4 border-b border-indigo-500/30 pb-3"
+                        >
+                            <span
+                                class="material-symbols-outlined text-sky-400 text-3xl"
+                                >article</span
+                            >
+                            <h2
+                                class="font-headline-md text-xl sm:text-2xl text-white font-bold"
+                            >
+                                Technical Blog Reading
+                            </h2>
+                        </div>
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                        >
+                            <!-- Tile 1 -->
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <span
+                                                class="text-sky-400 font-bold text-xs font-mono"
+                                                >TECHNICAL BLOG</span
+                                            >
+                                            <h3
+                                                class="text-white font-sans font-bold text-sm line-clamp-3"
+                                            >
+                                                SCCM Migration to Latest Version
+                                            </h3>
+                                        </div>
+                                        <a
+                                            href="Blogs/sccm-latest-migration.html"
+                                            class="text-sky-400 font-mono text-xs hover:underline"
+                                            >Read article →</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tile 2 -->
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <span
+                                                class="text-sky-400 font-bold text-xs font-mono"
+                                                >TECHNICAL BLOG</span
+                                            >
+                                            <h3
+                                                class="text-white font-sans font-bold text-sm line-clamp-3"
+                                            >
+                                                PowerShell Script to Add Users
+                                                in Intune Group
+                                            </h3>
+                                        </div>
+                                        <a
+                                            href="Blogs/powershell-intune-users.html"
+                                            class="text-sky-400 font-mono text-xs hover:underline"
+                                            >Read article →</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tile 3 -->
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <span
+                                                class="text-sky-400 font-bold text-xs font-mono"
+                                                >TECHNICAL BLOG</span
+                                            >
+                                            <h3
+                                                class="text-white font-sans font-bold text-sm line-clamp-3"
+                                            >
+                                                Windows 365 Enterprise
+                                                Deployment Guide
+                                            </h3>
+                                        </div>
+                                        <a
+                                            href="Blogs/windows-365-deployment.html"
+                                            class="text-sky-400 font-mono text-xs hover:underline"
+                                            >Read article →</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tile 4 -->
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <span
+                                                class="text-sky-400 font-bold text-xs font-mono"
+                                                >TECHNICAL BLOG</span
+                                            >
+                                            <h3
+                                                class="text-white font-sans font-bold text-sm line-clamp-3"
+                                            >
+                                                Intune Security Baselines: A
+                                                Practical Starting Point
+                                            </h3>
+                                        </div>
+                                        <a
+                                            href="Blogs/intune-baselines.html"
+                                            class="text-sky-400 font-mono text-xs hover:underline"
+                                            >Read article →</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            const commentMap = {};
-            const topLevelComments = [];
+                    <!-- PLURAL SIGHT TRACK -->
+                    <div
+                        id="pluralsight"
+                        class="space-y-6 scroll-mt-32 course-category-block"
+                    >
+                        <div
+                            class="flex items-center gap-4 border-b border-indigo-500/30 pb-3"
+                        >
+                            <span
+                                class="material-symbols-outlined text-indigo-400 text-3xl"
+                                >smart_display</span
+                            >
+                            <h2
+                                class="font-headline-md text-xl sm:text-2xl text-white font-bold"
+                            >
+                                Pluralsight Cloud Engineering
+                            </h2>
+                        </div>
+                        <p class="text-xs text-slate-400 font-mono italic">
+                            Advanced enterprise networking and automation tracks
+                            logging in progress.
+                        </p>
+                    </div>
 
-            comments.forEach(comment => {
-                comment.replies = [];
-                commentMap[comment.id] = comment;
-                if (comment.parent_id) {
-                    if (commentMap[comment.parent_id]) {
-                        commentMap[comment.parent_id].replies.push(comment);
-                    }
-                } else {
-                    topLevelComments.push(comment);
-                }
-            });
+                    <!-- UDEMY TRACK -->
+                    <div
+                        id="udemy"
+                        class="space-y-6 scroll-mt-32 course-category-block"
+                    >
+                        <div
+                            class="flex items-center gap-4 border-b border-indigo-500/30 pb-3"
+                        >
+                            <span
+                                class="material-symbols-outlined text-indigo-400 text-3xl"
+                                >play_lesson</span
+                            >
+                            <h2
+                                class="font-headline-md text-xl sm:text-2xl text-white font-bold"
+                            >
+                                Udemy Advanced Technical Tracks
+                            </h2>
+                        </div>
 
-            container.innerHTML = topLevelComments.map(comment => renderCommentNode(comment)).join('');
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        >
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-amber-400 font-bold"
+                                                    >UDEMY</span
+                                                ><span class="text-slate-400"
+                                                    >April 2026</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                Azure Deep Dive : Complete
+                                                Virtual Machine (VM) Course
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-amber-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-amber-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Comprehensive track covering compute
+                                            topologies, high-availability
+                                            architecture across availability
+                                            zones, and secure hypervisor
+                                            baselines.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flip-card-container h-[220px] cursor-pointer course-card"
+                                onclick="this.classList.toggle('is-flipped')"
+                            >
+                                <div class="flip-card-inner w-full h-full">
+                                    <div
+                                        class="flip-card-front glass-card-3d p-6 rounded-xl flex flex-col justify-between h-full"
+                                    >
+                                        <div class="space-y-2">
+                                            <div
+                                                class="flex items-center justify-between text-xs font-mono"
+                                            >
+                                                <span
+                                                    class="text-amber-400 font-bold"
+                                                    >UDEMY</span
+                                                ><span class="text-slate-400"
+                                                    >Mar 2024</span>
+                                            </div>
+                                            <h3
+                                                class="text-white font-sans font-bold text-base line-clamp-2"
+                                            >
+                                                Microsoft Endpoint Configuration
+                                                Manager (MECM) Training
+                                            </h3>
+                                        </div>
+                                        <span
+                                            class="font-mono text-[10px] text-amber-400"
+                                            >Click to flip for details →</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flip-card-back bg-slate-900 border border-amber-400 p-6 rounded-xl flex flex-col justify-center text-center h-full shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+                                    >
+                                        <p
+                                            class="text-slate-300 text-xs leading-relaxed"
+                                        >
+                                            Mastery course tracking boundaries,
+                                            deployment task sequences, SCCM
+                                            packaging pipelines, and site client
+                                            synchronization optimization.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No Search Results State -->
+                <div id="no-search-results" class="hidden text-center py-12">
+                    <p class="text-slate-400 font-mono text-sm">
+                        No courses or certifications found matching your search.
+                    </p>
+                </div>
+            </section>
+
+            <!-- THREADED DISCUSSION & COMMENTS SECTION (Wired to Serverless Neon API) -->
+            <section
+                id="discussion"
+                class="scroll-mt-28 border-t border-sky-500/20 pt-14 mt-16 space-y-8"
+            >
+                <div class="flex items-center gap-4">
+                    <h2
+                        class="font-headline-md text-xl sm:text-2xl text-sky-400 italic tracking-tight font-bold"
+                    >
+                        COURSES Q&amp;A &amp; DISCUSSION
+                    </h2>
+                    <div class="h-px flex-grow bg-white/10"></div>
+                </div>
+
+                <form
+                    id="comment-form"
+                    class="glass-card-3d p-6 sm:p-8 rounded-2xl border border-sky-500/30 space-y-5 shadow-2xl"
+                >
+                    <h3
+                        class="text-lg font-semibold text-sky-300 tracking-tight font-mono"
+                    >
+                        Ask About Certifications or Training
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input
+                            type="text"
+                            id="author"
+                            placeholder="Your Name / Handle *"
+                            required
+                            class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono"
+                        />
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Your Email Address *"
+                            required
+                            class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm font-mono"
+                        />
+                    </div>
+                    <div>
+                        <textarea
+                            id="content"
+                            rows="3"
+                            placeholder="Leave a comment or question about any certification track..."
+                            required
+                            class="w-full p-3.5 bg-black/60 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm"
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        id="submit-btn"
+                        class="px-6 py-3 bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950 font-bold rounded-xl transition-all disabled:opacity-50 text-sm shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:scale-105 cursor-pointer font-mono"
+                    >
+                        Post Comment
+                    </button>
+                </form>
+
+                <div id="comments-container" class="space-y-6">
+                    <p class="text-slate-500 text-sm font-mono">
+                        Loading discussion...
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer
+            class="w-full py-6 sm:py-8 bg-surface-dim border-t border-sky-500/20 text-center relative z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]"
+        >
+            <div
+                class="flex flex-col items-center justify-center text-center w-full px-4 gap-2.5 max-w-7xl mx-auto"
+            >
+                <div class="flex items-center gap-2.5">
+                    <div
+                        class="w-7 h-7 rounded-lg flex items-center justify-center bg-black border border-purple-500/50 p-1 shadow-[0_0_12px_rgba(168,85,247,0.4)]"
+                    >
+                        <svg
+                            viewBox="0 0 100 100"
+                            class="w-full h-full object-contain"
+                        >
+                            <path
+                                d="M25 75 L45 25 L55 25 L75 75 M32 58 L68 58 M70 25 L75 75 L80 35"
+                                fill="none"
+                                stroke="#a855f7"
+                                stroke-width="10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <span
+                        class="font-sans font-extrabold text-sm text-white tracking-tight"
+                        >Akash Nagapure</span
+                    >
+                </div>
+
+                <!-- Footer Links with Matching Icons -->
+                <div
+                    class="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400"
+                >
+                    <a
+                        href="https://www.linkedin.com/in/anagapure"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-sky-400 transition-colors flex items-center gap-1"
+                    >
+                        <span class="material-symbols-outlined text-sm"
+                            >share</span
+                        > LinkedIn
+                    </a>
+                    <span>•</span>
+                    <a
+                        href="mailto:akashnagapure@live.com"
+                        class="hover:text-sky-400 transition-colors flex items-center gap-1"
+                    >
+                        <span class="material-symbols-outlined text-sm"
+                            >mail</span
+                        > Contact Mail
+                    </a>
+                    <span>•</span>
+                    <a
+                        href="../Sub_Pages/privacy.html"
+                        class="hover:text-sky-400 transition-colors flex items-center gap-1"
+                    >
+                        <span class="material-symbols-outlined text-sm"
+                            >privacy_tip</span
+                        > Privacy Policy
+                    </a>
+                    <span>•</span>
+                    <a
+                        href="../Sub_Pages/terms.html"
+                        class="hover:text-sky-400 transition-colors flex items-center gap-1"
+                    >
+                        <span class="material-symbols-outlined text-sm"
+                            >description</span
+                        > Terms of Service
+                    </a>
+                </div>
+
+                <span
+                    class="font-mono text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5"
+                    >© 2026. All Rights Reserved. Engineered with Precision.</span
+                >
+            </div>
+        </footer>
+
+        <script>
             if (window.lucide) lucide.createIcons();
-        } catch (err) {
-            container.innerHTML = '<p class="text-slate-400 text-sm font-mono">No active comment server detected. Discussion thread initialized locally.</p>';
-        }
-    }
 
-    function renderCommentNode(comment) {
-        const formattedDate = comment.created_at ? new Date(comment.created_at).toLocaleString('en-US', {
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric',
-            hour: 'numeric',
-            minute: '2-digit',
-            hour12: true
-        }) : 'Just now';
+            const ARTICLE_ID = "courses";
+            const API_URL = "/api/comments";
 
-        const repliesHTML = comment.replies && comment.replies.length > 0
-            ? `<div class="mt-4 pl-4 md:pl-6 border-l-2 border-sky-500/20 space-y-4">
-                ${comment.replies.map(reply => renderCommentNode(reply)).join('')}
+            // Embedded Vote Manager to guarantee local storage persistence
+            const VOTE_MANAGER = {
+                getVoteKey(articleId) {
+                    return `votes_${articleId}_${this.getUserId()}`;
+                },
+                getUserId() {
+                    let userId = localStorage.getItem("portfolio_user_id");
+                    if (!userId) {
+                        userId =
+                            "user_" +
+                            Date.now() +
+                            "_" +
+                            Math.random().toString(36).substr(2, 9);
+                        localStorage.setItem("portfolio_user_id", userId);
+                    }
+                    return userId;
+                },
+                hasVoted(articleId, commentId, action) {
+                    const votes = JSON.parse(
+                        localStorage.getItem(this.getVoteKey(articleId)) ||
+                            "{}",
+                    );
+                    return votes[`${commentId}_${action}`] === true;
+                },
+                recordVote(articleId, commentId, action) {
+                    const votes = JSON.parse(
+                        localStorage.getItem(this.getVoteKey(articleId)) ||
+                            "{}",
+                    );
+                    votes[`${commentId}_${action}`] = true;
+                    localStorage.setItem(
+                        this.getVoteKey(articleId),
+                        JSON.stringify(votes),
+                    );
+                },
+                clearVote(articleId, commentId, action) {
+                    const votes = JSON.parse(
+                        localStorage.getItem(this.getVoteKey(articleId)) ||
+                            "{}",
+                    );
+                    delete votes[`${commentId}_${action}`];
+                    localStorage.setItem(
+                        this.getVoteKey(articleId),
+                        JSON.stringify(votes),
+                    );
+                },
+            };
+
+            // Synchronized Course Search Filter Function for both Top & Mobile Search inputs
+            function filterCourses(query) {
+                const filter = query.toLowerCase().trim();
+
+                const topInput = document.getElementById("course-search-top");
+                const mobileInput = document.getElementById(
+                    "course-search-mobile",
+                );
+                if (topInput && topInput.value !== query)
+                    topInput.value = query;
+                if (mobileInput && mobileInput.value !== query)
+                    mobileInput.value = query;
+
+                const categoryBlocks = document.querySelectorAll(
+                    ".course-category-block",
+                );
+                let totalVisibleCards = 0;
+
+                categoryBlocks.forEach((block) => {
+                    const cards = block.querySelectorAll(".course-card");
+                    let blockVisibleCount = 0;
+
+                    cards.forEach((card) => {
+                        const text = card.innerText.toLowerCase();
+                        if (text.includes(filter)) {
+                            card.style.display = "";
+                            blockVisibleCount++;
+                            totalVisibleCards++;
+                        } else {
+                            card.style.display = "none";
+                        }
+                    });
+
+                    if (blockVisibleCount === 0) {
+                        block.style.display = "none";
+                    } else {
+                        block.style.display = "";
+                    }
+                });
+
+                const noResultsMsg =
+                    document.getElementById("no-search-results");
+                if (noResultsMsg) {
+                    if (totalVisibleCards === 0) {
+                        noResultsMsg.classList.remove("hidden");
+                    } else {
+                        noResultsMsg.classList.add("hidden");
+                    }
+                }
+            }
+
+            async function loadComments() {
+                const container = document.getElementById("comments-container");
+                try {
+                    const response = await fetch(
+                        `${API_URL}?article_id=${encodeURIComponent(ARTICLE_ID)}`,
+                    );
+                    const comments = await response.json();
+
+                    if (!response.ok) throw new Error();
+
+                    if (!comments || comments.length === 0) {
+                        container.innerHTML =
+                            '<p class="text-slate-500 text-sm font-mono">No comments yet. Be the first to start the discussion!</p>';
+                        return;
+                    }
+
+                    const commentMap = {};
+                    const topLevelComments = [];
+
+                    comments.forEach((comment) => {
+                        comment.replies = [];
+                        commentMap[comment.id] = comment;
+                        if (comment.parent_id) {
+                            if (commentMap[comment.parent_id]) {
+                                commentMap[comment.parent_id].replies.push(
+                                    comment,
+                                );
+                            }
+                        } else {
+                            topLevelComments.push(comment);
+                        }
+                    });
+
+                    container.innerHTML = topLevelComments
+                        .map((comment) => renderCommentNode(comment))
+                        .join("");
+                    if (window.lucide) lucide.createIcons();
+                } catch (err) {
+                    container.innerHTML =
+                        '<p class="text-slate-400 text-sm font-mono">No active comment server detected. Discussion thread initialized locally.</p>';
+                }
+            }
+
+            function renderCommentNode(comment) {
+                const formattedDate = comment.created_at
+                    ? new Date(comment.created_at).toLocaleString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                          hour: "numeric",
+                          minute: "2-digit",
+                          hour12: true,
+                      })
+                    : "Just now";
+
+                const repliesHTML =
+                    comment.replies && comment.replies.length > 0
+                        ? `<div class="mt-4 pl-4 md:pl-6 border-l-2 border-sky-500/20 space-y-4">
+                ${comment.replies.map((reply) => renderCommentNode(reply)).join("")}
                </div>`
-            : '';
+                        : "";
 
-        const likedAlready = VOTE_MANAGER.hasVoted(ARTICLE_ID, comment.id, 'like');
-        const dislikedAlready = VOTE_MANAGER.hasVoted(ARTICLE_ID, comment.id, 'dislike');
+                const likedAlready = VOTE_MANAGER.hasVoted(
+                    ARTICLE_ID,
+                    comment.id,
+                    "like",
+                );
+                const dislikedAlready = VOTE_MANAGER.hasVoted(
+                    ARTICLE_ID,
+                    comment.id,
+                    "dislike",
+                );
 
-        const likeClass = likedAlready ? 'opacity-50 pointer-events-none text-emerald-400 border-emerald-500/30' : 'text-slate-400 hover:text-emerald-400';
-        const dislikeClass = dislikedAlready ? 'opacity-50 pointer-events-none text-rose-400 border-rose-500/30' : 'text-slate-400 hover:text-rose-400';
+                const likeClass = likedAlready
+                    ? "opacity-50 pointer-events-none text-emerald-400 border-emerald-500/30"
+                    : "text-slate-400 hover:text-emerald-400";
+                const dislikeClass = dislikedAlready
+                    ? "opacity-50 pointer-events-none text-rose-400 border-rose-500/30"
+                    : "text-slate-400 hover:text-rose-400";
 
-        return `
+                return `
             <div class="p-5 glass-card-3d rounded-2xl border border-slate-800 space-y-3 shadow-xl" id="comment-${comment.id}">
                 <div class="flex items-center justify-between text-xs text-slate-400">
                     <span class="font-bold text-sky-400 text-sm font-mono">${escapeHTML(comment.author)}</span>
@@ -808,133 +1671,171 @@
                 ${repliesHTML}
             </div>
         `;
-    }
-
-    function toggleReplyForm(commentId) {
-        document.getElementById(`reply-form-${commentId}`).classList.toggle('hidden');
-    }
-
-    async function handleVote(event, id, action) {
-        if (VOTE_MANAGER.hasVoted(ARTICLE_ID, id, action)) {
-            alert("You have already voted on this comment!");
-            return;
-        }
-
-        VOTE_MANAGER.recordVote(ARTICLE_ID, id, action);
-
-        const btn = event.currentTarget;
-        if (btn) {
-            btn.classList.add('opacity-50', 'pointer-events-none');
-        }
-
-        try {
-            const res = await fetch(API_URL, {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id, action })
-            });
-            if (res.ok) {
-                await loadComments();
-            } else {
-                VOTE_MANAGER.clearVote(ARTICLE_ID, id, action);
             }
-        } catch (err) {
-            console.error('Failed to vote', err);
-            VOTE_MANAGER.clearVote(ARTICLE_ID, id, action);
-        }
-    }
 
-    async function postReply(parentId) {
-        const author = document.getElementById(`reply-author-${parentId}`).value;
-        const email = document.getElementById(`reply-email-${parentId}`).value;
-        const content = document.getElementById(`reply-content-${parentId}`).value;
-
-        if (!author.trim() || !email.trim() || !content.trim()) {
-            alert('Please fill out all required fields.');
-            return;
-        }
-
-        try {
-            const res = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ author, email, content, parent_id: parentId, article_id: ARTICLE_ID })
-            });
-            if (res.ok) await loadComments();
-        } catch (err) {
-            alert('Network error.');
-        }
-    }
-
-    document.getElementById('comment-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = document.getElementById('submit-btn');
-        const author = document.getElementById('author');
-        const email = document.getElementById('email');
-        const content = document.getElementById('content');
-
-        btn.disabled = true;
-        btn.innerText = 'Posting...';
-
-        try {
-            const res = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ author: author.value, email: email.value, content: content.value, parent_id: null, article_id: ARTICLE_ID })
-            });
-
-            if (res.ok) {
-                author.value = ''; email.value = ''; content.value = '';
-                await loadComments();
+            function toggleReplyForm(commentId) {
+                document
+                    .getElementById(`reply-form-${commentId}`)
+                    .classList.toggle("hidden");
             }
-        } catch (err) {
-            alert('Network error.');
-        } finally {
-            btn.disabled = false;
-            btn.innerText = 'Post Comment';
-        }
-    });
 
-    function escapeHTML(str) {
-        return str.replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag));
-    }
+            async function handleVote(event, id, action) {
+                if (VOTE_MANAGER.hasVoted(ARTICLE_ID, id, action)) {
+                    alert("You have already voted on this comment!");
+                    return;
+                }
 
-    loadComments();
+                VOTE_MANAGER.recordVote(ARTICLE_ID, id, action);
 
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu-drawer');
-        menu.classList.toggle('hidden');
-    }
+                const btn = event.currentTarget;
+                if (btn) {
+                    btn.classList.add("opacity-50", "pointer-events-none");
+                }
 
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+                try {
+                    const res = await fetch(API_URL, {
+                        method: "PATCH",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ id, action }),
+                    });
+                    if (res.ok) {
+                        await loadComments();
+                    } else {
+                        VOTE_MANAGER.clearVote(ARTICLE_ID, id, action);
+                    }
+                } catch (err) {
+                    console.error("Failed to vote", err);
+                    VOTE_MANAGER.clearVote(ARTICLE_ID, id, action);
+                }
+            }
 
-    // Active Navigation Highlight on Scroll (Scroll Spy)
-    const navLinks = document.querySelectorAll('#nav-menu a[href^="#"]');
-    const sections = document.querySelectorAll('div[id].course-category-block');
+            async function postReply(parentId) {
+                const author = document.getElementById(
+                    `reply-author-${parentId}`,
+                ).value;
+                const email = document.getElementById(
+                    `reply-email-${parentId}`,
+                ).value;
+                const content = document.getElementById(
+                    `reply-content-${parentId}`,
+                ).value;
 
-    const navObserverOptions = {
-        root: null,
-        rootMargin: '-20% 0px -60% 0px',
-        threshold: 0
-    };
+                if (!author.trim() || !email.trim() || !content.trim()) {
+                    alert("Please fill out all required fields.");
+                    return;
+                }
 
-    const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.remove('active-link');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active-link');
+                try {
+                    const res = await fetch(API_URL, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            author,
+                            email,
+                            content,
+                            parent_id: parentId,
+                            article_id: ARTICLE_ID,
+                        }),
+                    });
+                    if (res.ok) await loadComments();
+                } catch (err) {
+                    alert("Network error.");
+                }
+            }
+
+            document
+                .getElementById("comment-form")
+                .addEventListener("submit", async (e) => {
+                    e.preventDefault();
+                    const btn = document.getElementById("submit-btn");
+                    const author = document.getElementById("author");
+                    const email = document.getElementById("email");
+                    const content = document.getElementById("content");
+
+                    btn.disabled = true;
+                    btn.innerText = "Posting...";
+
+                    try {
+                        const res = await fetch(API_URL, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                author: author.value,
+                                email: email.value,
+                                content: content.value,
+                                parent_id: null,
+                                article_id: ARTICLE_ID,
+                            }),
+                        });
+
+                        if (res.ok) {
+                            author.value = "";
+                            email.value = "";
+                            content.value = "";
+                            await loadComments();
+                        }
+                    } catch (err) {
+                        alert("Network error.");
+                    } finally {
+                        btn.disabled = false;
+                        btn.innerText = "Post Comment";
                     }
                 });
-            }
-        });
-    }, navObserverOptions);
 
-    sections.forEach(section => navObserver.observe(section));
-</script>
-</body>
+            function escapeHTML(str) {
+                return str.replace(
+                    /[&<>'"]/g,
+                    (tag) =>
+                        ({
+                            "&": "&amp;",
+                            "<": "&lt;",
+                            ">": "&gt;",
+                            "'": "&#39;",
+                            '"': "&quot;",
+                        })[tag] || tag,
+                );
+            }
+
+            loadComments();
+
+            function toggleMobileMenu() {
+                const menu = document.getElementById("mobile-menu-drawer");
+                menu.classList.toggle("hidden");
+            }
+
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+
+            // Active Navigation Highlight on Scroll (Scroll Spy)
+            const navLinks = document.querySelectorAll(
+                '#nav-menu a[href^="#"]',
+            );
+            const sections = document.querySelectorAll(
+                "div[id].course-category-block",
+            );
+
+            const navObserverOptions = {
+                root: null,
+                rootMargin: "-20% 0px -60% 0px",
+                threshold: 0,
+            };
+
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute("id");
+                        navLinks.forEach((link) => {
+                            link.classList.remove("active-link");
+                            if (link.getAttribute("href") === `#${id}`) {
+                                link.classList.add("active-link");
+                            }
+                        });
+                    }
+                });
+            }, navObserverOptions);
+
+            sections.forEach((section) => navObserver.observe(section));
+        </script>
+    </body>
 </html>
